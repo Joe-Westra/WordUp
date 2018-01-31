@@ -1,19 +1,33 @@
 package WordUp;
 
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class WordUpTest {
 
-    @org.junit.jupiter.api.Test
+    static WordUp w;
+
+    @BeforeAll
+    public static void setup(){
+        w = new WordUp("testing");
+
+    }
+    @Test
     void getWord() {
-        WordUp w = new WordUp("testing");
         assertEquals("testing", w.getWord());
     }
 
-    @org.junit.jupiter.api.Test
-    void getLemmatronURL() {
-        WordUp w = new WordUp("testing");
-//        assertEquals("sad", w.getLemmatronURL());
+    @Test
+    void getsResponseFromAPI(){
+        assertEquals(200, w.getResponseCode());
+    }
+
+    @Test
+    void fakeWordsGetAppropriateResponseCode() {
+        WordUp wu = new WordUp("asdf");
+        assertEquals(404, wu.getResponseCode());
     }
 
 
