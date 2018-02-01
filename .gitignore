@@ -1,6 +1,9 @@
 # Compiled folder
 out
 
+# Idea specific folder
+.idea
+
 # Compiled class file
 *.class
 
