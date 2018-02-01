@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="16db3b39-4352-4287-8e7c-b18d2edcf8ef" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/WordUp/WordUpTest.java" afterPath="$PROJECT_DIR$/tests/WordUp/WordUpTest.java" />
-    </list>
+    <list default="true" id="16db3b39-4352-4287-8e7c-b18d2edcf8ef" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,8 +16,8 @@
       <file leaf-file-name="WordUp.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/WordUp/WordUp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1700">
-              <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+            <state relative-caret-position="322">
+              <caret line="25" column="28" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
@@ -663,7 +661,7 @@
       <workItem from="1516079466488" duration="297000" />
       <workItem from="1517333535435" duration="2588000" />
       <workItem from="1517345611175" duration="12451000" />
-      <workItem from="1517430320835" duration="11357000" />
+      <workItem from="1517430320835" duration="11644000" />
     </task>
     <servers />
   </component>
@@ -700,7 +698,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30849000" />
+    <option name="totallyTimeSpent" value="31136000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-2" width="1920" height="1017" extended-state="6" />
@@ -926,8 +924,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WordUp/WordUp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1700">
-          <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+        <state relative-caret-position="322">
+          <caret line="25" column="28" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
