@@ -15,53 +15,59 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class WordUp {
     private String word;
-    private OxfordAPIInfo api;
-    private int responseCode;
+    private static OxfordAPIInfo api;
     private String baseWord;
     private DefinitionInformation definition;
+    private HttpsURLConnection inflectionConnection;
+    private HttpsURLConnection definitionConnection;
+
 
     public WordUp(String word) {
         this.word = word;
         api = new OxfordAPIInfo();
-        String type = "inflections";
-        HttpsURLConnection connection = getConnection(type, word.toLowerCase());
+    }
+
+    public DefinitionInformation determineDefinition(String baseWord) {
+        int responseCode;
+        definitionConnection = getConnection("entries", baseWord);
         try {
-            responseCode = connection.getResponseCode();
-            System.out.println("Response code at line 26: " + responseCode);
-            if (responseCode == 200){
-                JsonObject JSONResponse = getURLResponse(connection);
-                baseWord = retrieveBaseWord(JSONResponse);
-            }
-        }catch (FileNotFoundException e){
-            //This doesn't seem to be in the right spot, it's not catching anything.
-            System.out.println("not an acceptable word");
-            connection.disconnect();
-            System.exit(-1);
-        }catch (IOException e){
-            shriekAndDie(connection, e);
-        }
-
-
-
-        //baseword of lookup achieved;
-        type = "entries";
-        connection = getConnection(type, baseWord);
-        try {
-            responseCode = connection.getResponseCode();
-            System.out.println("Response code at line 26: " + responseCode);
-            if (responseCode == 200){
-                JsonObject JSONResponse = getURLResponse(connection);
-                System.out.println(JSONResponse.toString());
+            responseCode = definitionConnection.getResponseCode();
+            if (responseCode == 200) {
+                JsonObject JSONResponse = getURLResponse(definitionConnection);
+                System.out.println("Json Response for defition" + JSONResponse.toString());//scaffolding
                 definition = retrieveDefintion(JSONResponse);
             }
-        } catch(IOException e){
-            shriekAndDie(connection, e);
+        } catch (IOException e) {
+            shriekAndDie(definitionConnection, e);
         }
 
+        return new DefinitionInformation();
+    }
 
+    public String determineBaseWord(String word) {
+        int responseCode;
 
-
-
+        String baseWord = "";
+        inflectionConnection = getConnection("inflections", word.toLowerCase());
+        try {
+            responseCode = inflectionConnection.getResponseCode();
+            if (responseCode == 200) {
+                JsonObject JSONResponse = getURLResponse(inflectionConnection);
+                baseWord = retrieveBaseWord(JSONResponse);
+            } else {
+                //Error of some sort
+                System.out.println("error....\n" +
+                        "Response code:" + responseCode);
+            }
+        } catch (FileNotFoundException e) {
+            //This doesn't seem to be in the right spot, it's not catching anything.
+            System.out.println("not an acceptable word");
+            inflectionConnection.disconnect();
+            System.exit(-1);
+        } catch (IOException e) {
+            shriekAndDie(inflectionConnection, e);
+        }
+        return baseWord;
     }
 
     private void shriekAndDie(HttpsURLConnection connection, IOException e) {
@@ -102,12 +108,12 @@ public class WordUp {
                 .getAsJsonArray().get(0).getAsJsonObject().get("inflectionOf")
                 .getAsJsonArray().get(0).getAsJsonObject().get("text").toString();
         System.out.println(base);
-        return base.substring(1, base.length()-1);
+        return base.substring(1, base.length() - 1);
     }
 
     private JsonObject getURLResponse(HttpsURLConnection connection) {
         try {
-            System.out.println("response is: " +connection.getResponseCode());
+            System.out.println("response is: " + connection.getResponseCode());
             BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             JsonParser jp = new JsonParser();
             JsonElement je = jp.parse(reader);
@@ -130,14 +136,38 @@ public class WordUp {
         return word;
     }
 
-    public int getResponseCode() { return responseCode; }
+    public int getInflectionResponseCode() {
+        int responseCode = -1;
+        try {
+            responseCode = inflectionConnection.getResponseCode();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return responseCode;
+    }
+
+    public int getDefinitionResponseCode() {
+        int responseCode = -1;
+        try {
+            responseCode = definitionConnection.getResponseCode();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return responseCode;
+    }
 
     public DefinitionInformation getDefinition() { return definition; }
 
+    public void setDefinition(DefinitionInformation definition) { this.definition = definition; }
+
     public String getBaseWord() { return baseWord; }
+
+    public void setBaseWord(String baseWord) { this.baseWord = baseWord; }
 
     public static void main(String[] args) {
         WordUp w = new WordUp("starstruck");
+        w.setBaseWord(w.determineBaseWord(w.getWord()));
+        w.setDefinition(w.determineDefinition(w.getBaseWord()));
     }
 
 }
@@ -149,13 +179,17 @@ class OxfordAPIInfo {
     final String appKey = "54a6ca12f6ef562c890038e2d051fc5c";
 }
 
-class PossibleDefinition{
+class PossibleDefinition {
     String definition;
     String example;
 
-    public String getDefinition() { return definition; }
+    public String getDefinition() {
+        return definition;
+    }
 
-    public String getExample() { return example; }
+    public String getExample() {
+        return example;
+    }
 
     public PossibleDefinition(String definition, String example) {
         this.definition = definition;
@@ -163,7 +197,7 @@ class PossibleDefinition{
     }
 }
 
-class LexicalCategory{
+class LexicalCategory {
     String category;
     List<PossibleDefinition> definitions;
 
@@ -172,12 +206,12 @@ class LexicalCategory{
         definitions = new ArrayList<PossibleDefinition>();
     }
 
-    public void addDefinition(String definition, String example){
-        definitions.add(new PossibleDefinition(definition,example));
+    public void addDefinition(String definition, String example) {
+        definitions.add(new PossibleDefinition(definition, example));
     }
 }
 
-class DefinitionInformation{
+class DefinitionInformation {
     String etymologies;
     String phoneticSpelling;
     List<LexicalCategory> definitions;

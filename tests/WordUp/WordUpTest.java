@@ -12,8 +12,8 @@ class WordUpTest {
     @BeforeAll
     public static void setup(){
         w = new WordUp("testing");
-
     }
+
     @Test
     void getWord() {
         System.out.println("word: " + w.getWord());
@@ -21,26 +21,29 @@ class WordUpTest {
     }
 
     @Test
-    void getsResponseFromAPI(){
-        assertEquals(200, w.getResponseCode());
+    void getsResponseFromInflectionAPI(){
+        w.determineBaseWord(w.getWord());
+        assertEquals(200, w.getInflectionResponseCode());
     }
 
     @Test
     void fakeWordsGetAppropriateResponseCode() {
         WordUp wu = new WordUp("asdf");
-        assertEquals(404, wu.getResponseCode());
+        wu.determineBaseWord(wu.getWord());
+        assertEquals(404, wu.getInflectionResponseCode());
     }
 
     @Test
     void properRootWordsAreIdentified(){
         WordUp wy = new WordUp("dumping");
+        wy.setBaseWord(wy.determineBaseWord(wy.getWord()));
         assertEquals("dump", wy.getBaseWord());
     }
 
     @Test
     void baseWordProvidesAValidDictionaryQuery(){
-        assertEquals(200, w.getResponseCode());
-
+        w.setDefinition(w.determineDefinition(w.getBaseWord()));
+        assertEquals(200, w.getDefinitionResponseCode());
     }
 
     @Test
