@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16db3b39-4352-4287-8e7c-b18d2edcf8ef" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WordUp/WordUp.java" afterPath="$PROJECT_DIR$/src/WordUp/WordUp.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/WordUp/WordUpTest.java" afterPath="$PROJECT_DIR$/tests/WordUp/WordUpTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -19,11 +18,11 @@
       <file leaf-file-name="WordUp.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/WordUp/WordUp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="100" column="16" lean-forward="false" selection-start-line="100" selection-start-column="16" selection-end-line="100" selection-end-column="16" />
+            <state relative-caret-position="1700">
+              <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#getConnection#0;class#WordUp#0" expanded="false" />
+                <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
                 <element signature="method#getURLResponse#0;class#WordUp#0" expanded="false" />
                 <element signature="e#4617#4618#0" expanded="true" />
                 <element signature="e#4668#4669#0" expanded="true" />
@@ -35,14 +34,14 @@
       <file leaf-file-name="WordUpTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/WordUp/WordUpTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+            <state relative-caret-position="260">
+              <caret line="28" column="48" lean-forward="true" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#451#452#0" expanded="true" />
                 <element signature="e#505#506#0" expanded="true" />
-                <element signature="e#924#925#0" expanded="true" />
-                <element signature="e#1015#1016#0" expanded="true" />
+                <element signature="e#973#974#0" expanded="true" />
+                <element signature="e#1064#1065#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -70,8 +69,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/tests/tests.java" />
-        <option value="$PROJECT_DIR$/tests/WordUp/WordUpTest.java" />
         <option value="$PROJECT_DIR$/src/WordUp/WordUp.java" />
+        <option value="$PROJECT_DIR$/tests/WordUp/WordUpTest.java" />
       </list>
     </option>
   </component>
@@ -208,7 +207,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.WordUpTest">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="WordUp.WordUp" />
@@ -638,8 +637,8 @@
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.WordUpTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.WordUpTest" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -664,14 +663,11 @@
       <workItem from="1516079466488" duration="297000" />
       <workItem from="1517333535435" duration="2588000" />
       <workItem from="1517345611175" duration="12451000" />
-      <workItem from="1517430320835" duration="9765000" />
+      <workItem from="1517430320835" duration="11357000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="WordUpTest - 2018.01.31 at 13h 06m 00s.xml">
-      <configuration name="WordUpTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="WordUpTest - 2018.01.31 at 13h 29m 50s.xml">
       <configuration name="WordUpTest" configurationId="JUnit" />
     </history-entry>
@@ -699,9 +695,12 @@
     <history-entry file="WordUpTest - 2018.01.31 at 21h 20m 04s.xml">
       <configuration name="WordUpTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="WordUpTest - 2018.01.31 at 21h 26m 12s.xml">
+      <configuration name="WordUpTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29257000" />
+    <option name="totallyTimeSpent" value="30849000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-2" width="1920" height="1017" extended-state="6" />
@@ -717,7 +716,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30258718" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30258718" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -760,7 +759,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getConnection#0;class#WordUp#0" expanded="false" />
+            <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#getURLResponse#0;class#WordUp#0" expanded="false" />
             <element signature="e#4617#4618#0" expanded="true" />
             <element signature="e#4668#4669#0" expanded="true" />
@@ -776,8 +775,8 @@
             <element signature="imports" expanded="true" />
             <element signature="e#451#452#0" expanded="true" />
             <element signature="e#505#506#0" expanded="true" />
-            <element signature="e#924#925#0" expanded="true" />
-            <element signature="e#1015#1016#0" expanded="true" />
+            <element signature="e#973#974#0" expanded="true" />
+            <element signature="e#1064#1065#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -788,7 +787,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getConnection#0;class#WordUp#0" expanded="false" />
+            <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#getURLResponse#0;class#WordUp#0" expanded="false" />
             <element signature="e#4617#4618#0" expanded="true" />
             <element signature="e#4668#4669#0" expanded="true" />
@@ -804,8 +803,8 @@
             <element signature="imports" expanded="true" />
             <element signature="e#451#452#0" expanded="true" />
             <element signature="e#505#506#0" expanded="true" />
-            <element signature="e#924#925#0" expanded="true" />
-            <element signature="e#1015#1016#0" expanded="true" />
+            <element signature="e#973#974#0" expanded="true" />
+            <element signature="e#1064#1065#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -816,7 +815,7 @@
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getConnection#0;class#WordUp#0" expanded="false" />
+            <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#getURLResponse#0;class#WordUp#0" expanded="false" />
             <element signature="e#4617#4618#0" expanded="true" />
             <element signature="e#4668#4669#0" expanded="true" />
@@ -830,7 +829,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getConnection#0;class#WordUp#0" expanded="false" />
+            <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#getURLResponse#0;class#WordUp#0" expanded="false" />
             <element signature="e#4617#4618#0" expanded="true" />
             <element signature="e#4668#4669#0" expanded="true" />
@@ -844,7 +843,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getConnection#0;class#WordUp#0" expanded="false" />
+            <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#getURLResponse#0;class#WordUp#0" expanded="false" />
             <element signature="e#4617#4618#0" expanded="true" />
             <element signature="e#4668#4669#0" expanded="true" />
@@ -858,7 +857,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getConnection#0;class#WordUp#0" expanded="false" />
+            <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#getURLResponse#0;class#WordUp#0" expanded="false" />
             <element signature="e#4617#4618#0" expanded="true" />
             <element signature="e#4668#4669#0" expanded="true" />
@@ -873,7 +872,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getConnection#0;class#WordUp#0" expanded="false" />
+            <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#getURLResponse#0;class#WordUp#0" expanded="false" />
             <element signature="e#4617#4618#0" expanded="true" />
             <element signature="e#4668#4669#0" expanded="true" />
@@ -913,25 +912,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/WordUp/WordUpTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        <state relative-caret-position="260">
+          <caret line="28" column="48" lean-forward="true" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#451#452#0" expanded="true" />
             <element signature="e#505#506#0" expanded="true" />
-            <element signature="e#924#925#0" expanded="true" />
-            <element signature="e#1015#1016#0" expanded="true" />
+            <element signature="e#973#974#0" expanded="true" />
+            <element signature="e#1064#1065#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WordUp/WordUp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="100" column="16" lean-forward="false" selection-start-line="100" selection-start-column="16" selection-end-line="100" selection-end-column="16" />
+        <state relative-caret-position="1700">
+          <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getConnection#0;class#WordUp#0" expanded="false" />
+            <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#getURLResponse#0;class#WordUp#0" expanded="false" />
             <element signature="e#4617#4618#0" expanded="true" />
             <element signature="e#4668#4669#0" expanded="true" />

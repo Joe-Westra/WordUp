@@ -39,8 +39,10 @@ class WordUpTest {
 
     @Test
     void baseWordProvidesAValidDictionaryQuery(){
+        assertEquals(200, w.getResponseCode());
 
     }
+
     @Test
     void definitionClassIsCorrect(){
         assertTrue(w.getDefinition().getClass() == DefinitionInformation.class);
