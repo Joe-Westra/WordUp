@@ -5,6 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.google.gson.*;
 
@@ -15,6 +17,8 @@ public class WordUp {
     private String word;
     private OxfordAPIInfo api;
     private int responseCode;
+    private String baseWord;
+    private DefinitionInformation definition;
 
     public WordUp(String word) {
         this.word = word;
@@ -24,31 +28,51 @@ public class WordUp {
         try {
             responseCode = connection.getResponseCode();
             System.out.println("Response code at line 26: " + responseCode);
+            if (responseCode == 200){
+                JsonObject JSONResponse = getURLResponse(connection);
+                baseWord = retrieveBaseWord(JSONResponse);
+            }
         }catch (FileNotFoundException e){
             //This doesn't seem to be in the right spot, it's not catching anything.
             System.out.println("not an acceptable word");
             connection.disconnect();
             System.exit(-1);
         }catch (IOException e){
-            e.printStackTrace();
-            connection.disconnect();
-            System.exit(-1);
-        }
-        JsonObject JSONResponse = getURLResponse(connection);
-        String baseWord;
-        if (JSONResponse == null) {
-            System.out.println("something went wrong");
-            connection.disconnect();
-            System.exit(-1);
+            shriekAndDie(connection, e);
         }
 
-        baseWord = getBaseWord(JSONResponse);
+
+
         //baseword of lookup achieved;
         type = "entries";
         connection = getConnection(type, baseWord);
+        try {
+            responseCode = connection.getResponseCode();
+            System.out.println("Response code at line 26: " + responseCode);
+            if (responseCode == 200){
+                JsonObject JSONResponse = getURLResponse(connection);
+                System.out.println(JSONResponse.toString());
+                definition = retrieveDefintion(JSONResponse);
+            }
+        } catch(IOException e){
+            shriekAndDie(connection, e);
+        }
 
 
 
+
+
+    }
+
+    private void shriekAndDie(HttpsURLConnection connection, IOException e) {
+        e.printStackTrace();
+        connection.disconnect();
+        System.exit(-1);
+    }
+
+    private DefinitionInformation retrieveDefintion(JsonObject connection) {
+
+        return new DefinitionInformation();
     }
 
     private HttpsURLConnection getConnection(String type, String word) {
@@ -71,14 +95,14 @@ public class WordUp {
         }
     }
 
-    public String getBaseWord(JsonObject jo) {
+    public String retrieveBaseWord(JsonObject jo) {
         System.out.println(jo.toString());
-        JsonElement hoo = jo.get("results");
-        JsonElement hoot = hoo.getAsJsonArray().get(0);
-        JsonElement hooot = hoot.getAsJsonObject().get("lexicalEntries");
-        JsonElement hoooot = hooot.getAsJsonArray().get(0).getAsJsonObject().get("inflectionOf");
-        System.out.println(hoooot.getAsJsonArray().get(0).getAsJsonObject().get("text").toString());
-        return hoooot.getAsJsonArray().get(0).getAsJsonObject().get("text").toString();
+        String base = jo.get("results")
+                .getAsJsonArray().get(0).getAsJsonObject().get("lexicalEntries")
+                .getAsJsonArray().get(0).getAsJsonObject().get("inflectionOf")
+                .getAsJsonArray().get(0).getAsJsonObject().get("text").toString();
+        System.out.println(base);
+        return base.substring(1, base.length()-1);
     }
 
     private JsonObject getURLResponse(HttpsURLConnection connection) {
@@ -108,10 +132,14 @@ public class WordUp {
 
     public int getResponseCode() { return responseCode; }
 
+    public DefinitionInformation getDefinition() { return definition; }
+
+    public String getBaseWord() { return baseWord; }
+
     public static void main(String[] args) {
         WordUp w = new WordUp("starstruck");
-
     }
+
 }
 
 
@@ -120,6 +148,37 @@ class OxfordAPIInfo {
     final String appID = "3f6b9965";
     final String appKey = "54a6ca12f6ef562c890038e2d051fc5c";
 }
+
+class PossibleDefinition{
+    String definition;
+    String example;
+
+    public String getDefinition() { return definition; }
+
+    public String getExample() { return example; }
+
+    public PossibleDefinition(String definition, String example) {
+        this.definition = definition;
+        this.example = example;
+    }
+}
+
+class LexicalCategory{
+    String category;
+    List<PossibleDefinition> definitions;
+
+    public LexicalCategory(String category) {
+        this.category = category;
+        definitions = new ArrayList<PossibleDefinition>();
+    }
+
+    public void addDefinition(String definition, String example){
+        definitions.add(new PossibleDefinition(definition,example));
+    }
+}
+
 class DefinitionInformation{
-    
+    String etymologies;
+    String phoneticSpelling;
+    List<LexicalCategory> definitions;
 }

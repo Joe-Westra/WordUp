@@ -16,6 +16,7 @@ class WordUpTest {
     }
     @Test
     void getWord() {
+        System.out.println("word: " + w.getWord());
         assertEquals("testing", w.getWord());
     }
 
@@ -30,5 +31,18 @@ class WordUpTest {
         assertEquals(404, wu.getResponseCode());
     }
 
+    @Test
+    void properRootWordsAreIdentified(){
+        WordUp wy = new WordUp("dumping");
+        assertEquals("dump", wy.getBaseWord());
+    }
 
+    @Test
+    void baseWordProvidesAValidDictionaryQuery(){
+
+    }
+    @Test
+    void definitionClassIsCorrect(){
+        assertTrue(w.getDefinition().getClass() == DefinitionInformation.class);
+        }
 }
