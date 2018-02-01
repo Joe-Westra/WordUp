@@ -12,6 +12,8 @@ class WordUpTest {
     @BeforeAll
     public static void setup(){
         w = new WordUp("testing");
+        w.setBaseWord(w.determineBaseWord(w.getWord()));
+        w.setDefinition(w.determineDefinition(w.getBaseWord()));
     }
 
     @Test
@@ -22,7 +24,6 @@ class WordUpTest {
 
     @Test
     void getsResponseFromInflectionAPI(){
-        w.determineBaseWord(w.getWord());
         assertEquals(200, w.getInflectionResponseCode());
     }
 
@@ -42,12 +43,31 @@ class WordUpTest {
 
     @Test
     void baseWordProvidesAValidDictionaryQuery(){
-        w.setDefinition(w.determineDefinition(w.getBaseWord()));
         assertEquals(200, w.getDefinitionResponseCode());
     }
 
     @Test
-    void definitionClassIsCorrect(){
-        assertTrue(w.getDefinition().getClass() == DefinitionInformation.class);
-        }
+    void definitionIsNotNull(){
+        assertNotNull(w.getDefinition());
+    }
+
+    @Test
+    void definitionOfWordWithoutListedOriginIsEmptyString(){
+        //"testing" has no etymology
+        assertTrue(w.getDefinition().etymologies == "");
+    }
+
+    @Test
+    void definitionOfWordWithListedOriginIsString(){
+        String testingWord = "dumping";
+        String expectedEtymology =
+                "Middle English: perhaps from Old Norse; related to Danish dumpe" +
+                        " and Norwegian dumpa ‘fall suddenly’ (the original sense" +
+                        " in English); in later use partly imitative; compare with thump";
+        WordUp wu = new WordUp(testingWord);
+        wu.setBaseWord(wu.determineBaseWord(wu.getWord()));
+        wu.setDefinition(wu.determineDefinition(wu.getBaseWord()));
+
+        assertTrue(wu.getDefinition().etymologies.equals(expectedEtymology));
+    }
 }

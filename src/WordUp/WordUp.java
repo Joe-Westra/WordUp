@@ -34,14 +34,14 @@ public class WordUp {
             responseCode = definitionConnection.getResponseCode();
             if (responseCode == 200) {
                 JsonObject JSONResponse = getURLResponse(definitionConnection);
-                System.out.println("Json Response for defition" + JSONResponse.toString());//scaffolding
+                System.out.println("Json Response for definition of '" + baseWord + "': " + JSONResponse.toString());//scaffolding
                 definition = retrieveDefintion(JSONResponse);
             }
         } catch (IOException e) {
             shriekAndDie(definitionConnection, e);
         }
 
-        return new DefinitionInformation();
+        return definition;
     }
 
     public String determineBaseWord(String word) {
@@ -59,11 +59,6 @@ public class WordUp {
                 System.out.println("error....\n" +
                         "Response code:" + responseCode);
             }
-        } catch (FileNotFoundException e) {
-            //This doesn't seem to be in the right spot, it's not catching anything.
-            System.out.println("not an acceptable word");
-            inflectionConnection.disconnect();
-            System.exit(-1);
         } catch (IOException e) {
             shriekAndDie(inflectionConnection, e);
         }
@@ -76,9 +71,30 @@ public class WordUp {
         System.exit(-1);
     }
 
-    private DefinitionInformation retrieveDefintion(JsonObject connection) {
+    private DefinitionInformation retrieveDefintion(JsonObject rootJSONObject) {
+        DefinitionInformation def = new DefinitionInformation();
+        def.etymologies = fetchEtymologies(rootJSONObject);
+        System.out.println("ety: " + def.etymologies);
+        return def;
+    }
 
-        return new DefinitionInformation();
+    /**
+     * Returns etymology (origin) of a word if one is supplied in the response.
+     * Absent etymologies return an empty String.
+     * @param rootJSONObject
+     * @return
+     */
+    private String fetchEtymologies(JsonObject rootJSONObject) {
+        String ety = "";
+        JsonObject j = rootJSONObject.get("results")
+                .getAsJsonArray().get(0).getAsJsonObject().get("lexicalEntries")
+                .getAsJsonArray().get(0).getAsJsonObject().get("entries")
+                .getAsJsonArray().get(0).getAsJsonObject();
+        if( j.has("etymologies")){
+            ety = j.get("etymologies").getAsJsonArray().get(0).toString();
+            ety = ety.substring(1, ety.length()-1);
+        }
+        return ety;
     }
 
     private HttpsURLConnection getConnection(String type, String word) {
@@ -89,11 +105,6 @@ public class WordUp {
             connection.setRequestProperty("app_id", api.appID);
             connection.setRequestProperty("app_key", api.appKey);
             return connection;
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            System.out.println("Inappropriate word");
-            System.exit(-1);
-            return null;
         } catch (IOException e) {
             e.printStackTrace();
             System.exit(-1);
@@ -113,19 +124,11 @@ public class WordUp {
 
     private JsonObject getURLResponse(HttpsURLConnection connection) {
         try {
-            System.out.println("response is: " + connection.getResponseCode());
+            System.out.println("response is: " + connection.getResponseCode());//scaffolding
             BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             JsonParser jp = new JsonParser();
             JsonElement je = jp.parse(reader);
             return je.getAsJsonObject();
-
-        } catch (FileNotFoundException e) {
-            //This should recommend alternative spellings.
-            e.printStackTrace();
-            System.out.println("Inappropriate word");
-            connection.disconnect();
-            System.exit(-1);
-            return null;
         } catch (IOException e) {
             e.printStackTrace();
             return null;
