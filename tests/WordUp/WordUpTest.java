@@ -10,7 +10,7 @@ class WordUpTest {
     static WordUp w;
 
     @BeforeAll
-    public static void setup(){
+    public static void setup() {
         w = new WordUp("testing");
         w.setBaseWord(w.determineBaseWord(w.getWord()));
         w.setDefinition(w.determineDefinition(w.getBaseWord()));
@@ -23,7 +23,7 @@ class WordUpTest {
     }
 
     @Test
-    void getsResponseFromInflectionAPI(){
+    void getsResponseFromInflectionAPI() {
         assertEquals(200, w.getInflectionResponseCode());
     }
 
@@ -35,39 +35,48 @@ class WordUpTest {
     }
 
     @Test
-    void properRootWordsAreIdentified(){
+    void properRootWordsAreIdentified() {
         WordUp wy = new WordUp("dumping");
         wy.setBaseWord(wy.determineBaseWord(wy.getWord()));
         assertEquals("dump", wy.getBaseWord());
     }
 
     @Test
-    void baseWordProvidesAValidDictionaryQuery(){
+    void baseWordProvidesAValidDictionaryQuery() {
         assertEquals(200, w.getDefinitionResponseCode());
     }
 
     @Test
-    void definitionIsNotNull(){
+    void definitionIsNotNull() {
         assertNotNull(w.getDefinition());
     }
 
     @Test
-    void definitionOfWordWithoutListedOriginIsEmptyString(){
+    void definitionOfWordWithoutListedOriginIsEmptyString() {
         //"testing" has no etymology
         assertTrue(w.getDefinition().etymologies == "");
     }
 
     @Test
-    void definitionOfWordWithListedOriginIsString(){
+    void definitionOfWordWithListedOriginIsString() {
         String testingWord = "dumping";
         String expectedEtymology =
                 "Middle English: perhaps from Old Norse; related to Danish dumpe" +
                         " and Norwegian dumpa ‘fall suddenly’ (the original sense" +
                         " in English); in later use partly imitative; compare with thump";
+
         WordUp wu = new WordUp(testingWord);
         wu.setBaseWord(wu.determineBaseWord(wu.getWord()));
         wu.setDefinition(wu.determineDefinition(wu.getBaseWord()));
 
         assertTrue(wu.getDefinition().etymologies.equals(expectedEtymology));
     }
+
+    @Test
+    void definitionsContainAtLeastOneEntry() {
+        System.out.println("size of definitions list: " + w.getDefinition().definitions.size());
+        assertFalse(w.getDefinition().definitions.isEmpty());
+    }
+
+
 }
