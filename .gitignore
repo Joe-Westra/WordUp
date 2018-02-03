@@ -1,3 +1,6 @@
+# Sample files
+*.txt
+
 # Compiled folder
 out/
 

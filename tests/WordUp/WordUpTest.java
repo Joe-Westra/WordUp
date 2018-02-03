@@ -74,9 +74,21 @@ class WordUpTest {
 
     @Test
     void definitionsContainAtLeastOneEntry() {
-        System.out.println("size of definitions list: " + w.getDefinition().definitions.size());
-        assertFalse(w.getDefinition().definitions.isEmpty());
+        System.out.println("size of definitions list: " + w.getDefinition().lexicalCategories.size());
+        assertFalse(w.getDefinition().lexicalCategories.isEmpty());
     }
 
 
+    @Test
+    void definitionsHaveAtLeastOneLexicalCategory() {
+        assertFalse(w.getDefinition().lexicalCategories.isEmpty());
+    }
+/*    @Test
+    void someWordsHaveMultipleSubsensenses() {
+        WordUp wu = new WordUp("dumping");
+        wu.setBaseWord(wu.determineBaseWord(wu.getWord()));
+        wu.setDefinition(wu.determineDefinition(wu.getBaseWord()));
+
+
+    }*/
 }
