@@ -57,7 +57,6 @@ public class WordUp {
                 JsonObject JSONResponse = getURLResponse(inflectionConnection);
                 baseWord = retrieveBaseWord(JSONResponse);
             } else {
-                //Error of some sort
                 System.out.println("error....\n" +
                         "Response code:" + responseCode);
             }
@@ -97,7 +96,6 @@ public class WordUp {
 
     private List<LexicalCategory> getEachLexicalCategory(JsonObject lexicalEntries) {
         List<LexicalCategory> lc = new ArrayList<>();
-        //AO("lexicalCategory"(string),"entries"AO"senses"AO"definitions"
         Iterator<JsonElement> it = lexicalEntries.get("lexicalEntries").getAsJsonArray().iterator();
         while (it.hasNext()){
             JsonObject jo = it.next().getAsJsonObject();
@@ -115,12 +113,12 @@ public class WordUp {
             JsonObject j = it.next().getAsJsonObject();
             Iterator<JsonElement> jj = j.get("senses").getAsJsonArray().iterator();
             while (jj.hasNext()){
-                JsonObject jjj = it.next().getAsJsonObject();
+                JsonObject jjj = jj.next().getAsJsonObject();
 
                 String def = jjj.get("definitions").getAsString();
                 String example = "";
                 if (jjj.has("examples"))
-                    example = jjj.get("examples").getAsString();
+                    example = jjj.get("examples").getAsJsonArray().get(0).getAsJsonObject().get("text").getAsString();
                 sense = new PossibleDefinition(def,example);
                 if (jjj.has("subsenses")){
                     Iterator<JsonElement> k = jjj.get("subsenses").getAsJsonArray().iterator();
@@ -149,9 +147,6 @@ public class WordUp {
         return j;
     }
 
-    private String getStringFromElement(JsonObject jo, String element){
-        return jo.get(element).getAsJsonArray().get(0).toString();
-    }
 
     /**
      * Returns etymology (origin) of a word if one is supplied in the response.
@@ -255,7 +250,6 @@ public class WordUp {
 
 }
 
-//w.setDefinition(w.determineDefinition(w.getBaseWord()));
 class OxfordAPIInfo {
     final String baseURL = "https://od-api.oxforddictionaries.com/api/v1";
     final String appID = "3f6b9965";
