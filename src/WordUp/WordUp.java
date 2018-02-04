@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -60,7 +61,10 @@ public class WordUp {
                 System.out.println("error....\n" +
                         "Response code:" + responseCode);
             }
-        } catch (IOException e) {
+        } catch(UnknownHostException exception) {
+            System.out.println("Please check your internet connection and try again.");
+            shriekAndDie(inflectionConnection,exception);
+        }catch (IOException e) {
             shriekAndDie(inflectionConnection, e);
         }
         return baseWord;
@@ -74,10 +78,10 @@ public class WordUp {
 
     private DefinitionInformation retrieveDefinition(JsonObject rootJSONObject) {
         DefinitionInformation def = new DefinitionInformation();
-        def.etymologies = fetchEtymologies(rootJSONObject);
-        def.lexicalCategories = fetchDefinitions(rootJSONObject);
-        System.out.println("ety: " + def.etymologies);
-        System.out.println("definis: " + def.lexicalCategories);
+        def.setEtymologies(fetchEtymologies(rootJSONObject));
+        def.setLexicalCategories(fetchDefinitions(rootJSONObject));
+        System.out.println("ety: " + def.getEtymologies());
+        System.out.println("definis: " + def.getLexicalCategories());
         return def;
     }
 
@@ -261,17 +265,12 @@ class OxfordAPIInfo {
 
 class LexicalCategory {
     private String category;
-    PossibleDefinition sense;
+    private PossibleDefinition sense;
 
     LexicalCategory(String category, PossibleDefinition sense) {
         this.category = category;
         this.sense =sense;
     }
-
-    public void addDefinition(String definition, String example) {
-        sense.addSubSense(definition, example);
-    }
-
 }
 
 class PossibleDefinition {
@@ -303,9 +302,26 @@ class PossibleDefinition {
 }
 
 class DefinitionInformation {
-    String etymologies;
-    String phoneticSpelling;
-    List<LexicalCategory> lexicalCategories;
+    private String etymologies;
+    private String phoneticSpelling;
+
+    public String getEtymologies() {
+        return etymologies;
+    }
+
+    public void setEtymologies(String etymologies) {
+        this.etymologies = etymologies;
+    }
+
+    public List<LexicalCategory> getLexicalCategories() {
+        return lexicalCategories;
+    }
+
+    public void setLexicalCategories(List<LexicalCategory> lexicalCategories) {
+        this.lexicalCategories = lexicalCategories;
+    }
+
+    private List<LexicalCategory> lexicalCategories;
 
     public DefinitionInformation() {
         lexicalCategories = new ArrayList<>();

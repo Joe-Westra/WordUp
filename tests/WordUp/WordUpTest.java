@@ -54,7 +54,7 @@ class WordUpTest {
     @Test
     void definitionOfWordWithoutListedOriginIsEmptyString() {
         //"testing" has no etymology
-        assertTrue(w.getDefinition().etymologies == "");
+        assertTrue(w.getDefinition().getEtymologies() == "");
     }
 
     @Test
@@ -69,19 +69,19 @@ class WordUpTest {
         wu.setBaseWord(wu.determineBaseWord(wu.getWord()));
         wu.setDefinition(wu.determineDefinition(wu.getBaseWord()));
 
-        assertTrue(wu.getDefinition().etymologies.equals(expectedEtymology));
+        assertTrue(wu.getDefinition().getEtymologies().equals(expectedEtymology));
     }
 
     @Test
     void definitionsContainAtLeastOneEntry() {
-        System.out.println("size of definitions list: " + w.getDefinition().lexicalCategories.size());
-        assertFalse(w.getDefinition().lexicalCategories.isEmpty());
+        System.out.println("size of definitions list: " + w.getDefinition().getLexicalCategories().size());
+        assertFalse(w.getDefinition().getLexicalCategories().isEmpty());
     }
 
 
     @Test
     void definitionsHaveAtLeastOneLexicalCategory() {
-        assertFalse(w.getDefinition().lexicalCategories.isEmpty());
+        assertFalse(w.getDefinition().getLexicalCategories().isEmpty());
     }
 /*    @Test
     void someWordsHaveMultipleSubsensenses() {
