@@ -81,38 +81,60 @@ public class WordUp {
         return def;
     }
 
-    private List<LexicalCategories> fetchDefinitions(JsonObject rootJSONObject) {
-        List<LexicalCategories> senses = new ArrayList<>();
-        String[] path = {"results", "lexicalEntries",/* GET LEXICALCATEGORIES FROM THIS POINT*/ "entries", "senses"};
-        JsonObject j = traverseAPI(rootJSONObject, path);
-        String definition = getStringFromElement(j, "definitions");
-        System.out.println("definition is: " + definition);
-        //fetch the root definition
-        String example = "";
-        if (j.has("examples")){
-            example = getStringFromElement(j,"examples");
-        }
-        LexicalCategories sense = new LexicalCategories(definition,example);
+    private List<LexicalCategory> fetchDefinitions(JsonObject rootJSONObject) {
+        List<LexicalCategory> senses;
+        String path = "results";
+        JsonObject lexicalEntries = traverseAPI(rootJSONObject, path);
+        //This is an array of Json objects that contain multiple entries.
+        //Each entry is for a different lexical category
+        senses = getEachLexicalCategory(lexicalEntries);
+        return senses;
+    }
 
-        //senses may have subsenses with definitions and optional example sentences.
-        if (j.has("subsenses")) {
-            JsonArray ja = j.get("subsenses").getAsJsonArray();
-            Iterator<JsonElement> ji = ja.iterator();
-            String def = "";
-            String subExample = null;
-            while (ji.hasNext()) {
-                JsonObject jo = ji.next().getAsJsonObject();
-                def = getStringFromElement(jo, "definitions");
-                if(jo.has("examples")){
-                    subExample = getStringFromElement(jo, "examples");
+    private List<LexicalCategory> getEachLexicalCategory(JsonObject lexicalEntries) {
+        List<LexicalCategory> lc = new ArrayList<>();
+        //AO("lexicalCategory"(string),"entries"AO"senses"AO"definitions"
+        Iterator<JsonElement> it = lexicalEntries.get("lexicalEntries").getAsJsonArray().iterator();
+        while (it.hasNext()){
+            JsonObject jo = it.next().getAsJsonObject();
+            String category = jo.get("lexicalCategory").getAsString();
+            PossibleDefinition pd = getEachDefinition(jo);
+            lc.add(new LexicalCategory(category,pd));
+        }
+        return lc;
+    }
+
+    private PossibleDefinition getEachDefinition(JsonObject jo) {
+        PossibleDefinition sense= new PossibleDefinition(null,null);
+        Iterator<JsonElement> it = jo.get("entries").getAsJsonArray().iterator();
+        while (it.hasNext()){
+            JsonObject j = it.next().getAsJsonObject();
+            Iterator<JsonElement> jj = j.get("senses").getAsJsonArray().iterator();
+            while (jj.hasNext()){
+                JsonObject jjj = it.next().getAsJsonObject();
+
+                String def = jjj.get("definitions").getAsString();
+                String example = "";
+                if (jjj.has("examples"))
+                    example = jjj.get("examples").getAsString();
+                sense = new PossibleDefinition(def,example);
+                if (jjj.has("subsenses")){
+                    Iterator<JsonElement> k = jjj.get("subsenses").getAsJsonArray().iterator();
+                    while (k.hasNext()) {
+                        JsonObject kk = k.next().getAsJsonObject();
+                        String d = kk.get("definitions").getAsString();
+                        String e = "";
+                        if (kk.has("examples")) {
+                            e = kk.get("examples").getAsJsonArray().get(0).getAsJsonObject().get("text").getAsString();
+                        }
+                        sense.addSubSense(new PossibleDefinition(d,e));
+                    }
+
                 }
             }
-            System.out.println("def, example" + def + " " + subExample);//scaffolding
-            sense.addDefinition(def, subExample);
         }
-        senses.add(sense);
 
-        return senses;
+        return sense;
     }
 
     private JsonObject traverseAPI(JsonObject rootJSONObject, String... path) {
@@ -237,26 +259,19 @@ class OxfordAPIInfo {
 }
 
 
-class LexicalCategories {
+class LexicalCategory {
     private String category;
     PossibleDefinition sense;
 
-
-    LexicalCategories(String sense, String example) {
-        this.sense = new PossibleDefinition(sense,example);
-    }
-
-    LexicalCategories(String category, String sense, String example) {
+    LexicalCategory(String category, PossibleDefinition sense) {
         this.category = category;
-        this.sense = new PossibleDefinition(sense,example);
+        this.sense =sense;
     }
 
     public void addDefinition(String definition, String example) {
         sense.addSubSense(definition, example);
     }
 
-
-    public void setCategory(String category) { this.category = category; }
 }
 
 class PossibleDefinition {
@@ -275,18 +290,22 @@ class PossibleDefinition {
     public PossibleDefinition(String definition, String example) {
         this.definition = definition;
         this.example = example;
+        subsenses = new ArrayList<>();
+
     }
 
     public void addSubSense(String definition, String example) {
-        subsenses = new ArrayList<>();
         subsenses.add(new PossibleDefinition(definition,example));
+    }
+    public void addSubSense(PossibleDefinition definition) {
+        subsenses.add(definition);
     }
 }
 
 class DefinitionInformation {
     String etymologies;
     String phoneticSpelling;
-    List<LexicalCategories> lexicalCategories;
+    List<LexicalCategory> lexicalCategories;
 
     public DefinitionInformation() {
         lexicalCategories = new ArrayList<>();
