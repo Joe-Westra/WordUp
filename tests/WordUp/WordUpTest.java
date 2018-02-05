@@ -83,12 +83,30 @@ class WordUpTest {
     void definitionsHaveAtLeastOneLexicalCategory() {
         assertFalse(w.getDefinition().getLexicalCategories().isEmpty());
     }
-/*    @Test
+
+    @Test
     void someWordsHaveMultipleSubsensenses() {
         WordUp wu = new WordUp("dumping");
         wu.setBaseWord(wu.determineBaseWord(wu.getWord()));
         wu.setDefinition(wu.determineDefinition(wu.getBaseWord()));
+        assertFalse(wu.getSubsenses().isEmpty());
+    }
 
+    @Test
+    void definitionsHaveAReadableStringRepresentation(){
+        WordUp wu = new WordUp("dumping");
+        wu.setBaseWord(wu.determineBaseWord(wu.getWord()));
+        wu.setDefinition(wu.determineDefinition(wu.getBaseWord()));
 
-    }*/
+        //THIS IS ONLY RETURNING PART OF THE DEFINITIONS LIST.
+        //Although this test currently (almost) "passes" it is not
+        //a complete definition set of "dump"
+        assertEquals("definition: an act of defecation.\n" +
+                "example: \n" +
+                "definition: copy (stored data) to a different location, especially so as to protect against loss.\n" +
+                "example: \n" +
+                "definition: print out or list the contents of (a store), especially after a system failure.\n" +
+                "example:",
+                wu.toString());
+    }
 }

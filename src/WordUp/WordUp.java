@@ -248,6 +248,34 @@ public class WordUp {
         w.setDefinition(w.determineDefinition(w.getBaseWord()));
     }
 
+    @Override
+    public String toString(){
+        List<PossibleDefinition> pd = getSubsenses();
+        Iterator<PossibleDefinition> definitions = pd.iterator();
+        StringBuilder deflist = new StringBuilder();
+        while (definitions.hasNext()){
+            PossibleDefinition d = definitions.next();
+            deflist.append("definition: " + d.getDefinition() + "\n");
+            deflist.append("example: " + d.getExample() + "\n");
+        }
+        return deflist.toString();
+    }
+
+    public List<PossibleDefinition> getSubsenses() {
+        Iterator<LexicalCategory> lc = this.definition.getLexicalCategories().iterator();
+        List<PossibleDefinition> pd = new ArrayList<>();
+        while(lc.hasNext()){
+            PossibleDefinition def = lc.next().getSense();
+            pd.add(def);//add the root definition (sense)
+            if (! def.getSubsenses().isEmpty()){  //this might be redundant... does hasnext throw an exception if the list is empty?
+                Iterator<PossibleDefinition> subsense = def.getSubsenses().iterator();
+                while (subsense.hasNext()){
+                    pd.add(subsense.next());
+                }
+            }
+        }
+        return pd;
+    }
 }
 
 class OxfordAPIInfo {
@@ -265,6 +293,12 @@ class LexicalCategory {
         this.category = category;
         this.sense =sense;
     }
+
+    public PossibleDefinition getSense() {
+        return sense;
+    }
+
+
 }
 
 class PossibleDefinition {
@@ -287,17 +321,15 @@ class PossibleDefinition {
 
     }
 
-    public void addSubSense(String definition, String example) {
-        subsenses.add(new PossibleDefinition(definition,example));
-    }
-    public void addSubSense(PossibleDefinition definition) {
-        subsenses.add(definition);
-    }
+    public List<PossibleDefinition> getSubsenses() { return subsenses; }
+
+    public void addSubSense(PossibleDefinition definition) { subsenses.add(definition); }
 }
 
 class DefinitionInformation {
     private String etymologies;
     private String phoneticSpelling;
+    private List<LexicalCategory> lexicalCategories;
 
     public String getEtymologies() {
         return etymologies;
@@ -315,7 +347,6 @@ class DefinitionInformation {
         this.lexicalCategories = lexicalCategories;
     }
 
-    private List<LexicalCategory> lexicalCategories;
 
     public DefinitionInformation() {
         lexicalCategories = new ArrayList<>();
