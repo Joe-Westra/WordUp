@@ -7,6 +7,7 @@ import java.net.URL;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
 import com.google.gson.*;
@@ -100,31 +101,83 @@ public class WordUp {
         while (it.hasNext()){
             JsonObject jo = it.next().getAsJsonObject();
             String category = jo.get("lexicalCategory").getAsString();
-            PossibleDefinition pd = getEachDefinition(jo);
+            List<String> path = new LinkedList<String>();
+            path.add("entries");
+            path.add("senses");
+            path.add("subsenses");
+            PossibleDefinition pd = FetchDeffies(jo,path);//getEachDefinition(jo);
             lc.add(new LexicalCategory(category,pd));
         }
         return lc;
     }
+    //trying to improve this function
+    private PossibleDefinition FetchDeffies(JsonObject jo, List<String> path){
+        System.out.println("firing recursive fetch at " + path.get(0));
+        PossibleDefinition pd = new PossibleDefinition();
+        if(path.isEmpty())
+            return digestDefinitionIfPresent(jo);
+        while(! path.isEmpty()) { //suspect line....
+            String nextSubElement = path.remove(0);
+            if(jo.has(nextSubElement)) {
+                JsonElement je = jo.get(nextSubElement);
+                if( je.isJsonObject() ) {
+                    JsonObject inner = je.getAsJsonObject();
+                }
+                pd.addSubSense(FetchDeffies(inner, path));//returns a PD
+                Iterator<JsonElement> it = inner.getAsJsonArray().iterator();
+                while (it.hasNext()) {
+                    JsonObject j = it.next().getAsJsonObject();
+                    pd.addSubSense(FetchDeffies(j, path));//returns a PD
+                }
+            }
+        }
+
+return pd;
+        }
+
+        private PossibleDefinition digestDefinitionIfPresent(JsonObject jo){
+        String d = null;
+        String e = null;
+        if(jo.has("definitions"))
+                d = jo.get("definitions").getAsJsonArray().get(0).getAsString();
+        if(jo.has("examples"))
+                e = jo.get("examples").getAsJsonArray().get(0).getAsJsonObject().get("text").getAsString();
+        return new PossibleDefinition(d,e);
+        }
 
     private PossibleDefinition getEachDefinition(JsonObject jo) {
-        PossibleDefinition sense= new PossibleDefinition(null,null);
+
+        List<String> path = new LinkedList<String>();
+        path.add("entries");
+        path.add("senses");
+        path.add("subsenses");
+        PossibleDefinition sense = new PossibleDefinition();
         Iterator<JsonElement> it = jo.get("entries").getAsJsonArray().iterator();
         while (it.hasNext()){
+            System.out.println("hitting 'entries' sublist");
             JsonObject j = it.next().getAsJsonObject();
             Iterator<JsonElement> jj = j.get("senses").getAsJsonArray().iterator();
             while (jj.hasNext()){
+                System.out.println("hitting 'senses' sublist");
                 JsonObject jjj = jj.next().getAsJsonObject();
 
                 String def = jjj.get("definitions").getAsString();
                 String example = "";
-                if (jjj.has("examples"))
+                if (jjj.has("examples")) {
+                    System.out.println("hitting 'examples' sublist");
+
                     example = jjj.get("examples").getAsJsonArray().get(0).getAsJsonObject().get("text").getAsString();
+                }
                 sense = new PossibleDefinition(def,example);
                 if (jjj.has("subsenses")){
                     Iterator<JsonElement> k = jjj.get("subsenses").getAsJsonArray().iterator();
                     while (k.hasNext()) {
                         JsonObject kk = k.next().getAsJsonObject();
-                        String d = kk.get("definitions").getAsString();
+                        System.out.println(kk.toString());
+                        String d = "";
+                        if(kk.has("definitions")) {
+                            d = kk.get("definitions").getAsJsonArray().get(0).getAsString();
+                        }
                         String e = "";
                         if (kk.has("examples")) {
                             e = kk.get("examples").getAsJsonArray().get(0).getAsJsonObject().get("text").getAsString();
@@ -243,9 +296,10 @@ public class WordUp {
     }
 
     public static void main(String[] args) {
-        WordUp w = new WordUp("starstruck");
+        WordUp w = new WordUp("filling");
         w.setBaseWord(w.determineBaseWord(w.getWord()));
         w.setDefinition(w.determineDefinition(w.getBaseWord()));
+        System.out.println(w.toString());
     }
 
     @Override
@@ -314,6 +368,9 @@ class PossibleDefinition {
         return example;
     }
 
+    public PossibleDefinition(){
+        this(null,null);
+    }
     public PossibleDefinition(String definition, String example) {
         this.definition = definition;
         this.example = example;
