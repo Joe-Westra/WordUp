@@ -107,6 +107,6 @@ class WordUpTest {
                 "example: \n" +
                 "definition: print out or list the contents of (a store), especially after a system failure.\n" +
                 "example:",
-                wu.toString());
+                wu.getDefinition().toString());
     }
 }
