@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16db3b39-4352-4287-8e7c-b18d2edcf8ef" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/WordUp/WordUp.java" afterPath="$PROJECT_DIR$/src/WordUp/WordUp.java" />
-      <change beforePath="$PROJECT_DIR$/tests/WordUp/WordUpTest.java" afterPath="$PROJECT_DIR$/tests/WordUp/WordUpTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,48 +18,49 @@
       <file leaf-file-name="WordUp.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/WordUp/WordUp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="355" column="20" lean-forward="false" selection-start-line="355" selection-start-column="20" selection-end-line="355" selection-end-column="20" />
+            <state relative-caret-position="425">
+              <caret line="131" column="9" lean-forward="true" selection-start-line="131" selection-start-column="9" selection-end-line="131" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
                 <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
                 <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+                <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
                 <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
                 <element signature="docComment;method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
                 <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
                 <element signature="method#getConnection#0;class#WordUp#0" expanded="false" />
                 <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
                 <element signature="method#getURLResponse#0;class#WordUp#0" expanded="false" />
-                <element signature="e#8370#8371#0" expanded="true" />
-                <element signature="e#8397#8398#0" expanded="true" />
+                <element signature="e#9494#9495#0" expanded="true" />
+                <element signature="e#9521#9522#0" expanded="true" />
                 <element signature="method#getInflectionResponseCode#0;class#WordUp#0" expanded="false" />
                 <element signature="method#getDefinitionResponseCode#0;class#WordUp#0" expanded="false" />
-                <element signature="e#8989#8990#0" expanded="true" />
-                <element signature="e#9022#9023#0" expanded="true" />
-                <element signature="e#9089#9090#0" expanded="true" />
-                <element signature="e#9133#9134#0" expanded="true" />
-                <element signature="e#9168#9169#0" expanded="true" />
-                <element signature="e#9199#9200#0" expanded="true" />
-                <element signature="e#9247#9248#0" expanded="true" />
-                <element signature="e#9287#9288#0" expanded="true" />
+                <element signature="e#10113#10114#0" expanded="true" />
+                <element signature="e#10146#10147#0" expanded="true" />
+                <element signature="e#10213#10214#0" expanded="true" />
+                <element signature="e#10257#10258#0" expanded="true" />
+                <element signature="e#10292#10293#0" expanded="true" />
+                <element signature="e#10323#10324#0" expanded="true" />
+                <element signature="e#10371#10372#0" expanded="true" />
+                <element signature="e#10411#10412#0" expanded="true" />
                 <element signature="class#OxfordAPIInfo#0" expanded="false" />
-                <element signature="e#12266#12267#0" expanded="true" />
-                <element signature="e#12294#12295#0" expanded="true" />
-                <element signature="e#12693#12694#0" expanded="true" />
-                <element signature="e#12726#12727#0" expanded="true" />
-                <element signature="e#12760#12761#0" expanded="true" />
-                <element signature="e#12790#12791#0" expanded="true" />
-                <element signature="e#12824#12825#0" expanded="true" />
-                <element signature="e#12855#12856#0" expanded="true" />
-                <element signature="e#14262#14263#0" expanded="true" />
-                <element signature="e#14296#14297#0" expanded="true" />
-                <element signature="e#14350#14351#0" expanded="true" />
-                <element signature="e#14396#14397#0" expanded="true" />
-                <element signature="e#14455#14456#0" expanded="true" />
-                <element signature="e#14495#14496#0" expanded="true" />
-                <element signature="e#14673#14674#0" expanded="true" />
-                <element signature="e#14726#14727#0" expanded="true" />
+                <element signature="e#11887#11888#0" expanded="true" />
+                <element signature="e#11915#11916#0" expanded="true" />
+                <element signature="e#12313#12314#0" expanded="true" />
+                <element signature="e#12345#12346#0" expanded="true" />
+                <element signature="e#12582#12583#0" expanded="true" />
+                <element signature="e#12614#12615#0" expanded="true" />
+                <element signature="e#12676#12677#0" expanded="true" />
+                <element signature="e#12717#12718#0" expanded="true" />
+                <element signature="e#13785#13786#0" expanded="true" />
+                <element signature="e#13819#13820#0" expanded="true" />
+                <element signature="e#13873#13874#0" expanded="true" />
+                <element signature="e#13919#13920#0" expanded="true" />
+                <element signature="e#13978#13979#0" expanded="true" />
+                <element signature="e#14018#14019#0" expanded="true" />
+                <element signature="e#14196#14197#0" expanded="true" />
+                <element signature="e#14249#14250#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -68,8 +69,8 @@
       <file leaf-file-name="WordUpTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/WordUp/WordUpTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+            <state relative-caret-position="1360">
+              <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#585#586#0" expanded="true" />
@@ -81,19 +82,6 @@
                 <element signature="e#2439#2440#0" expanded="true" />
                 <element signature="e#2518#2519#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="170">
-                <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-                <folding />
-              </first_editor>
-              <second_editor />
             </state>
           </provider>
         </entry>
@@ -141,14 +129,15 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1922" />
-    <option name="width" value="1362" />
-    <option name="height" value="1078" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1494" />
+    <option name="y" value="143" />
+    <option name="width" value="1022" />
+    <option name="height" value="539" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -161,43 +150,7 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="WordUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WordUp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WordUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WordUp" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WordUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WordUp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WordUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WordUp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="WordUp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WordUp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -298,6 +251,31 @@
       <option name="PACKAGE_NAME" value="WordUp" />
       <option name="MAIN_CLASS_NAME" value="WordUp.WordUpTest" />
       <option name="METHOD_NAME" value="definitionsContainAtLeastOneEntry" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="WordUpTest.definitionsHaveAReadableStringRepresentation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="WordUp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="WordUp" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="WordUp" />
+      <option name="MAIN_CLASS_NAME" value="WordUp.WordUpTest" />
+      <option name="METHOD_NAME" value="definitionsHaveAReadableStringRepresentation" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -680,16 +658,18 @@
       <arguments />
       <envs />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.WordUpTest" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.WordUpTest.definitionsContainAtLeastOneEntry" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.WordUpTest.definitionsHaveAReadableStringRepresentation" />
     </list>
     <recent_temporary>
-      <list size="3">
+      <list size="4">
         <item index="0" class="java.lang.String" itemvalue="JUnit.WordUpTest" />
         <item index="1" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.WordUpTest.definitionsContainAtLeastOneEntry" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.WordUpTest.definitionsHaveAReadableStringRepresentation" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.WordUpTest.definitionsContainAtLeastOneEntry" />
       </list>
     </recent_temporary>
   </component>
@@ -722,48 +702,53 @@
       <workItem from="1517896716114" duration="37000" />
       <workItem from="1517896773991" duration="5944000" />
       <workItem from="1517955225628" duration="3103000" />
-      <workItem from="1518187619131" duration="8151000" />
+      <workItem from="1518187619131" duration="10781000" />
+      <workItem from="1518320386426" duration="1248000" />
+      <workItem from="1518387086035" duration="865000" />
+      <workItem from="1518418024309" duration="1719000" />
+      <workItem from="1518568423664" duration="1197000" />
+      <workItem from="1518842177434" duration="4702000" />
+      <workItem from="1518908419672" duration="4399000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="WordUpTest - 2018.02.05 at 23h 24m 55s.xml">
+    <history-entry file="WordUpTest - 2018.02.09 at 21h 53m 32s.xml">
       <configuration name="WordUpTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WordUpTest - 2018.02.06 at 17h 19m 21s.xml">
+    <history-entry file="WordUpTest - 2018.02.09 at 21h 54m 18s.xml">
       <configuration name="WordUpTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WordUpTest - 2018.02.09 at 06h 49m 29s.xml">
+    <history-entry file="WordUpTest - 2018.02.09 at 22h 25m 11s.xml">
       <configuration name="WordUpTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WordUpTest - 2018.02.09 at 19h 59m 10s.xml">
+    <history-entry file="WordUpTest - 2018.02.10 at 20h 22m 38s.xml">
       <configuration name="WordUpTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WordUpTest - 2018.02.09 at 20h 54m 25s.xml">
+    <history-entry file="WordUpTest - 2018.02.11 at 22h 57m 15s.xml">
       <configuration name="WordUpTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WordUpTest - 2018.02.09 at 21h 00m 14s.xml">
+    <history-entry file="WordUpTest - 2018.02.16 at 20h 50m 36s.xml">
       <configuration name="WordUpTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WordUpTest - 2018.02.09 at 21h 33m 04s.xml">
+    <history-entry file="WordUpTest - 2018.02.17 at 09h 21m 22s.xml">
       <configuration name="WordUpTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WordUpTest - 2018.02.09 at 21h 33m 51s.xml">
+    <history-entry file="WordUpTest - 2018.02.18 at 19h 38m 30s.xml">
       <configuration name="WordUpTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WordUpTest - 2018.02.09 at 21h 35m 56s.xml">
-      <configuration name="WordUpTest" configurationId="JUnit" />
+    <history-entry file="WordUpTest_definitionsHaveAReadableStringRepresentation - 2018.02.09 at 22h 02m 38s.xml">
+      <configuration name="WordUpTest.definitionsHaveAReadableStringRepresentation" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WordUpTest - 2018.02.09 at 21h 38m 15s.xml">
-      <configuration name="WordUpTest" configurationId="JUnit" />
+    <history-entry file="WordUpTest_definitionsHaveAReadableStringRepresentation - 2018.02.09 at 22h 03m 04s.xml">
+      <configuration name="WordUpTest.definitionsHaveAReadableStringRepresentation" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86967000" />
+    <option name="totallyTimeSpent" value="103727000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1922" y="0" width="1362" height="1078" extended-state="0" />
-    <editor active="true" />
+    <frame x="1363" y="53" width="1926" height="1030" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -773,8 +758,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3102041" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26748058" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -784,8 +769,8 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2608213" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -805,7 +790,39 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/WordUp/WordUp.java</url>
+          <line>298</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/WordUp/WordUp.java</url>
+          <line>152</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/WordUp/WordUp.java</url>
+          <line>136</line>
+          <properties />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/WordUp/WordUp.java</url>
+          <line>109</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/WordUp/WordUp.java</url>
+          <line>97</line>
+          <properties />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -814,6 +831,175 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="jar://$PROJECT_DIR$/lib/gson-2.8.2.jar!/com/google/gson/JsonObject.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding>
+            <marker date="1517347051000" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1517347051000" expanded="false" signature="139:255" ph="..." />
+            <marker date="1517347051000" expanded="true" signature="418:425" ph="{}" />
+            <marker date="1517347051000" expanded="true" signature="460:799" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="857:986" ph="{...}" />
+            <marker date="1517347051000" expanded="false" signature="1034:1045" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="1095:1101" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="1161:1172" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="1222:1228" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="1288:1299" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="1349:1355" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="1416:1427" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="1477:1483" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="1546:1557" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="1607:1613" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="1671:1770" ph="{...}" />
+            <marker date="1517347051000" expanded="false" signature="1825:1836" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="1867:1873" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="1906:1917" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="1946:1952" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="1975:1986" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="2013:2019" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="2062:2073" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="2117:2123" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="2170:2181" ph=" { " />
+            <marker date="1517347051000" expanded="true" signature="2230:2236" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="2300:2311" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="2362:2368" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="2424:2435" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="2482:2488" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="2546:2557" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="2605:2611" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="2649:2757" ph="{...}" />
+            <marker date="1517347051000" expanded="false" signature="2784:2795" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="2826:2832" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/gson-2.8.2.jar!/com/google/gson/internal/LinkedTreeMap.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding>
+            <marker date="1517347051000" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1517347051000" expanded="false" signature="148:496" ph="..." />
+            <marker date="1517347051000" expanded="true" signature="682:791" ph="{...}" />
+            <marker date="1517347051000" expanded="false" signature="738:753" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="775:785" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="1066:1077" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="1097:1103" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="1164:1344" ph="{...}" />
+            <marker date="1517347051000" expanded="false" signature="1367:1378" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="1395:1401" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="1432:1552" ph="{...}" />
+            <marker date="1517347051000" expanded="false" signature="1596:1607" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="1645:1651" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="1686:1975" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="2001:2181" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="2215:2342" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="2401:4092" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="4148:4311" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="4373:4585" ph="{...}" />
+            <marker date="1517347051000" expanded="false" signature="4632:4643" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="4685:4691" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="4764:6387" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="6450:6626" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="6730:7209" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="7291:9619" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="9680:10323" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="10385:11034" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="11075:11232" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="11261:11410" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="11475:11522" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="11570:12244" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="11589:11600" ph="{}" />
+            <marker date="1517347051000" expanded="false" signature="11627:11642" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="11673:11683" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="11723:11921" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="11795:11910" ph="{...}" />
+            <marker date="1517347051000" expanded="false" signature="11828:11851" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="11878:11896" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="11964:11979" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="12020:12030" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="12073:12088" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="12147:12157" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="12186:12201" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="12228:12238" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="12298:13372" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="12319:12330" ph="{}" />
+            <marker date="1517347051000" expanded="false" signature="12357:12372" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="12403:12413" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="12463:12677" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="12545:12666" ph="{...}" />
+            <marker date="1517347051000" expanded="false" signature="12588:12611" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="12634:12652" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="12721:12823" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="12865:13285" ph="{...}" />
+            <marker date="1517347051000" expanded="false" signature="13314:13329" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="13356:13366" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="13449:14727" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="13600:13770" ph="{...}" />
+            <marker date="1517347051000" expanded="false" signature="13810:13825" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="13871:13881" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="13933:14355" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="14392:14721" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="14786:17709" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="15060:15142" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="15259:15481" ph="{...}" />
+            <marker date="1517347051000" expanded="false" signature="15508:15523" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="15539:15549" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="15578:15593" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="15611:15621" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="15658:15767" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="15809:16903" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="16935:17062" ph="{...}" />
+            <marker date="1517347051000" expanded="false" signature="17096:17111" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="17146:17156" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="17206:17429" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="17478:17703" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/WordUp/WordUpTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#585#586#0" expanded="true" />
+            <element signature="e#649#650#0" expanded="true" />
+            <element signature="e#1130#1131#0" expanded="true" />
+            <element signature="e#1194#1195#0" expanded="true" />
+            <element signature="e#1238#1239#0" expanded="true" />
+            <element signature="e#1286#1287#0" expanded="true" />
+            <element signature="e#2439#2440#0" expanded="true" />
+            <element signature="e#2518#2519#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="170">
+            <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="170">
+            <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/WordUp/WordUp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -823,41 +1009,247 @@
             <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="docComment;method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#getConnection#0;class#WordUp#0" expanded="false" />
             <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#getURLResponse#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8370#8371#0" expanded="true" />
-            <element signature="e#8397#8398#0" expanded="true" />
+            <element signature="e#9494#9495#0" expanded="true" />
+            <element signature="e#9521#9522#0" expanded="true" />
             <element signature="method#getInflectionResponseCode#0;class#WordUp#0" expanded="false" />
             <element signature="method#getDefinitionResponseCode#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8989#8990#0" expanded="true" />
-            <element signature="e#9022#9023#0" expanded="true" />
-            <element signature="e#9089#9090#0" expanded="true" />
-            <element signature="e#9133#9134#0" expanded="true" />
-            <element signature="e#9168#9169#0" expanded="true" />
-            <element signature="e#9199#9200#0" expanded="true" />
-            <element signature="e#9247#9248#0" expanded="true" />
-            <element signature="e#9287#9288#0" expanded="true" />
+            <element signature="e#10113#10114#0" expanded="true" />
+            <element signature="e#10146#10147#0" expanded="true" />
+            <element signature="e#10213#10214#0" expanded="true" />
+            <element signature="e#10257#10258#0" expanded="true" />
+            <element signature="e#10292#10293#0" expanded="true" />
+            <element signature="e#10323#10324#0" expanded="true" />
+            <element signature="e#10371#10372#0" expanded="true" />
+            <element signature="e#10411#10412#0" expanded="true" />
             <element signature="class#OxfordAPIInfo#0" expanded="false" />
-            <element signature="e#12266#12267#0" expanded="true" />
-            <element signature="e#12294#12295#0" expanded="true" />
-            <element signature="e#12693#12694#0" expanded="true" />
-            <element signature="e#12726#12727#0" expanded="true" />
-            <element signature="e#12760#12761#0" expanded="true" />
-            <element signature="e#12790#12791#0" expanded="true" />
-            <element signature="e#12824#12825#0" expanded="true" />
-            <element signature="e#12855#12856#0" expanded="true" />
-            <element signature="e#14262#14263#0" expanded="true" />
-            <element signature="e#14296#14297#0" expanded="true" />
-            <element signature="e#14350#14351#0" expanded="true" />
-            <element signature="e#14396#14397#0" expanded="true" />
-            <element signature="e#14455#14456#0" expanded="true" />
-            <element signature="e#14495#14496#0" expanded="true" />
-            <element signature="e#14673#14674#0" expanded="true" />
-            <element signature="e#14726#14727#0" expanded="true" />
+            <element signature="e#11887#11888#0" expanded="true" />
+            <element signature="e#11915#11916#0" expanded="true" />
+            <element signature="e#12313#12314#0" expanded="true" />
+            <element signature="e#12345#12346#0" expanded="true" />
+            <element signature="e#12582#12583#0" expanded="true" />
+            <element signature="e#12614#12615#0" expanded="true" />
+            <element signature="e#12676#12677#0" expanded="true" />
+            <element signature="e#12717#12718#0" expanded="true" />
+            <element signature="e#13785#13786#0" expanded="true" />
+            <element signature="e#13819#13820#0" expanded="true" />
+            <element signature="e#13873#13874#0" expanded="true" />
+            <element signature="e#13919#13920#0" expanded="true" />
+            <element signature="e#13978#13979#0" expanded="true" />
+            <element signature="e#14018#14019#0" expanded="true" />
+            <element signature="e#14196#14197#0" expanded="true" />
+            <element signature="e#14249#14250#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="170">
+            <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WordUp/WordUp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
+            <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
+            <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
+            <element signature="docComment;method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
+            <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getConnection#0;class#WordUp#0" expanded="false" />
+            <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getURLResponse#0;class#WordUp#0" expanded="false" />
+            <element signature="e#9494#9495#0" expanded="true" />
+            <element signature="e#9521#9522#0" expanded="true" />
+            <element signature="method#getInflectionResponseCode#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getDefinitionResponseCode#0;class#WordUp#0" expanded="false" />
+            <element signature="e#10113#10114#0" expanded="true" />
+            <element signature="e#10146#10147#0" expanded="true" />
+            <element signature="e#10213#10214#0" expanded="true" />
+            <element signature="e#10257#10258#0" expanded="true" />
+            <element signature="e#10292#10293#0" expanded="true" />
+            <element signature="e#10323#10324#0" expanded="true" />
+            <element signature="e#10371#10372#0" expanded="true" />
+            <element signature="e#10411#10412#0" expanded="true" />
+            <element signature="class#OxfordAPIInfo#0" expanded="false" />
+            <element signature="e#11887#11888#0" expanded="true" />
+            <element signature="e#11915#11916#0" expanded="true" />
+            <element signature="e#12313#12314#0" expanded="true" />
+            <element signature="e#12345#12346#0" expanded="true" />
+            <element signature="e#12582#12583#0" expanded="true" />
+            <element signature="e#12614#12615#0" expanded="true" />
+            <element signature="e#12676#12677#0" expanded="true" />
+            <element signature="e#12717#12718#0" expanded="true" />
+            <element signature="e#13785#13786#0" expanded="true" />
+            <element signature="e#13819#13820#0" expanded="true" />
+            <element signature="e#13873#13874#0" expanded="true" />
+            <element signature="e#13919#13920#0" expanded="true" />
+            <element signature="e#13978#13979#0" expanded="true" />
+            <element signature="e#14018#14019#0" expanded="true" />
+            <element signature="e#14196#14197#0" expanded="true" />
+            <element signature="e#14249#14250#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/WordUp/WordUpTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1547">
+          <caret line="91" column="22" lean-forward="false" selection-start-line="91" selection-start-column="22" selection-end-line="91" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#585#586#0" expanded="true" />
+            <element signature="e#649#650#0" expanded="true" />
+            <element signature="e#1130#1131#0" expanded="true" />
+            <element signature="e#1194#1195#0" expanded="true" />
+            <element signature="e#1238#1239#0" expanded="true" />
+            <element signature="e#1286#1287#0" expanded="true" />
+            <element signature="e#2439#2440#0" expanded="true" />
+            <element signature="e#2518#2519#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="170">
+            <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WordUp/WordUp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
+            <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
+            <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
+            <element signature="docComment;method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
+            <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getConnection#0;class#WordUp#0" expanded="false" />
+            <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getURLResponse#0;class#WordUp#0" expanded="false" />
+            <element signature="e#9494#9495#0" expanded="true" />
+            <element signature="e#9521#9522#0" expanded="true" />
+            <element signature="method#getInflectionResponseCode#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getDefinitionResponseCode#0;class#WordUp#0" expanded="false" />
+            <element signature="e#10113#10114#0" expanded="true" />
+            <element signature="e#10146#10147#0" expanded="true" />
+            <element signature="e#10213#10214#0" expanded="true" />
+            <element signature="e#10257#10258#0" expanded="true" />
+            <element signature="e#10292#10293#0" expanded="true" />
+            <element signature="e#10323#10324#0" expanded="true" />
+            <element signature="e#10371#10372#0" expanded="true" />
+            <element signature="e#10411#10412#0" expanded="true" />
+            <element signature="class#OxfordAPIInfo#0" expanded="false" />
+            <element signature="e#11887#11888#0" expanded="true" />
+            <element signature="e#11915#11916#0" expanded="true" />
+            <element signature="e#12313#12314#0" expanded="true" />
+            <element signature="e#12345#12346#0" expanded="true" />
+            <element signature="e#12582#12583#0" expanded="true" />
+            <element signature="e#12614#12615#0" expanded="true" />
+            <element signature="e#12676#12677#0" expanded="true" />
+            <element signature="e#12717#12718#0" expanded="true" />
+            <element signature="e#13785#13786#0" expanded="true" />
+            <element signature="e#13819#13820#0" expanded="true" />
+            <element signature="e#13873#13874#0" expanded="true" />
+            <element signature="e#13919#13920#0" expanded="true" />
+            <element signature="e#13978#13979#0" expanded="true" />
+            <element signature="e#14018#14019#0" expanded="true" />
+            <element signature="e#14196#14197#0" expanded="true" />
+            <element signature="e#14249#14250#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/WordUp/WordUpTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1547">
+          <caret line="91" column="22" lean-forward="false" selection-start-line="91" selection-start-column="22" selection-end-line="91" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#585#586#0" expanded="true" />
+            <element signature="e#649#650#0" expanded="true" />
+            <element signature="e#1130#1131#0" expanded="true" />
+            <element signature="e#1194#1195#0" expanded="true" />
+            <element signature="e#1238#1239#0" expanded="true" />
+            <element signature="e#1286#1287#0" expanded="true" />
+            <element signature="e#2439#2440#0" expanded="true" />
+            <element signature="e#2518#2519#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WordUp/WordUp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
+            <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
+            <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
+            <element signature="docComment;method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
+            <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getConnection#0;class#WordUp#0" expanded="false" />
+            <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getURLResponse#0;class#WordUp#0" expanded="false" />
+            <element signature="e#9494#9495#0" expanded="true" />
+            <element signature="e#9521#9522#0" expanded="true" />
+            <element signature="method#getInflectionResponseCode#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getDefinitionResponseCode#0;class#WordUp#0" expanded="false" />
+            <element signature="e#10113#10114#0" expanded="true" />
+            <element signature="e#10146#10147#0" expanded="true" />
+            <element signature="e#10213#10214#0" expanded="true" />
+            <element signature="e#10257#10258#0" expanded="true" />
+            <element signature="e#10292#10293#0" expanded="true" />
+            <element signature="e#10323#10324#0" expanded="true" />
+            <element signature="e#10371#10372#0" expanded="true" />
+            <element signature="e#10411#10412#0" expanded="true" />
+            <element signature="class#OxfordAPIInfo#0" expanded="false" />
+            <element signature="e#11887#11888#0" expanded="true" />
+            <element signature="e#11915#11916#0" expanded="true" />
+            <element signature="e#12313#12314#0" expanded="true" />
+            <element signature="e#12345#12346#0" expanded="true" />
+            <element signature="e#12582#12583#0" expanded="true" />
+            <element signature="e#12614#12615#0" expanded="true" />
+            <element signature="e#12676#12677#0" expanded="true" />
+            <element signature="e#12717#12718#0" expanded="true" />
+            <element signature="e#13785#13786#0" expanded="true" />
+            <element signature="e#13819#13820#0" expanded="true" />
+            <element signature="e#13873#13874#0" expanded="true" />
+            <element signature="e#13919#13920#0" expanded="true" />
+            <element signature="e#13978#13979#0" expanded="true" />
+            <element signature="e#14018#14019#0" expanded="true" />
+            <element signature="e#14196#14197#0" expanded="true" />
+            <element signature="e#14249#14250#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -889,41 +1281,42 @@
             <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="docComment;method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#getConnection#0;class#WordUp#0" expanded="false" />
             <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#getURLResponse#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8370#8371#0" expanded="true" />
-            <element signature="e#8397#8398#0" expanded="true" />
+            <element signature="e#9494#9495#0" expanded="true" />
+            <element signature="e#9521#9522#0" expanded="true" />
             <element signature="method#getInflectionResponseCode#0;class#WordUp#0" expanded="false" />
             <element signature="method#getDefinitionResponseCode#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8989#8990#0" expanded="true" />
-            <element signature="e#9022#9023#0" expanded="true" />
-            <element signature="e#9089#9090#0" expanded="true" />
-            <element signature="e#9133#9134#0" expanded="true" />
-            <element signature="e#9168#9169#0" expanded="true" />
-            <element signature="e#9199#9200#0" expanded="true" />
-            <element signature="e#9247#9248#0" expanded="true" />
-            <element signature="e#9287#9288#0" expanded="true" />
+            <element signature="e#10113#10114#0" expanded="true" />
+            <element signature="e#10146#10147#0" expanded="true" />
+            <element signature="e#10213#10214#0" expanded="true" />
+            <element signature="e#10257#10258#0" expanded="true" />
+            <element signature="e#10292#10293#0" expanded="true" />
+            <element signature="e#10323#10324#0" expanded="true" />
+            <element signature="e#10371#10372#0" expanded="true" />
+            <element signature="e#10411#10412#0" expanded="true" />
             <element signature="class#OxfordAPIInfo#0" expanded="false" />
-            <element signature="e#12266#12267#0" expanded="true" />
-            <element signature="e#12294#12295#0" expanded="true" />
-            <element signature="e#12693#12694#0" expanded="true" />
-            <element signature="e#12726#12727#0" expanded="true" />
-            <element signature="e#12760#12761#0" expanded="true" />
-            <element signature="e#12790#12791#0" expanded="true" />
-            <element signature="e#12824#12825#0" expanded="true" />
-            <element signature="e#12855#12856#0" expanded="true" />
-            <element signature="e#14262#14263#0" expanded="true" />
-            <element signature="e#14296#14297#0" expanded="true" />
-            <element signature="e#14350#14351#0" expanded="true" />
-            <element signature="e#14396#14397#0" expanded="true" />
-            <element signature="e#14455#14456#0" expanded="true" />
-            <element signature="e#14495#14496#0" expanded="true" />
-            <element signature="e#14673#14674#0" expanded="true" />
-            <element signature="e#14726#14727#0" expanded="true" />
+            <element signature="e#11887#11888#0" expanded="true" />
+            <element signature="e#11915#11916#0" expanded="true" />
+            <element signature="e#12313#12314#0" expanded="true" />
+            <element signature="e#12345#12346#0" expanded="true" />
+            <element signature="e#12582#12583#0" expanded="true" />
+            <element signature="e#12614#12615#0" expanded="true" />
+            <element signature="e#12676#12677#0" expanded="true" />
+            <element signature="e#12717#12718#0" expanded="true" />
+            <element signature="e#13785#13786#0" expanded="true" />
+            <element signature="e#13819#13820#0" expanded="true" />
+            <element signature="e#13873#13874#0" expanded="true" />
+            <element signature="e#13919#13920#0" expanded="true" />
+            <element signature="e#13978#13979#0" expanded="true" />
+            <element signature="e#14018#14019#0" expanded="true" />
+            <element signature="e#14196#14197#0" expanded="true" />
+            <element signature="e#14249#14250#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -955,41 +1348,42 @@
             <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="docComment;method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#getConnection#0;class#WordUp#0" expanded="false" />
             <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#getURLResponse#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8370#8371#0" expanded="true" />
-            <element signature="e#8397#8398#0" expanded="true" />
+            <element signature="e#9494#9495#0" expanded="true" />
+            <element signature="e#9521#9522#0" expanded="true" />
             <element signature="method#getInflectionResponseCode#0;class#WordUp#0" expanded="false" />
             <element signature="method#getDefinitionResponseCode#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8989#8990#0" expanded="true" />
-            <element signature="e#9022#9023#0" expanded="true" />
-            <element signature="e#9089#9090#0" expanded="true" />
-            <element signature="e#9133#9134#0" expanded="true" />
-            <element signature="e#9168#9169#0" expanded="true" />
-            <element signature="e#9199#9200#0" expanded="true" />
-            <element signature="e#9247#9248#0" expanded="true" />
-            <element signature="e#9287#9288#0" expanded="true" />
+            <element signature="e#10113#10114#0" expanded="true" />
+            <element signature="e#10146#10147#0" expanded="true" />
+            <element signature="e#10213#10214#0" expanded="true" />
+            <element signature="e#10257#10258#0" expanded="true" />
+            <element signature="e#10292#10293#0" expanded="true" />
+            <element signature="e#10323#10324#0" expanded="true" />
+            <element signature="e#10371#10372#0" expanded="true" />
+            <element signature="e#10411#10412#0" expanded="true" />
             <element signature="class#OxfordAPIInfo#0" expanded="false" />
-            <element signature="e#12266#12267#0" expanded="true" />
-            <element signature="e#12294#12295#0" expanded="true" />
-            <element signature="e#12693#12694#0" expanded="true" />
-            <element signature="e#12726#12727#0" expanded="true" />
-            <element signature="e#12760#12761#0" expanded="true" />
-            <element signature="e#12790#12791#0" expanded="true" />
-            <element signature="e#12824#12825#0" expanded="true" />
-            <element signature="e#12855#12856#0" expanded="true" />
-            <element signature="e#14262#14263#0" expanded="true" />
-            <element signature="e#14296#14297#0" expanded="true" />
-            <element signature="e#14350#14351#0" expanded="true" />
-            <element signature="e#14396#14397#0" expanded="true" />
-            <element signature="e#14455#14456#0" expanded="true" />
-            <element signature="e#14495#14496#0" expanded="true" />
-            <element signature="e#14673#14674#0" expanded="true" />
-            <element signature="e#14726#14727#0" expanded="true" />
+            <element signature="e#11887#11888#0" expanded="true" />
+            <element signature="e#11915#11916#0" expanded="true" />
+            <element signature="e#12313#12314#0" expanded="true" />
+            <element signature="e#12345#12346#0" expanded="true" />
+            <element signature="e#12582#12583#0" expanded="true" />
+            <element signature="e#12614#12615#0" expanded="true" />
+            <element signature="e#12676#12677#0" expanded="true" />
+            <element signature="e#12717#12718#0" expanded="true" />
+            <element signature="e#13785#13786#0" expanded="true" />
+            <element signature="e#13819#13820#0" expanded="true" />
+            <element signature="e#13873#13874#0" expanded="true" />
+            <element signature="e#13919#13920#0" expanded="true" />
+            <element signature="e#13978#13979#0" expanded="true" />
+            <element signature="e#14018#14019#0" expanded="true" />
+            <element signature="e#14196#14197#0" expanded="true" />
+            <element signature="e#14249#14250#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1032,41 +1426,42 @@
             <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="docComment;method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#getConnection#0;class#WordUp#0" expanded="false" />
             <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#getURLResponse#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8370#8371#0" expanded="true" />
-            <element signature="e#8397#8398#0" expanded="true" />
+            <element signature="e#9494#9495#0" expanded="true" />
+            <element signature="e#9521#9522#0" expanded="true" />
             <element signature="method#getInflectionResponseCode#0;class#WordUp#0" expanded="false" />
             <element signature="method#getDefinitionResponseCode#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8989#8990#0" expanded="true" />
-            <element signature="e#9022#9023#0" expanded="true" />
-            <element signature="e#9089#9090#0" expanded="true" />
-            <element signature="e#9133#9134#0" expanded="true" />
-            <element signature="e#9168#9169#0" expanded="true" />
-            <element signature="e#9199#9200#0" expanded="true" />
-            <element signature="e#9247#9248#0" expanded="true" />
-            <element signature="e#9287#9288#0" expanded="true" />
+            <element signature="e#10113#10114#0" expanded="true" />
+            <element signature="e#10146#10147#0" expanded="true" />
+            <element signature="e#10213#10214#0" expanded="true" />
+            <element signature="e#10257#10258#0" expanded="true" />
+            <element signature="e#10292#10293#0" expanded="true" />
+            <element signature="e#10323#10324#0" expanded="true" />
+            <element signature="e#10371#10372#0" expanded="true" />
+            <element signature="e#10411#10412#0" expanded="true" />
             <element signature="class#OxfordAPIInfo#0" expanded="false" />
-            <element signature="e#12266#12267#0" expanded="true" />
-            <element signature="e#12294#12295#0" expanded="true" />
-            <element signature="e#12693#12694#0" expanded="true" />
-            <element signature="e#12726#12727#0" expanded="true" />
-            <element signature="e#12760#12761#0" expanded="true" />
-            <element signature="e#12790#12791#0" expanded="true" />
-            <element signature="e#12824#12825#0" expanded="true" />
-            <element signature="e#12855#12856#0" expanded="true" />
-            <element signature="e#14262#14263#0" expanded="true" />
-            <element signature="e#14296#14297#0" expanded="true" />
-            <element signature="e#14350#14351#0" expanded="true" />
-            <element signature="e#14396#14397#0" expanded="true" />
-            <element signature="e#14455#14456#0" expanded="true" />
-            <element signature="e#14495#14496#0" expanded="true" />
-            <element signature="e#14673#14674#0" expanded="true" />
-            <element signature="e#14726#14727#0" expanded="true" />
+            <element signature="e#11887#11888#0" expanded="true" />
+            <element signature="e#11915#11916#0" expanded="true" />
+            <element signature="e#12313#12314#0" expanded="true" />
+            <element signature="e#12345#12346#0" expanded="true" />
+            <element signature="e#12582#12583#0" expanded="true" />
+            <element signature="e#12614#12615#0" expanded="true" />
+            <element signature="e#12676#12677#0" expanded="true" />
+            <element signature="e#12717#12718#0" expanded="true" />
+            <element signature="e#13785#13786#0" expanded="true" />
+            <element signature="e#13819#13820#0" expanded="true" />
+            <element signature="e#13873#13874#0" expanded="true" />
+            <element signature="e#13919#13920#0" expanded="true" />
+            <element signature="e#13978#13979#0" expanded="true" />
+            <element signature="e#14018#14019#0" expanded="true" />
+            <element signature="e#14196#14197#0" expanded="true" />
+            <element signature="e#14249#14250#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1098,41 +1493,42 @@
             <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="docComment;method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#getConnection#0;class#WordUp#0" expanded="false" />
             <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#getURLResponse#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8370#8371#0" expanded="true" />
-            <element signature="e#8397#8398#0" expanded="true" />
+            <element signature="e#9494#9495#0" expanded="true" />
+            <element signature="e#9521#9522#0" expanded="true" />
             <element signature="method#getInflectionResponseCode#0;class#WordUp#0" expanded="false" />
             <element signature="method#getDefinitionResponseCode#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8989#8990#0" expanded="true" />
-            <element signature="e#9022#9023#0" expanded="true" />
-            <element signature="e#9089#9090#0" expanded="true" />
-            <element signature="e#9133#9134#0" expanded="true" />
-            <element signature="e#9168#9169#0" expanded="true" />
-            <element signature="e#9199#9200#0" expanded="true" />
-            <element signature="e#9247#9248#0" expanded="true" />
-            <element signature="e#9287#9288#0" expanded="true" />
+            <element signature="e#10113#10114#0" expanded="true" />
+            <element signature="e#10146#10147#0" expanded="true" />
+            <element signature="e#10213#10214#0" expanded="true" />
+            <element signature="e#10257#10258#0" expanded="true" />
+            <element signature="e#10292#10293#0" expanded="true" />
+            <element signature="e#10323#10324#0" expanded="true" />
+            <element signature="e#10371#10372#0" expanded="true" />
+            <element signature="e#10411#10412#0" expanded="true" />
             <element signature="class#OxfordAPIInfo#0" expanded="false" />
-            <element signature="e#12266#12267#0" expanded="true" />
-            <element signature="e#12294#12295#0" expanded="true" />
-            <element signature="e#12693#12694#0" expanded="true" />
-            <element signature="e#12726#12727#0" expanded="true" />
-            <element signature="e#12760#12761#0" expanded="true" />
-            <element signature="e#12790#12791#0" expanded="true" />
-            <element signature="e#12824#12825#0" expanded="true" />
-            <element signature="e#12855#12856#0" expanded="true" />
-            <element signature="e#14262#14263#0" expanded="true" />
-            <element signature="e#14296#14297#0" expanded="true" />
-            <element signature="e#14350#14351#0" expanded="true" />
-            <element signature="e#14396#14397#0" expanded="true" />
-            <element signature="e#14455#14456#0" expanded="true" />
-            <element signature="e#14495#14496#0" expanded="true" />
-            <element signature="e#14673#14674#0" expanded="true" />
-            <element signature="e#14726#14727#0" expanded="true" />
+            <element signature="e#11887#11888#0" expanded="true" />
+            <element signature="e#11915#11916#0" expanded="true" />
+            <element signature="e#12313#12314#0" expanded="true" />
+            <element signature="e#12345#12346#0" expanded="true" />
+            <element signature="e#12582#12583#0" expanded="true" />
+            <element signature="e#12614#12615#0" expanded="true" />
+            <element signature="e#12676#12677#0" expanded="true" />
+            <element signature="e#12717#12718#0" expanded="true" />
+            <element signature="e#13785#13786#0" expanded="true" />
+            <element signature="e#13819#13820#0" expanded="true" />
+            <element signature="e#13873#13874#0" expanded="true" />
+            <element signature="e#13919#13920#0" expanded="true" />
+            <element signature="e#13978#13979#0" expanded="true" />
+            <element signature="e#14018#14019#0" expanded="true" />
+            <element signature="e#14196#14197#0" expanded="true" />
+            <element signature="e#14249#14250#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1164,41 +1560,42 @@
             <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="docComment;method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#getConnection#0;class#WordUp#0" expanded="false" />
             <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#getURLResponse#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8370#8371#0" expanded="true" />
-            <element signature="e#8397#8398#0" expanded="true" />
+            <element signature="e#9494#9495#0" expanded="true" />
+            <element signature="e#9521#9522#0" expanded="true" />
             <element signature="method#getInflectionResponseCode#0;class#WordUp#0" expanded="false" />
             <element signature="method#getDefinitionResponseCode#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8989#8990#0" expanded="true" />
-            <element signature="e#9022#9023#0" expanded="true" />
-            <element signature="e#9089#9090#0" expanded="true" />
-            <element signature="e#9133#9134#0" expanded="true" />
-            <element signature="e#9168#9169#0" expanded="true" />
-            <element signature="e#9199#9200#0" expanded="true" />
-            <element signature="e#9247#9248#0" expanded="true" />
-            <element signature="e#9287#9288#0" expanded="true" />
+            <element signature="e#10113#10114#0" expanded="true" />
+            <element signature="e#10146#10147#0" expanded="true" />
+            <element signature="e#10213#10214#0" expanded="true" />
+            <element signature="e#10257#10258#0" expanded="true" />
+            <element signature="e#10292#10293#0" expanded="true" />
+            <element signature="e#10323#10324#0" expanded="true" />
+            <element signature="e#10371#10372#0" expanded="true" />
+            <element signature="e#10411#10412#0" expanded="true" />
             <element signature="class#OxfordAPIInfo#0" expanded="false" />
-            <element signature="e#12266#12267#0" expanded="true" />
-            <element signature="e#12294#12295#0" expanded="true" />
-            <element signature="e#12693#12694#0" expanded="true" />
-            <element signature="e#12726#12727#0" expanded="true" />
-            <element signature="e#12760#12761#0" expanded="true" />
-            <element signature="e#12790#12791#0" expanded="true" />
-            <element signature="e#12824#12825#0" expanded="true" />
-            <element signature="e#12855#12856#0" expanded="true" />
-            <element signature="e#14262#14263#0" expanded="true" />
-            <element signature="e#14296#14297#0" expanded="true" />
-            <element signature="e#14350#14351#0" expanded="true" />
-            <element signature="e#14396#14397#0" expanded="true" />
-            <element signature="e#14455#14456#0" expanded="true" />
-            <element signature="e#14495#14496#0" expanded="true" />
-            <element signature="e#14673#14674#0" expanded="true" />
-            <element signature="e#14726#14727#0" expanded="true" />
+            <element signature="e#11887#11888#0" expanded="true" />
+            <element signature="e#11915#11916#0" expanded="true" />
+            <element signature="e#12313#12314#0" expanded="true" />
+            <element signature="e#12345#12346#0" expanded="true" />
+            <element signature="e#12582#12583#0" expanded="true" />
+            <element signature="e#12614#12615#0" expanded="true" />
+            <element signature="e#12676#12677#0" expanded="true" />
+            <element signature="e#12717#12718#0" expanded="true" />
+            <element signature="e#13785#13786#0" expanded="true" />
+            <element signature="e#13819#13820#0" expanded="true" />
+            <element signature="e#13873#13874#0" expanded="true" />
+            <element signature="e#13919#13920#0" expanded="true" />
+            <element signature="e#13978#13979#0" expanded="true" />
+            <element signature="e#14018#14019#0" expanded="true" />
+            <element signature="e#14196#14197#0" expanded="true" />
+            <element signature="e#14249#14250#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1230,41 +1627,42 @@
             <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="docComment;method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#getConnection#0;class#WordUp#0" expanded="false" />
             <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#getURLResponse#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8370#8371#0" expanded="true" />
-            <element signature="e#8397#8398#0" expanded="true" />
+            <element signature="e#9494#9495#0" expanded="true" />
+            <element signature="e#9521#9522#0" expanded="true" />
             <element signature="method#getInflectionResponseCode#0;class#WordUp#0" expanded="false" />
             <element signature="method#getDefinitionResponseCode#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8989#8990#0" expanded="true" />
-            <element signature="e#9022#9023#0" expanded="true" />
-            <element signature="e#9089#9090#0" expanded="true" />
-            <element signature="e#9133#9134#0" expanded="true" />
-            <element signature="e#9168#9169#0" expanded="true" />
-            <element signature="e#9199#9200#0" expanded="true" />
-            <element signature="e#9247#9248#0" expanded="true" />
-            <element signature="e#9287#9288#0" expanded="true" />
+            <element signature="e#10113#10114#0" expanded="true" />
+            <element signature="e#10146#10147#0" expanded="true" />
+            <element signature="e#10213#10214#0" expanded="true" />
+            <element signature="e#10257#10258#0" expanded="true" />
+            <element signature="e#10292#10293#0" expanded="true" />
+            <element signature="e#10323#10324#0" expanded="true" />
+            <element signature="e#10371#10372#0" expanded="true" />
+            <element signature="e#10411#10412#0" expanded="true" />
             <element signature="class#OxfordAPIInfo#0" expanded="false" />
-            <element signature="e#12266#12267#0" expanded="true" />
-            <element signature="e#12294#12295#0" expanded="true" />
-            <element signature="e#12693#12694#0" expanded="true" />
-            <element signature="e#12726#12727#0" expanded="true" />
-            <element signature="e#12760#12761#0" expanded="true" />
-            <element signature="e#12790#12791#0" expanded="true" />
-            <element signature="e#12824#12825#0" expanded="true" />
-            <element signature="e#12855#12856#0" expanded="true" />
-            <element signature="e#14262#14263#0" expanded="true" />
-            <element signature="e#14296#14297#0" expanded="true" />
-            <element signature="e#14350#14351#0" expanded="true" />
-            <element signature="e#14396#14397#0" expanded="true" />
-            <element signature="e#14455#14456#0" expanded="true" />
-            <element signature="e#14495#14496#0" expanded="true" />
-            <element signature="e#14673#14674#0" expanded="true" />
-            <element signature="e#14726#14727#0" expanded="true" />
+            <element signature="e#11887#11888#0" expanded="true" />
+            <element signature="e#11915#11916#0" expanded="true" />
+            <element signature="e#12313#12314#0" expanded="true" />
+            <element signature="e#12345#12346#0" expanded="true" />
+            <element signature="e#12582#12583#0" expanded="true" />
+            <element signature="e#12614#12615#0" expanded="true" />
+            <element signature="e#12676#12677#0" expanded="true" />
+            <element signature="e#12717#12718#0" expanded="true" />
+            <element signature="e#13785#13786#0" expanded="true" />
+            <element signature="e#13819#13820#0" expanded="true" />
+            <element signature="e#13873#13874#0" expanded="true" />
+            <element signature="e#13919#13920#0" expanded="true" />
+            <element signature="e#13978#13979#0" expanded="true" />
+            <element signature="e#14018#14019#0" expanded="true" />
+            <element signature="e#14196#14197#0" expanded="true" />
+            <element signature="e#14249#14250#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1307,41 +1705,42 @@
             <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="docComment;method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#getConnection#0;class#WordUp#0" expanded="false" />
             <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#getURLResponse#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8370#8371#0" expanded="true" />
-            <element signature="e#8397#8398#0" expanded="true" />
+            <element signature="e#9494#9495#0" expanded="true" />
+            <element signature="e#9521#9522#0" expanded="true" />
             <element signature="method#getInflectionResponseCode#0;class#WordUp#0" expanded="false" />
             <element signature="method#getDefinitionResponseCode#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8989#8990#0" expanded="true" />
-            <element signature="e#9022#9023#0" expanded="true" />
-            <element signature="e#9089#9090#0" expanded="true" />
-            <element signature="e#9133#9134#0" expanded="true" />
-            <element signature="e#9168#9169#0" expanded="true" />
-            <element signature="e#9199#9200#0" expanded="true" />
-            <element signature="e#9247#9248#0" expanded="true" />
-            <element signature="e#9287#9288#0" expanded="true" />
+            <element signature="e#10113#10114#0" expanded="true" />
+            <element signature="e#10146#10147#0" expanded="true" />
+            <element signature="e#10213#10214#0" expanded="true" />
+            <element signature="e#10257#10258#0" expanded="true" />
+            <element signature="e#10292#10293#0" expanded="true" />
+            <element signature="e#10323#10324#0" expanded="true" />
+            <element signature="e#10371#10372#0" expanded="true" />
+            <element signature="e#10411#10412#0" expanded="true" />
             <element signature="class#OxfordAPIInfo#0" expanded="false" />
-            <element signature="e#12266#12267#0" expanded="true" />
-            <element signature="e#12294#12295#0" expanded="true" />
-            <element signature="e#12693#12694#0" expanded="true" />
-            <element signature="e#12726#12727#0" expanded="true" />
-            <element signature="e#12760#12761#0" expanded="true" />
-            <element signature="e#12790#12791#0" expanded="true" />
-            <element signature="e#12824#12825#0" expanded="true" />
-            <element signature="e#12855#12856#0" expanded="true" />
-            <element signature="e#14262#14263#0" expanded="true" />
-            <element signature="e#14296#14297#0" expanded="true" />
-            <element signature="e#14350#14351#0" expanded="true" />
-            <element signature="e#14396#14397#0" expanded="true" />
-            <element signature="e#14455#14456#0" expanded="true" />
-            <element signature="e#14495#14496#0" expanded="true" />
-            <element signature="e#14673#14674#0" expanded="true" />
-            <element signature="e#14726#14727#0" expanded="true" />
+            <element signature="e#11887#11888#0" expanded="true" />
+            <element signature="e#11915#11916#0" expanded="true" />
+            <element signature="e#12313#12314#0" expanded="true" />
+            <element signature="e#12345#12346#0" expanded="true" />
+            <element signature="e#12582#12583#0" expanded="true" />
+            <element signature="e#12614#12615#0" expanded="true" />
+            <element signature="e#12676#12677#0" expanded="true" />
+            <element signature="e#12717#12718#0" expanded="true" />
+            <element signature="e#13785#13786#0" expanded="true" />
+            <element signature="e#13819#13820#0" expanded="true" />
+            <element signature="e#13873#13874#0" expanded="true" />
+            <element signature="e#13919#13920#0" expanded="true" />
+            <element signature="e#13978#13979#0" expanded="true" />
+            <element signature="e#14018#14019#0" expanded="true" />
+            <element signature="e#14196#14197#0" expanded="true" />
+            <element signature="e#14249#14250#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1373,41 +1772,42 @@
             <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="docComment;method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#getConnection#0;class#WordUp#0" expanded="false" />
             <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#getURLResponse#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8370#8371#0" expanded="true" />
-            <element signature="e#8397#8398#0" expanded="true" />
+            <element signature="e#9494#9495#0" expanded="true" />
+            <element signature="e#9521#9522#0" expanded="true" />
             <element signature="method#getInflectionResponseCode#0;class#WordUp#0" expanded="false" />
             <element signature="method#getDefinitionResponseCode#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8989#8990#0" expanded="true" />
-            <element signature="e#9022#9023#0" expanded="true" />
-            <element signature="e#9089#9090#0" expanded="true" />
-            <element signature="e#9133#9134#0" expanded="true" />
-            <element signature="e#9168#9169#0" expanded="true" />
-            <element signature="e#9199#9200#0" expanded="true" />
-            <element signature="e#9247#9248#0" expanded="true" />
-            <element signature="e#9287#9288#0" expanded="true" />
+            <element signature="e#10113#10114#0" expanded="true" />
+            <element signature="e#10146#10147#0" expanded="true" />
+            <element signature="e#10213#10214#0" expanded="true" />
+            <element signature="e#10257#10258#0" expanded="true" />
+            <element signature="e#10292#10293#0" expanded="true" />
+            <element signature="e#10323#10324#0" expanded="true" />
+            <element signature="e#10371#10372#0" expanded="true" />
+            <element signature="e#10411#10412#0" expanded="true" />
             <element signature="class#OxfordAPIInfo#0" expanded="false" />
-            <element signature="e#12266#12267#0" expanded="true" />
-            <element signature="e#12294#12295#0" expanded="true" />
-            <element signature="e#12693#12694#0" expanded="true" />
-            <element signature="e#12726#12727#0" expanded="true" />
-            <element signature="e#12760#12761#0" expanded="true" />
-            <element signature="e#12790#12791#0" expanded="true" />
-            <element signature="e#12824#12825#0" expanded="true" />
-            <element signature="e#12855#12856#0" expanded="true" />
-            <element signature="e#14262#14263#0" expanded="true" />
-            <element signature="e#14296#14297#0" expanded="true" />
-            <element signature="e#14350#14351#0" expanded="true" />
-            <element signature="e#14396#14397#0" expanded="true" />
-            <element signature="e#14455#14456#0" expanded="true" />
-            <element signature="e#14495#14496#0" expanded="true" />
-            <element signature="e#14673#14674#0" expanded="true" />
-            <element signature="e#14726#14727#0" expanded="true" />
+            <element signature="e#11887#11888#0" expanded="true" />
+            <element signature="e#11915#11916#0" expanded="true" />
+            <element signature="e#12313#12314#0" expanded="true" />
+            <element signature="e#12345#12346#0" expanded="true" />
+            <element signature="e#12582#12583#0" expanded="true" />
+            <element signature="e#12614#12615#0" expanded="true" />
+            <element signature="e#12676#12677#0" expanded="true" />
+            <element signature="e#12717#12718#0" expanded="true" />
+            <element signature="e#13785#13786#0" expanded="true" />
+            <element signature="e#13819#13820#0" expanded="true" />
+            <element signature="e#13873#13874#0" expanded="true" />
+            <element signature="e#13919#13920#0" expanded="true" />
+            <element signature="e#13978#13979#0" expanded="true" />
+            <element signature="e#14018#14019#0" expanded="true" />
+            <element signature="e#14196#14197#0" expanded="true" />
+            <element signature="e#14249#14250#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1439,41 +1839,42 @@
             <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="docComment;method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#getConnection#0;class#WordUp#0" expanded="false" />
             <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#getURLResponse#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8370#8371#0" expanded="true" />
-            <element signature="e#8397#8398#0" expanded="true" />
+            <element signature="e#9494#9495#0" expanded="true" />
+            <element signature="e#9521#9522#0" expanded="true" />
             <element signature="method#getInflectionResponseCode#0;class#WordUp#0" expanded="false" />
             <element signature="method#getDefinitionResponseCode#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8989#8990#0" expanded="true" />
-            <element signature="e#9022#9023#0" expanded="true" />
-            <element signature="e#9089#9090#0" expanded="true" />
-            <element signature="e#9133#9134#0" expanded="true" />
-            <element signature="e#9168#9169#0" expanded="true" />
-            <element signature="e#9199#9200#0" expanded="true" />
-            <element signature="e#9247#9248#0" expanded="true" />
-            <element signature="e#9287#9288#0" expanded="true" />
+            <element signature="e#10113#10114#0" expanded="true" />
+            <element signature="e#10146#10147#0" expanded="true" />
+            <element signature="e#10213#10214#0" expanded="true" />
+            <element signature="e#10257#10258#0" expanded="true" />
+            <element signature="e#10292#10293#0" expanded="true" />
+            <element signature="e#10323#10324#0" expanded="true" />
+            <element signature="e#10371#10372#0" expanded="true" />
+            <element signature="e#10411#10412#0" expanded="true" />
             <element signature="class#OxfordAPIInfo#0" expanded="false" />
-            <element signature="e#12266#12267#0" expanded="true" />
-            <element signature="e#12294#12295#0" expanded="true" />
-            <element signature="e#12693#12694#0" expanded="true" />
-            <element signature="e#12726#12727#0" expanded="true" />
-            <element signature="e#12760#12761#0" expanded="true" />
-            <element signature="e#12790#12791#0" expanded="true" />
-            <element signature="e#12824#12825#0" expanded="true" />
-            <element signature="e#12855#12856#0" expanded="true" />
-            <element signature="e#14262#14263#0" expanded="true" />
-            <element signature="e#14296#14297#0" expanded="true" />
-            <element signature="e#14350#14351#0" expanded="true" />
-            <element signature="e#14396#14397#0" expanded="true" />
-            <element signature="e#14455#14456#0" expanded="true" />
-            <element signature="e#14495#14496#0" expanded="true" />
-            <element signature="e#14673#14674#0" expanded="true" />
-            <element signature="e#14726#14727#0" expanded="true" />
+            <element signature="e#11887#11888#0" expanded="true" />
+            <element signature="e#11915#11916#0" expanded="true" />
+            <element signature="e#12313#12314#0" expanded="true" />
+            <element signature="e#12345#12346#0" expanded="true" />
+            <element signature="e#12582#12583#0" expanded="true" />
+            <element signature="e#12614#12615#0" expanded="true" />
+            <element signature="e#12676#12677#0" expanded="true" />
+            <element signature="e#12717#12718#0" expanded="true" />
+            <element signature="e#13785#13786#0" expanded="true" />
+            <element signature="e#13819#13820#0" expanded="true" />
+            <element signature="e#13873#13874#0" expanded="true" />
+            <element signature="e#13919#13920#0" expanded="true" />
+            <element signature="e#13978#13979#0" expanded="true" />
+            <element signature="e#14018#14019#0" expanded="true" />
+            <element signature="e#14196#14197#0" expanded="true" />
+            <element signature="e#14249#14250#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1505,41 +1906,42 @@
             <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="docComment;method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#getConnection#0;class#WordUp#0" expanded="false" />
             <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#getURLResponse#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8370#8371#0" expanded="true" />
-            <element signature="e#8397#8398#0" expanded="true" />
+            <element signature="e#9494#9495#0" expanded="true" />
+            <element signature="e#9521#9522#0" expanded="true" />
             <element signature="method#getInflectionResponseCode#0;class#WordUp#0" expanded="false" />
             <element signature="method#getDefinitionResponseCode#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8989#8990#0" expanded="true" />
-            <element signature="e#9022#9023#0" expanded="true" />
-            <element signature="e#9089#9090#0" expanded="true" />
-            <element signature="e#9133#9134#0" expanded="true" />
-            <element signature="e#9168#9169#0" expanded="true" />
-            <element signature="e#9199#9200#0" expanded="true" />
-            <element signature="e#9247#9248#0" expanded="true" />
-            <element signature="e#9287#9288#0" expanded="true" />
+            <element signature="e#10113#10114#0" expanded="true" />
+            <element signature="e#10146#10147#0" expanded="true" />
+            <element signature="e#10213#10214#0" expanded="true" />
+            <element signature="e#10257#10258#0" expanded="true" />
+            <element signature="e#10292#10293#0" expanded="true" />
+            <element signature="e#10323#10324#0" expanded="true" />
+            <element signature="e#10371#10372#0" expanded="true" />
+            <element signature="e#10411#10412#0" expanded="true" />
             <element signature="class#OxfordAPIInfo#0" expanded="false" />
-            <element signature="e#12266#12267#0" expanded="true" />
-            <element signature="e#12294#12295#0" expanded="true" />
-            <element signature="e#12693#12694#0" expanded="true" />
-            <element signature="e#12726#12727#0" expanded="true" />
-            <element signature="e#12760#12761#0" expanded="true" />
-            <element signature="e#12790#12791#0" expanded="true" />
-            <element signature="e#12824#12825#0" expanded="true" />
-            <element signature="e#12855#12856#0" expanded="true" />
-            <element signature="e#14262#14263#0" expanded="true" />
-            <element signature="e#14296#14297#0" expanded="true" />
-            <element signature="e#14350#14351#0" expanded="true" />
-            <element signature="e#14396#14397#0" expanded="true" />
-            <element signature="e#14455#14456#0" expanded="true" />
-            <element signature="e#14495#14496#0" expanded="true" />
-            <element signature="e#14673#14674#0" expanded="true" />
-            <element signature="e#14726#14727#0" expanded="true" />
+            <element signature="e#11887#11888#0" expanded="true" />
+            <element signature="e#11915#11916#0" expanded="true" />
+            <element signature="e#12313#12314#0" expanded="true" />
+            <element signature="e#12345#12346#0" expanded="true" />
+            <element signature="e#12582#12583#0" expanded="true" />
+            <element signature="e#12614#12615#0" expanded="true" />
+            <element signature="e#12676#12677#0" expanded="true" />
+            <element signature="e#12717#12718#0" expanded="true" />
+            <element signature="e#13785#13786#0" expanded="true" />
+            <element signature="e#13819#13820#0" expanded="true" />
+            <element signature="e#13873#13874#0" expanded="true" />
+            <element signature="e#13919#13920#0" expanded="true" />
+            <element signature="e#13978#13979#0" expanded="true" />
+            <element signature="e#14018#14019#0" expanded="true" />
+            <element signature="e#14196#14197#0" expanded="true" />
+            <element signature="e#14249#14250#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1553,41 +1955,42 @@
             <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="docComment;method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#getConnection#0;class#WordUp#0" expanded="false" />
             <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#getURLResponse#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8370#8371#0" expanded="true" />
-            <element signature="e#8397#8398#0" expanded="true" />
+            <element signature="e#9494#9495#0" expanded="true" />
+            <element signature="e#9521#9522#0" expanded="true" />
             <element signature="method#getInflectionResponseCode#0;class#WordUp#0" expanded="false" />
             <element signature="method#getDefinitionResponseCode#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8989#8990#0" expanded="true" />
-            <element signature="e#9022#9023#0" expanded="true" />
-            <element signature="e#9089#9090#0" expanded="true" />
-            <element signature="e#9133#9134#0" expanded="true" />
-            <element signature="e#9168#9169#0" expanded="true" />
-            <element signature="e#9199#9200#0" expanded="true" />
-            <element signature="e#9247#9248#0" expanded="true" />
-            <element signature="e#9287#9288#0" expanded="true" />
+            <element signature="e#10113#10114#0" expanded="true" />
+            <element signature="e#10146#10147#0" expanded="true" />
+            <element signature="e#10213#10214#0" expanded="true" />
+            <element signature="e#10257#10258#0" expanded="true" />
+            <element signature="e#10292#10293#0" expanded="true" />
+            <element signature="e#10323#10324#0" expanded="true" />
+            <element signature="e#10371#10372#0" expanded="true" />
+            <element signature="e#10411#10412#0" expanded="true" />
             <element signature="class#OxfordAPIInfo#0" expanded="false" />
-            <element signature="e#12266#12267#0" expanded="true" />
-            <element signature="e#12294#12295#0" expanded="true" />
-            <element signature="e#12693#12694#0" expanded="true" />
-            <element signature="e#12726#12727#0" expanded="true" />
-            <element signature="e#12760#12761#0" expanded="true" />
-            <element signature="e#12790#12791#0" expanded="true" />
-            <element signature="e#12824#12825#0" expanded="true" />
-            <element signature="e#12855#12856#0" expanded="true" />
-            <element signature="e#14262#14263#0" expanded="true" />
-            <element signature="e#14296#14297#0" expanded="true" />
-            <element signature="e#14350#14351#0" expanded="true" />
-            <element signature="e#14396#14397#0" expanded="true" />
-            <element signature="e#14455#14456#0" expanded="true" />
-            <element signature="e#14495#14496#0" expanded="true" />
-            <element signature="e#14673#14674#0" expanded="true" />
-            <element signature="e#14726#14727#0" expanded="true" />
+            <element signature="e#11887#11888#0" expanded="true" />
+            <element signature="e#11915#11916#0" expanded="true" />
+            <element signature="e#12313#12314#0" expanded="true" />
+            <element signature="e#12345#12346#0" expanded="true" />
+            <element signature="e#12582#12583#0" expanded="true" />
+            <element signature="e#12614#12615#0" expanded="true" />
+            <element signature="e#12676#12677#0" expanded="true" />
+            <element signature="e#12717#12718#0" expanded="true" />
+            <element signature="e#13785#13786#0" expanded="true" />
+            <element signature="e#13819#13820#0" expanded="true" />
+            <element signature="e#13873#13874#0" expanded="true" />
+            <element signature="e#13919#13920#0" expanded="true" />
+            <element signature="e#13978#13979#0" expanded="true" />
+            <element signature="e#14018#14019#0" expanded="true" />
+            <element signature="e#14196#14197#0" expanded="true" />
+            <element signature="e#14249#14250#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1601,41 +2004,42 @@
             <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="docComment;method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#getConnection#0;class#WordUp#0" expanded="false" />
             <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#getURLResponse#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8370#8371#0" expanded="true" />
-            <element signature="e#8397#8398#0" expanded="true" />
+            <element signature="e#9494#9495#0" expanded="true" />
+            <element signature="e#9521#9522#0" expanded="true" />
             <element signature="method#getInflectionResponseCode#0;class#WordUp#0" expanded="false" />
             <element signature="method#getDefinitionResponseCode#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8989#8990#0" expanded="true" />
-            <element signature="e#9022#9023#0" expanded="true" />
-            <element signature="e#9089#9090#0" expanded="true" />
-            <element signature="e#9133#9134#0" expanded="true" />
-            <element signature="e#9168#9169#0" expanded="true" />
-            <element signature="e#9199#9200#0" expanded="true" />
-            <element signature="e#9247#9248#0" expanded="true" />
-            <element signature="e#9287#9288#0" expanded="true" />
+            <element signature="e#10113#10114#0" expanded="true" />
+            <element signature="e#10146#10147#0" expanded="true" />
+            <element signature="e#10213#10214#0" expanded="true" />
+            <element signature="e#10257#10258#0" expanded="true" />
+            <element signature="e#10292#10293#0" expanded="true" />
+            <element signature="e#10323#10324#0" expanded="true" />
+            <element signature="e#10371#10372#0" expanded="true" />
+            <element signature="e#10411#10412#0" expanded="true" />
             <element signature="class#OxfordAPIInfo#0" expanded="false" />
-            <element signature="e#12266#12267#0" expanded="true" />
-            <element signature="e#12294#12295#0" expanded="true" />
-            <element signature="e#12693#12694#0" expanded="true" />
-            <element signature="e#12726#12727#0" expanded="true" />
-            <element signature="e#12760#12761#0" expanded="true" />
-            <element signature="e#12790#12791#0" expanded="true" />
-            <element signature="e#12824#12825#0" expanded="true" />
-            <element signature="e#12855#12856#0" expanded="true" />
-            <element signature="e#14262#14263#0" expanded="true" />
-            <element signature="e#14296#14297#0" expanded="true" />
-            <element signature="e#14350#14351#0" expanded="true" />
-            <element signature="e#14396#14397#0" expanded="true" />
-            <element signature="e#14455#14456#0" expanded="true" />
-            <element signature="e#14495#14496#0" expanded="true" />
-            <element signature="e#14673#14674#0" expanded="true" />
-            <element signature="e#14726#14727#0" expanded="true" />
+            <element signature="e#11887#11888#0" expanded="true" />
+            <element signature="e#11915#11916#0" expanded="true" />
+            <element signature="e#12313#12314#0" expanded="true" />
+            <element signature="e#12345#12346#0" expanded="true" />
+            <element signature="e#12582#12583#0" expanded="true" />
+            <element signature="e#12614#12615#0" expanded="true" />
+            <element signature="e#12676#12677#0" expanded="true" />
+            <element signature="e#12717#12718#0" expanded="true" />
+            <element signature="e#13785#13786#0" expanded="true" />
+            <element signature="e#13819#13820#0" expanded="true" />
+            <element signature="e#13873#13874#0" expanded="true" />
+            <element signature="e#13919#13920#0" expanded="true" />
+            <element signature="e#13978#13979#0" expanded="true" />
+            <element signature="e#14018#14019#0" expanded="true" />
+            <element signature="e#14196#14197#0" expanded="true" />
+            <element signature="e#14249#14250#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1649,41 +2053,42 @@
             <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="docComment;method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#getConnection#0;class#WordUp#0" expanded="false" />
             <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#getURLResponse#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8370#8371#0" expanded="true" />
-            <element signature="e#8397#8398#0" expanded="true" />
+            <element signature="e#9494#9495#0" expanded="true" />
+            <element signature="e#9521#9522#0" expanded="true" />
             <element signature="method#getInflectionResponseCode#0;class#WordUp#0" expanded="false" />
             <element signature="method#getDefinitionResponseCode#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8989#8990#0" expanded="true" />
-            <element signature="e#9022#9023#0" expanded="true" />
-            <element signature="e#9089#9090#0" expanded="true" />
-            <element signature="e#9133#9134#0" expanded="true" />
-            <element signature="e#9168#9169#0" expanded="true" />
-            <element signature="e#9199#9200#0" expanded="true" />
-            <element signature="e#9247#9248#0" expanded="true" />
-            <element signature="e#9287#9288#0" expanded="true" />
+            <element signature="e#10113#10114#0" expanded="true" />
+            <element signature="e#10146#10147#0" expanded="true" />
+            <element signature="e#10213#10214#0" expanded="true" />
+            <element signature="e#10257#10258#0" expanded="true" />
+            <element signature="e#10292#10293#0" expanded="true" />
+            <element signature="e#10323#10324#0" expanded="true" />
+            <element signature="e#10371#10372#0" expanded="true" />
+            <element signature="e#10411#10412#0" expanded="true" />
             <element signature="class#OxfordAPIInfo#0" expanded="false" />
-            <element signature="e#12266#12267#0" expanded="true" />
-            <element signature="e#12294#12295#0" expanded="true" />
-            <element signature="e#12693#12694#0" expanded="true" />
-            <element signature="e#12726#12727#0" expanded="true" />
-            <element signature="e#12760#12761#0" expanded="true" />
-            <element signature="e#12790#12791#0" expanded="true" />
-            <element signature="e#12824#12825#0" expanded="true" />
-            <element signature="e#12855#12856#0" expanded="true" />
-            <element signature="e#14262#14263#0" expanded="true" />
-            <element signature="e#14296#14297#0" expanded="true" />
-            <element signature="e#14350#14351#0" expanded="true" />
-            <element signature="e#14396#14397#0" expanded="true" />
-            <element signature="e#14455#14456#0" expanded="true" />
-            <element signature="e#14495#14496#0" expanded="true" />
-            <element signature="e#14673#14674#0" expanded="true" />
-            <element signature="e#14726#14727#0" expanded="true" />
+            <element signature="e#11887#11888#0" expanded="true" />
+            <element signature="e#11915#11916#0" expanded="true" />
+            <element signature="e#12313#12314#0" expanded="true" />
+            <element signature="e#12345#12346#0" expanded="true" />
+            <element signature="e#12582#12583#0" expanded="true" />
+            <element signature="e#12614#12615#0" expanded="true" />
+            <element signature="e#12676#12677#0" expanded="true" />
+            <element signature="e#12717#12718#0" expanded="true" />
+            <element signature="e#13785#13786#0" expanded="true" />
+            <element signature="e#13819#13820#0" expanded="true" />
+            <element signature="e#13873#13874#0" expanded="true" />
+            <element signature="e#13919#13920#0" expanded="true" />
+            <element signature="e#13978#13979#0" expanded="true" />
+            <element signature="e#14018#14019#0" expanded="true" />
+            <element signature="e#14196#14197#0" expanded="true" />
+            <element signature="e#14249#14250#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1698,41 +2103,42 @@
             <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="docComment;method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#getConnection#0;class#WordUp#0" expanded="false" />
             <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#getURLResponse#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8370#8371#0" expanded="true" />
-            <element signature="e#8397#8398#0" expanded="true" />
+            <element signature="e#9494#9495#0" expanded="true" />
+            <element signature="e#9521#9522#0" expanded="true" />
             <element signature="method#getInflectionResponseCode#0;class#WordUp#0" expanded="false" />
             <element signature="method#getDefinitionResponseCode#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8989#8990#0" expanded="true" />
-            <element signature="e#9022#9023#0" expanded="true" />
-            <element signature="e#9089#9090#0" expanded="true" />
-            <element signature="e#9133#9134#0" expanded="true" />
-            <element signature="e#9168#9169#0" expanded="true" />
-            <element signature="e#9199#9200#0" expanded="true" />
-            <element signature="e#9247#9248#0" expanded="true" />
-            <element signature="e#9287#9288#0" expanded="true" />
+            <element signature="e#10113#10114#0" expanded="true" />
+            <element signature="e#10146#10147#0" expanded="true" />
+            <element signature="e#10213#10214#0" expanded="true" />
+            <element signature="e#10257#10258#0" expanded="true" />
+            <element signature="e#10292#10293#0" expanded="true" />
+            <element signature="e#10323#10324#0" expanded="true" />
+            <element signature="e#10371#10372#0" expanded="true" />
+            <element signature="e#10411#10412#0" expanded="true" />
             <element signature="class#OxfordAPIInfo#0" expanded="false" />
-            <element signature="e#12266#12267#0" expanded="true" />
-            <element signature="e#12294#12295#0" expanded="true" />
-            <element signature="e#12693#12694#0" expanded="true" />
-            <element signature="e#12726#12727#0" expanded="true" />
-            <element signature="e#12760#12761#0" expanded="true" />
-            <element signature="e#12790#12791#0" expanded="true" />
-            <element signature="e#12824#12825#0" expanded="true" />
-            <element signature="e#12855#12856#0" expanded="true" />
-            <element signature="e#14262#14263#0" expanded="true" />
-            <element signature="e#14296#14297#0" expanded="true" />
-            <element signature="e#14350#14351#0" expanded="true" />
-            <element signature="e#14396#14397#0" expanded="true" />
-            <element signature="e#14455#14456#0" expanded="true" />
-            <element signature="e#14495#14496#0" expanded="true" />
-            <element signature="e#14673#14674#0" expanded="true" />
-            <element signature="e#14726#14727#0" expanded="true" />
+            <element signature="e#11887#11888#0" expanded="true" />
+            <element signature="e#11915#11916#0" expanded="true" />
+            <element signature="e#12313#12314#0" expanded="true" />
+            <element signature="e#12345#12346#0" expanded="true" />
+            <element signature="e#12582#12583#0" expanded="true" />
+            <element signature="e#12614#12615#0" expanded="true" />
+            <element signature="e#12676#12677#0" expanded="true" />
+            <element signature="e#12717#12718#0" expanded="true" />
+            <element signature="e#13785#13786#0" expanded="true" />
+            <element signature="e#13819#13820#0" expanded="true" />
+            <element signature="e#13873#13874#0" expanded="true" />
+            <element signature="e#13919#13920#0" expanded="true" />
+            <element signature="e#13978#13979#0" expanded="true" />
+            <element signature="e#14018#14019#0" expanded="true" />
+            <element signature="e#14196#14197#0" expanded="true" />
+            <element signature="e#14249#14250#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1760,6 +2166,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="110" column="19" lean-forward="false" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1773,8 +2187,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/WordUp/WordUpTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+        <state relative-caret-position="1360">
+          <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#585#586#0" expanded="true" />
@@ -1789,58 +2203,180 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/String.java">
+    <entry file="jar://$PROJECT_DIR$/lib/gson-2.8.2.jar!/com/google/gson/internal/LinkedTreeMap.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="110" column="19" lean-forward="false" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
-          <folding />
+        <state relative-caret-position="510">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding>
+            <marker date="1517347051000" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1517347051000" expanded="false" signature="148:496" ph="..." />
+            <marker date="1517347051000" expanded="true" signature="682:791" ph="{...}" />
+            <marker date="1517347051000" expanded="false" signature="738:753" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="775:785" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="1066:1077" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="1097:1103" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="1164:1344" ph="{...}" />
+            <marker date="1517347051000" expanded="false" signature="1367:1378" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="1395:1401" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="1432:1552" ph="{...}" />
+            <marker date="1517347051000" expanded="false" signature="1596:1607" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="1645:1651" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="1686:1975" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="2001:2181" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="2215:2342" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="2401:4092" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="4148:4311" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="4373:4585" ph="{...}" />
+            <marker date="1517347051000" expanded="false" signature="4632:4643" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="4685:4691" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="4764:6387" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="6450:6626" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="6730:7209" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="7291:9619" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="9680:10323" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="10385:11034" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="11075:11232" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="11261:11410" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="11475:11522" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="11570:12244" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="11589:11600" ph="{}" />
+            <marker date="1517347051000" expanded="false" signature="11627:11642" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="11673:11683" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="11723:11921" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="11795:11910" ph="{...}" />
+            <marker date="1517347051000" expanded="false" signature="11828:11851" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="11878:11896" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="11964:11979" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="12020:12030" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="12073:12088" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="12147:12157" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="12186:12201" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="12228:12238" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="12298:13372" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="12319:12330" ph="{}" />
+            <marker date="1517347051000" expanded="false" signature="12357:12372" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="12403:12413" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="12463:12677" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="12545:12666" ph="{...}" />
+            <marker date="1517347051000" expanded="false" signature="12588:12611" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="12634:12652" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="12721:12823" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="12865:13285" ph="{...}" />
+            <marker date="1517347051000" expanded="false" signature="13314:13329" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="13356:13366" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="13449:14727" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="13600:13770" ph="{...}" />
+            <marker date="1517347051000" expanded="false" signature="13810:13825" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="13871:13881" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="13933:14355" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="14392:14721" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="14786:17709" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="15060:15142" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="15259:15481" ph="{...}" />
+            <marker date="1517347051000" expanded="false" signature="15508:15523" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="15539:15549" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="15578:15593" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="15611:15621" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="15658:15767" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="15809:16903" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="16935:17062" ph="{...}" />
+            <marker date="1517347051000" expanded="false" signature="17096:17111" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="17146:17156" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="17206:17429" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="17478:17703" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/gson-2.8.2.jar!/com/google/gson/JsonObject.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding>
+            <marker date="1517347051000" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1517347051000" expanded="false" signature="139:255" ph="..." />
+            <marker date="1517347051000" expanded="true" signature="418:425" ph="{}" />
+            <marker date="1517347051000" expanded="true" signature="460:799" ph="{...}" />
+            <marker date="1517347051000" expanded="true" signature="857:986" ph="{...}" />
+            <marker date="1517347051000" expanded="false" signature="1034:1045" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="1095:1101" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="1161:1172" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="1222:1228" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="1288:1299" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="1349:1355" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="1416:1427" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="1477:1483" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="1546:1557" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="1607:1613" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="1671:1770" ph="{...}" />
+            <marker date="1517347051000" expanded="false" signature="1825:1836" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="1867:1873" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="1906:1917" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="1946:1952" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="1975:1986" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="2013:2019" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="2062:2073" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="2117:2123" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="2170:2181" ph=" { " />
+            <marker date="1517347051000" expanded="true" signature="2230:2236" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="2300:2311" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="2362:2368" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="2424:2435" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="2482:2488" ph=" }" />
+            <marker date="1517347051000" expanded="false" signature="2546:2557" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="2605:2611" ph=" }" />
+            <marker date="1517347051000" expanded="true" signature="2649:2757" ph="{...}" />
+            <marker date="1517347051000" expanded="false" signature="2784:2795" ph=" { " />
+            <marker date="1517347051000" expanded="false" signature="2826:2832" ph=" }" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WordUp/WordUp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="355" column="20" lean-forward="false" selection-start-line="355" selection-start-column="20" selection-end-line="355" selection-end-column="20" />
+        <state relative-caret-position="425">
+          <caret line="131" column="9" lean-forward="true" selection-start-line="131" selection-start-column="9" selection-end-line="131" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="docComment;method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#getConnection#0;class#WordUp#0" expanded="false" />
             <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#getURLResponse#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8370#8371#0" expanded="true" />
-            <element signature="e#8397#8398#0" expanded="true" />
+            <element signature="e#9494#9495#0" expanded="true" />
+            <element signature="e#9521#9522#0" expanded="true" />
             <element signature="method#getInflectionResponseCode#0;class#WordUp#0" expanded="false" />
             <element signature="method#getDefinitionResponseCode#0;class#WordUp#0" expanded="false" />
-            <element signature="e#8989#8990#0" expanded="true" />
-            <element signature="e#9022#9023#0" expanded="true" />
-            <element signature="e#9089#9090#0" expanded="true" />
-            <element signature="e#9133#9134#0" expanded="true" />
-            <element signature="e#9168#9169#0" expanded="true" />
-            <element signature="e#9199#9200#0" expanded="true" />
-            <element signature="e#9247#9248#0" expanded="true" />
-            <element signature="e#9287#9288#0" expanded="true" />
+            <element signature="e#10113#10114#0" expanded="true" />
+            <element signature="e#10146#10147#0" expanded="true" />
+            <element signature="e#10213#10214#0" expanded="true" />
+            <element signature="e#10257#10258#0" expanded="true" />
+            <element signature="e#10292#10293#0" expanded="true" />
+            <element signature="e#10323#10324#0" expanded="true" />
+            <element signature="e#10371#10372#0" expanded="true" />
+            <element signature="e#10411#10412#0" expanded="true" />
             <element signature="class#OxfordAPIInfo#0" expanded="false" />
-            <element signature="e#12266#12267#0" expanded="true" />
-            <element signature="e#12294#12295#0" expanded="true" />
-            <element signature="e#12693#12694#0" expanded="true" />
-            <element signature="e#12726#12727#0" expanded="true" />
-            <element signature="e#12760#12761#0" expanded="true" />
-            <element signature="e#12790#12791#0" expanded="true" />
-            <element signature="e#12824#12825#0" expanded="true" />
-            <element signature="e#12855#12856#0" expanded="true" />
-            <element signature="e#14262#14263#0" expanded="true" />
-            <element signature="e#14296#14297#0" expanded="true" />
-            <element signature="e#14350#14351#0" expanded="true" />
-            <element signature="e#14396#14397#0" expanded="true" />
-            <element signature="e#14455#14456#0" expanded="true" />
-            <element signature="e#14495#14496#0" expanded="true" />
-            <element signature="e#14673#14674#0" expanded="true" />
-            <element signature="e#14726#14727#0" expanded="true" />
+            <element signature="e#11887#11888#0" expanded="true" />
+            <element signature="e#11915#11916#0" expanded="true" />
+            <element signature="e#12313#12314#0" expanded="true" />
+            <element signature="e#12345#12346#0" expanded="true" />
+            <element signature="e#12582#12583#0" expanded="true" />
+            <element signature="e#12614#12615#0" expanded="true" />
+            <element signature="e#12676#12677#0" expanded="true" />
+            <element signature="e#12717#12718#0" expanded="true" />
+            <element signature="e#13785#13786#0" expanded="true" />
+            <element signature="e#13819#13820#0" expanded="true" />
+            <element signature="e#13873#13874#0" expanded="true" />
+            <element signature="e#13919#13920#0" expanded="true" />
+            <element signature="e#13978#13979#0" expanded="true" />
+            <element signature="e#14018#14019#0" expanded="true" />
+            <element signature="e#14196#14197#0" expanded="true" />
+            <element signature="e#14249#14250#0" expanded="true" />
           </folding>
         </state>
       </provider>

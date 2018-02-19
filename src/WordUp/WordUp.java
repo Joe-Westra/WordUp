@@ -60,10 +60,10 @@ public class WordUp {
                 System.out.println("error....\n" +
                         "Response code:" + responseCode);
             }
-        } catch(UnknownHostException exception) {
+        } catch (UnknownHostException exception) {
             System.out.println("Please check your internet connection and try again.");
-            shriekAndDie(inflectionConnection,exception);
-        }catch (IOException e) {
+            shriekAndDie(inflectionConnection, exception);
+        } catch (IOException e) {
             shriekAndDie(inflectionConnection, e);
         }
         return baseWord;
@@ -97,72 +97,92 @@ public class WordUp {
     private List<LexicalCategory> getEachLexicalCategory(JsonObject lexicalEntries) {
         List<LexicalCategory> lc = new ArrayList<>();
         Iterator<JsonElement> it = lexicalEntries.get("lexicalEntries").getAsJsonArray().iterator();
-        while (it.hasNext()){
+        while (it.hasNext()) {
             JsonObject jo = it.next().getAsJsonObject();
             String category = jo.get("lexicalCategory").getAsString();
             PossibleDefinition pd = getEachEntry(jo);
-            lc.add(new LexicalCategory(category,pd));
+            lc.add(new LexicalCategory(category, pd));
         }
         return lc;
     }
 
-
-        private PossibleDefinition digestDefinitionIfPresent(JsonObject jo){
-        String d = null;
-        String e = null;
-        if(jo.has("definitions"))
-                d = jo.get("definitions").getAsJsonArray().get(0).getAsString();
-        if(jo.has("examples"))
-                e = getExamples(jo);
-        return new PossibleDefinition(d,e);
-        }
-
     private PossibleDefinition getEachEntry(JsonObject jo) {
         PossibleDefinition sense = new PossibleDefinition();
-
         Iterator<JsonElement> it = jo.get("entries").getAsJsonArray().iterator();
         while (it.hasNext()) {
             System.out.println("hitting 'entries' sublist");
             JsonObject j = it.next().getAsJsonObject();
-            sense = getEachSense(j);
+            sense.addSubSenses(getEachSense(j));
         }
-
         return sense;
     }
+    //IMPLEMENT this new version of getEachSense()
+    //Possibly create a lone Pd, and add 'senses' as a list of subsenses.
+        private List<PossibleDefinition> getEachSense(JsonObject j) {
+    List<PossibleDefinition> senses = new ArrayList<>();
+        Iterator<JsonElement> jj = j.get("senses").getAsJsonArray().iterator();
+        while (jj.hasNext()) {
+            System.out.println("hitting 'senses' sublist");
+            JsonObject jjj = jj.next().getAsJsonObject();
 
-    private String getExamples(JsonObject jo) {
-        StringBuilder examples = new StringBuilder();
-        JsonArray ja = jo.get("examples").getAsJsonArray();
-        for(JsonElement je : ja) {
-            examples.append(je.getAsJsonObject().get("text").getAsString() + "\n");
+            PossibleDefinition thisSense = digestDefinitionIfPresent(jjj);
+            List<PossibleDefinition> subsenses = getEachSubsense(jjj);
+            thisSense.addSubSenses(subsenses);
+            senses.add(thisSense);
         }
-        return examples.toString();
+        return senses;
     }
-
+/*
     private PossibleDefinition getEachSense(JsonObject j) {
         PossibleDefinition thisSense = new PossibleDefinition();
         Iterator<JsonElement> jj = j.get("senses").getAsJsonArray().iterator();
-        while (jj.hasNext()){
+        while (jj.hasNext()) {
             System.out.println("hitting 'senses' sublist");
             JsonObject jjj = jj.next().getAsJsonObject();
 
             thisSense = digestDefinitionIfPresent(jjj);
             List<PossibleDefinition> subsenses = getEachSubsense(jjj);
-
- /*           String def = jjj.get("definitions").getAsString();
-            String example = "";
-            if (jjj.has("examples")) {
-                System.out.println("hitting 'examples' sublist");
-                example = getExamples(jjj);
-            }
-            thisSense = new PossibleDefinition(def,example);
-*/
-
-thisSense.addSubSenses(subsenses);
+            thisSense.addSubSenses(subsenses);
         }
-
         return thisSense;
     }
+*/
+
+    public List<PossibleDefinition> getEachSubsense(JsonObject jjj) {
+
+        List<PossibleDefinition> eachSubsense = new ArrayList<>();
+        if (jjj.has("subsenses")) {
+            Iterator<JsonElement> k = jjj.get("subsenses").getAsJsonArray().iterator();
+            while (k.hasNext()) {
+                JsonObject kk = k.next().getAsJsonObject();
+                System.out.println("in getEachSubsense: " + kk.toString());
+                eachSubsense.add(digestDefinitionIfPresent(kk));
+            }
+        }
+        System.out.println("subsenses contains " + eachSubsense.size() + " entries");
+        return eachSubsense;
+    }
+
+    private PossibleDefinition digestDefinitionIfPresent(JsonObject jo) {
+        String d = null;
+        String e = null;
+        if (jo.has("definitions"))
+            d = jo.get("definitions").getAsJsonArray().get(0).getAsString();
+        if (jo.has("examples"))
+            e = getExamples(jo);
+        System.out.println(d + e);
+        return new PossibleDefinition(d, e);
+    }
+
+    private String getExamples(JsonObject jo) {
+        StringBuilder examples = new StringBuilder();
+        JsonArray ja = jo.get("examples").getAsJsonArray();
+        for (JsonElement je : ja) {
+            examples.append(je.getAsJsonObject().get("text").getAsString() + "\n");
+        }
+        return examples.toString();
+    }
+
 
     private JsonObject traverseAPI(JsonObject rootJSONObject, String... path) {
         JsonObject j = rootJSONObject;
@@ -208,8 +228,8 @@ thisSense.addSubSenses(subsenses);
 
     public String retrieveBaseWord(JsonObject jo) {
         System.out.println(jo.toString());
-        String[] path = {"results","lexicalEntries","inflectionOf"};
-        String base = traverseAPI(jo,path).get("text").toString();
+        String[] path = {"results", "lexicalEntries", "inflectionOf"};
+        String base = traverseAPI(jo, path).get("text").toString();
         System.out.println(base);
         return base.substring(1, base.length() - 1); //remove quotations
     }
@@ -268,34 +288,22 @@ thisSense.addSubSenses(subsenses);
     }
 
     public static void main(String[] args) {
-        WordUp w = new WordUp("filling");
+        WordUp w = new WordUp("dumping");
         w.setBaseWord(w.determineBaseWord(w.getWord()));
         w.setDefinition(w.determineDefinition(w.getBaseWord()));
-        System.out.println(w.toString());
+        System.out.println(w.getDefinition().toString());
     }
 
-    @Override
-    public String toString(){
-        List<PossibleDefinition> pd = getSubsenses();
-        Iterator<PossibleDefinition> definitions = pd.iterator();
-        StringBuilder deflist = new StringBuilder();
-        while (definitions.hasNext()){
-            PossibleDefinition d = definitions.next();
-            deflist.append("definition: " + d.getDefinition() + "\n");
-            deflist.append("example: " + d.getExample() + "\n");
-        }
-        return deflist.toString();
-    }
 
     public List<PossibleDefinition> getSubsenses() {
         Iterator<LexicalCategory> lc = this.definition.getLexicalCategories().iterator();
         List<PossibleDefinition> pd = new ArrayList<>();
-        while(lc.hasNext()){
+        while (lc.hasNext()) {
             PossibleDefinition def = lc.next().getSense();
             pd.add(def);//add the root definition (sense)
-            if (! def.getSubsenses().isEmpty()){  //this might be redundant... does hasnext throw an exception if the list is empty?
+            if (! def.getSubsenses().isEmpty()) {  //this might be redundant... does hasnext throw an exception if the list is empty?
                 Iterator<PossibleDefinition> subsense = def.getSubsenses().iterator();
-                while (subsense.hasNext()){
+                while (subsense.hasNext()) {
                     pd.add(subsense.next());
                 }
             }
@@ -303,31 +311,7 @@ thisSense.addSubSenses(subsenses);
         return pd;
     }
 
-    public List<PossibleDefinition> getEachSubsense(JsonObject jjj) {
 
-        List<PossibleDefinition> eachSubsense = new ArrayList<>();
-        if (jjj.has("subsenses")){
-            Iterator<JsonElement> k = jjj.get("subsenses").getAsJsonArray().iterator();
-            while (k.hasNext()) {
-                JsonObject kk = k.next().getAsJsonObject();
-                System.out.println("in getEachSubsense: " + kk.toString());
-
-                eachSubsense.add(digestDefinitionIfPresent(kk));
-                /*
-                String d = "";
-                if(kk.has("definitions")) {
-                    d = kk.get("definitions").getAsJsonArray().get(0).getAsString();
-                }
-                String e = "";
-                if (kk.has("examples")) {
-                    e = kk.get("examples").getAsJsonArray().get(0).getAsJsonObject().get("text").getAsString();
-                }
-                thisSense.addSubSense(new PossibleDefinition(d,e));
-*/            }
-
-        }
-        return eachSubsense;
-    }
 }
 
 class OxfordAPIInfo {
@@ -343,7 +327,7 @@ class LexicalCategory {
 
     LexicalCategory(String category, PossibleDefinition sense) {
         this.category = category;
-        this.sense =sense;
+        this.sense = sense;
     }
 
     public PossibleDefinition getSense() {
@@ -351,7 +335,7 @@ class LexicalCategory {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Category: " + category + "\n");
         sb.append(sense.toString() + "\n");
@@ -365,37 +349,33 @@ class PossibleDefinition {
     private String example;
     private List<PossibleDefinition> subsenses;
 
-    public String getDefinition() {
-        return definition;
+    public PossibleDefinition() {
+        this(null, null);
     }
 
-    public String getExample() {
-        return example;
-    }
-
-    public PossibleDefinition(){
-        this(null,null);
-    }
     public PossibleDefinition(String definition, String example) {
         this.definition = definition;
         this.example = example;
         subsenses = new ArrayList<>();
-
     }
 
-    public List<PossibleDefinition> getSubsenses() { return subsenses; }
+    public List<PossibleDefinition> getSubsenses() {
+        return subsenses;
+    }
 
-    public void addSubSense(PossibleDefinition definition) { subsenses.add(definition); }
+    public void addSubSense(PossibleDefinition definition) {
+        subsenses.add(definition);
+    }
 
     public void addSubSenses(List<PossibleDefinition> subsenses) {
-        for (PossibleDefinition pd:
-             subsenses) {
+        for (PossibleDefinition pd :
+                subsenses) {
             this.addSubSense(pd);
         }
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Definition: " + this.definition + "\n");
         if (example != null)/*example.length() != 0 && ! example.equals("null")*////RED FLAG!!!
@@ -403,8 +383,8 @@ class PossibleDefinition {
             // when parsing the definition from the API response.
             sb.append(example + "\n");
         if (! this.subsenses.isEmpty())
-            for (PossibleDefinition pd:
-                 subsenses) {
+            for (PossibleDefinition pd :
+                    subsenses) {
                 sb.append(pd.toString());
             }
         sb.append("");//newline
@@ -440,14 +420,14 @@ class DefinitionInformation {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         StringBuilder sb = new StringBuilder();
         //get word
         //get baseword
         sb.append(phoneticSpelling + "\n");
         sb.append("origin: " + etymologies + "\n");
-        for (LexicalCategory lc:
-             lexicalCategories) {
+        for (LexicalCategory lc :
+                lexicalCategories) {
             sb.append(lc.toString());
         }
         return sb.toString();
