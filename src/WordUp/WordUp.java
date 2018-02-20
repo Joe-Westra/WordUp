@@ -8,9 +8,7 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
 import com.google.gson.*;
-
 import javax.net.ssl.HttpsURLConnection;
 
 
@@ -36,13 +34,11 @@ public class WordUp {
             responseCode = definitionConnection.getResponseCode();
             if (responseCode == 200) {
                 JsonObject JSONResponse = getURLResponse(definitionConnection);
-                System.out.println("Json Response for definition of '" + baseWord + "': " + JSONResponse.toString());//scaffolding
                 definition = retrieveDefinition(JSONResponse);
             }
         } catch (IOException e) {
             shriekAndDie(definitionConnection, e);
         }
-
         return definition;
     }
 
@@ -58,7 +54,7 @@ public class WordUp {
                 baseWord = retrieveBaseWord(JSONResponse);
             } else {
                 System.out.println("error....\n" +
-                        "Response code:" + responseCode);
+                        "Response code: " + responseCode);
             }
         } catch (UnknownHostException exception) {
             System.out.println("Please check your internet connection and try again.");
@@ -78,16 +74,14 @@ public class WordUp {
     private DefinitionInformation retrieveDefinition(JsonObject rootJSONObject) {
         DefinitionInformation def = new DefinitionInformation();
         def.setEtymologies(fetchEtymologies(rootJSONObject));
+        //TODO:get phonetic spelling
         def.setLexicalCategories(fetchDefinitions(rootJSONObject));
-        System.out.println("ety: " + def.getEtymologies());
-        System.out.println("definis: " + def.getLexicalCategories());
         return def;
     }
 
     private List<LexicalCategory> fetchDefinitions(JsonObject rootJSONObject) {
         List<LexicalCategory> senses;
-        String path = "results";
-        JsonObject lexicalEntries = traverseAPI(rootJSONObject, path);
+        JsonObject lexicalEntries = traverseAPI(rootJSONObject, "results");
         //This is an array of Json objects that contain multiple entries.
         //Each entry is for a different lexical category
         senses = getEachLexicalCategory(lexicalEntries);
@@ -110,80 +104,73 @@ public class WordUp {
         PossibleDefinition sense = new PossibleDefinition();
         Iterator<JsonElement> it = jo.get("entries").getAsJsonArray().iterator();
         while (it.hasNext()) {
-            System.out.println("hitting 'entries' sublist");
             JsonObject j = it.next().getAsJsonObject();
             sense.addSubSenses(getEachSense(j));
         }
         return sense;
     }
-    //IMPLEMENT this new version of getEachSense()
-    //Possibly create a lone Pd, and add 'senses' as a list of subsenses.
-        private List<PossibleDefinition> getEachSense(JsonObject j) {
-    List<PossibleDefinition> senses = new ArrayList<>();
-        Iterator<JsonElement> jj = j.get("senses").getAsJsonArray().iterator();
-        while (jj.hasNext()) {
-            System.out.println("hitting 'senses' sublist");
-            JsonObject jjj = jj.next().getAsJsonObject();
 
-            PossibleDefinition thisSense = digestDefinitionIfPresent(jjj);
-            List<PossibleDefinition> subsenses = getEachSubsense(jjj);
-            thisSense.addSubSenses(subsenses);
+    private List<PossibleDefinition> getEachSense(JsonObject jo) {
+        List<PossibleDefinition> senses = new ArrayList<>();
+        Iterator<JsonElement> senseList = jo.get("senses").getAsJsonArray().iterator();
+        while (senseList.hasNext()) {
+            JsonObject joSense = senseList.next().getAsJsonObject();
+            PossibleDefinition thisSense = digestDefinitionIfPresent(joSense);
+            thisSense.addSubSenses(getEachSubsense(joSense));
             senses.add(thisSense);
         }
         return senses;
     }
-/*
-    private PossibleDefinition getEachSense(JsonObject j) {
-        PossibleDefinition thisSense = new PossibleDefinition();
-        Iterator<JsonElement> jj = j.get("senses").getAsJsonArray().iterator();
-        while (jj.hasNext()) {
-            System.out.println("hitting 'senses' sublist");
-            JsonObject jjj = jj.next().getAsJsonObject();
 
-            thisSense = digestDefinitionIfPresent(jjj);
-            List<PossibleDefinition> subsenses = getEachSubsense(jjj);
-            thisSense.addSubSenses(subsenses);
-        }
-        return thisSense;
-    }
-*/
 
-    public List<PossibleDefinition> getEachSubsense(JsonObject jjj) {
-
-        List<PossibleDefinition> eachSubsense = new ArrayList<>();
-        if (jjj.has("subsenses")) {
-            Iterator<JsonElement> k = jjj.get("subsenses").getAsJsonArray().iterator();
+    public List<PossibleDefinition> getEachSubsense(JsonObject jo) {
+        List<PossibleDefinition> subsenses = new ArrayList<>();
+        if (jo.has("subsenses")) {
+            Iterator<JsonElement> k = jo.get("subsenses").getAsJsonArray().iterator();
             while (k.hasNext()) {
                 JsonObject kk = k.next().getAsJsonObject();
-                System.out.println("in getEachSubsense: " + kk.toString());
-                eachSubsense.add(digestDefinitionIfPresent(kk));
+                subsenses.add(digestDefinitionIfPresent(kk));
             }
         }
-        System.out.println("subsenses contains " + eachSubsense.size() + " entries");
-        return eachSubsense;
+        return subsenses;
     }
 
-    private PossibleDefinition digestDefinitionIfPresent(JsonObject jo) {
+    /**
+     * extracts a definition and example from a JsonObject if the member elements exist, or usese 'null' values otherwise.
+     * @param definitionJO
+     * @return a PossibleDefinition with the extracted values
+     */
+    private PossibleDefinition digestDefinitionIfPresent(JsonObject definitionJO) {
         String d = null;
         String e = null;
-        if (jo.has("definitions"))
-            d = jo.get("definitions").getAsJsonArray().get(0).getAsString();
-        if (jo.has("examples"))
-            e = getExamples(jo);
+        if (definitionJO.has("definitions"))
+            d = definitionJO.get("definitions").getAsJsonArray().get(0).getAsString(); //always seems to be a lone definition.
+        if (definitionJO.has("examples"))
+            e = getExamples(definitionJO);
         System.out.println(d + e);
         return new PossibleDefinition(d, e);
     }
 
+    /**
+     * Extracts all 'examples' from a JsonObject, concatenating them into one string.
+     * @param jo
+     * @return a formatted concatenation of all examples
+     */
     private String getExamples(JsonObject jo) {
         StringBuilder examples = new StringBuilder();
         JsonArray ja = jo.get("examples").getAsJsonArray();
         for (JsonElement je : ja) {
-            examples.append(je.getAsJsonObject().get("text").getAsString() + "\n");
+            examples.append("'" + je.getAsJsonObject().get("text").getAsString() + "'\n");
         }
         return examples.toString();
     }
 
-
+    /**
+     * This method walks through an unspecified amount of levels of the API's JSON response.
+     * @param rootJSONObject
+     * @param path
+     * @return
+     */
     private JsonObject traverseAPI(JsonObject rootJSONObject, String... path) {
         JsonObject j = rootJSONObject;
         for (int i = 0; i < path.length; i++) {
@@ -211,13 +198,20 @@ public class WordUp {
         return ety;
     }
 
+    /**
+     * Attempts to connect to the Oxford API with the supplied app_id and app_key.
+     * This method is used for determining both the definition and the lemma of the queried word.
+     * @param type
+     * @param word
+     * @return
+     */
     private HttpsURLConnection getConnection(String type, String word) {
         try {
-            URL url = new URL(api.baseURL + "/" + type + "/en/" + word);
+            URL url = new URL(api.BASE_URL + "/" + type + "/en/" + word);
             HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
             connection.setRequestProperty("Accept", "application/json");
-            connection.setRequestProperty("app_id", api.appID);
-            connection.setRequestProperty("app_key", api.appKey);
+            connection.setRequestProperty("app_id", api.APP_ID);
+            connection.setRequestProperty("app_key", api.APP_KEY);
             return connection;
         } catch (IOException e) {
             e.printStackTrace();
@@ -227,10 +221,8 @@ public class WordUp {
     }
 
     public String retrieveBaseWord(JsonObject jo) {
-        System.out.println(jo.toString());
         String[] path = {"results", "lexicalEntries", "inflectionOf"};
         String base = traverseAPI(jo, path).get("text").toString();
-        System.out.println(base);
         return base.substring(1, base.length() - 1); //remove quotations
     }
 
@@ -288,7 +280,12 @@ public class WordUp {
     }
 
     public static void main(String[] args) {
-        WordUp w = new WordUp("dumping");
+          String word = "testing";
+        if(args.length > 0){
+            //TODO: check for phrases or multiple words
+            word = args[0];
+        }
+        WordUp w = new WordUp(word);
         w.setBaseWord(w.determineBaseWord(w.getWord()));
         w.setDefinition(w.determineDefinition(w.getBaseWord()));
         System.out.println(w.getDefinition().toString());
@@ -301,12 +298,12 @@ public class WordUp {
         while (lc.hasNext()) {
             PossibleDefinition def = lc.next().getSense();
             pd.add(def);//add the root definition (sense)
-            if (! def.getSubsenses().isEmpty()) {  //this might be redundant... does hasnext throw an exception if the list is empty?
+         //   if (!def.getSubsenses().isEmpty()) {  //this might be redundant... does hasnext throw an exception if the list is empty?
                 Iterator<PossibleDefinition> subsense = def.getSubsenses().iterator();
                 while (subsense.hasNext()) {
                     pd.add(subsense.next());
                 }
-            }
+        //    }
         }
         return pd;
     }
@@ -315,9 +312,9 @@ public class WordUp {
 }
 
 class OxfordAPIInfo {
-    final String baseURL = "https://od-api.oxforddictionaries.com/api/v1";
-    final String appID = "3f6b9965";
-    final String appKey = "54a6ca12f6ef562c890038e2d051fc5c";
+    final String BASE_URL = "https://od-api.oxforddictionaries.com/api/v1";
+    final String APP_ID = "3f6b9965";
+    final String APP_KEY = "54a6ca12f6ef562c890038e2d051fc5c";
 }
 
 
@@ -341,7 +338,6 @@ class LexicalCategory {
         sb.append(sense.toString() + "\n");
         return sb.toString();
     }
-
 }
 
 class PossibleDefinition {
@@ -378,11 +374,9 @@ class PossibleDefinition {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Definition: " + this.definition + "\n");
-        if (example != null)/*example.length() != 0 && ! example.equals("null")*////RED FLAG!!!
-            // shouldn't be checking for the word "null", need to revise example assignment code
-            // when parsing the definition from the API response.
-            sb.append(example + "\n");
-        if (! this.subsenses.isEmpty())
+        if (example != null)
+            sb.append("\u0009" + example);
+        if (!this.subsenses.isEmpty())
             for (PossibleDefinition pd :
                     subsenses) {
                 sb.append(pd.toString());
