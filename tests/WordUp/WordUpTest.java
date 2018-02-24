@@ -12,8 +12,6 @@ class WordUpTest {
     @BeforeAll
     public static void setup() {
         w = new WordUp("testing");
-        w.setBaseWord(w.determineBaseWord(w.getWord()));
-        w.setDefinition(w.determineDefinition(w.getBaseWord()));
     }
 
     @Test
@@ -29,15 +27,15 @@ class WordUpTest {
 
     @Test
     void fakeWordsGetAppropriateResponseCode() {
+        //TODO: Refactoring now makes this throw an exception prior to the response code being evaluated.
         WordUp wu = new WordUp("asdf");
-        wu.determineBaseWord(wu.getWord());
         assertEquals(404, wu.getInflectionResponseCode());
     }
 
     @Test
     void properRootWordsAreIdentified() {
         WordUp wy = new WordUp("dumping");
-        wy.setBaseWord(wy.determineBaseWord(wy.getWord()));
+        //wy.deriveBaseWord();
         assertEquals("dump", wy.getBaseWord());
     }
 
@@ -66,9 +64,6 @@ class WordUpTest {
                         " in English); in later use partly imitative; compare with thump";
 
         WordUp wu = new WordUp(testingWord);
-        wu.setBaseWord(wu.determineBaseWord(wu.getWord()));
-        wu.setDefinition(wu.determineDefinition(wu.getBaseWord()));
-
         assertTrue(wu.getDefinition().getEtymologies().equals(expectedEtymology));
     }
 
@@ -87,26 +82,46 @@ class WordUpTest {
     @Test
     void someWordsHaveMultipleSubsensenses() {
         WordUp wu = new WordUp("dumping");
-        wu.setBaseWord(wu.determineBaseWord(wu.getWord()));
-        wu.setDefinition(wu.determineDefinition(wu.getBaseWord()));
         assertFalse(wu.getSubsenses().isEmpty());
     }
 
     @Test
     void definitionsHaveAReadableStringRepresentation(){
         WordUp wu = new WordUp("dumping");
-        wu.setBaseWord(wu.determineBaseWord(wu.getWord()));
-        wu.setDefinition(wu.determineDefinition(wu.getBaseWord()));
-
-        //THIS IS ONLY RETURNING PART OF THE DEFINITIONS LIST.
-        //Although this test currently (almost) "passes" it is not
-        //a complete definition set of "dump"
-        assertEquals("definition: an act of defecation.\n" +
-                "example: \n" +
-                "definition: copy (stored data) to a different location, especially so as to protect against loss.\n" +
-                "example: \n" +
-                "definition: print out or list the contents of (a store), especially after a system failure.\n" +
-                "example:",
+        assertEquals("Queried word: dumping\n" +
+                        "Root word: dump\n" +
+                        "Origin: Middle English: perhaps from Old Norse; related to Danish dumpe and Norwegian dumpa ‘fall suddenly’ (the original sense in English); in later use partly imitative; compare with thump\n" +
+                        "Category: Noun\n" +
+                        "Definition: null\n" +
+                        "Definition: a site for depositing rubbish.\n" +
+                        "Definition: a heap of rubbish left at a dump.\n" +
+                        "Definition: a place where a particular kind of waste, especially dangerous waste, is left\n" +
+                        "\t'a nuclear waste dump'\n" +
+                        "Definition: a place where weapons and other military equipment is stored\n" +
+                        "\t'an ammunitions dump'\n" +
+                        "Definition: an unpleasant or dreary place\n" +
+                        "\t'why are you living in a dump like this?'\n" +
+                        "Definition: an act of copying stored data to a different location, performed typically as a protection against loss.\n" +
+                        "Definition: a printout or list of the contents of a computer's memory, occurring typically after a system failure.\n" +
+                        "Definition: an act of defecation.\n" +
+                        "\n" +
+                        "Category: Verb\n" +
+                        "Definition: null\n" +
+                        "Definition: deposit or dispose of (rubbish, waste, or unwanted material), typically in a careless or hurried way\n" +
+                        "\t'trucks dumped 1,900 tons of refuse here'\n" +
+                        "Definition: abandon (something) hurriedly in order to make an escape\n" +
+                        "\t'the couple dumped the car and fled'\n" +
+                        "Definition: put (something) down heavily or carelessly\n" +
+                        "\t'she dumped her knapsack on the floor'\n" +
+                        "Definition: abandon or desert (someone)\n" +
+                        "\t'you'll get tired of me and dump me'\n" +
+                        "Definition: send (goods unsaleable in the home market) to a foreign market for sale at a low price\n" +
+                        "\t'these countries have been dumping cheap fertilizers on the UK market'\n" +
+                        "Definition: sell off (assets) rapidly\n" +
+                        "\t'investors dumped shares in scores of other consumer-goods firms'\n" +
+                        "Definition: copy (stored data) to a different location, especially so as to protect against loss.\n" +
+                        "Definition: print out or list the contents of (a store), especially after a system failure.\n" +
+                        "\n",
                 wu.getDefinition().toString());
     }
 }

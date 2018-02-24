@@ -11,30 +11,31 @@ import java.util.List;
 import com.google.gson.*;
 import javax.net.ssl.HttpsURLConnection;
 
-
+//TODO: Change the way that examples in definitions are stored.  An array would be more appropriate.
+//TODO: DefinitionInformation class should hold 'word' and 'baseword' variables.
 public class WordUp {
-    private String word;
     private static OxfordAPIInfo api;
-    private String baseWord;
     private DefinitionInformation definition;
     private HttpsURLConnection inflectionConnection;
     private HttpsURLConnection definitionConnection;
 
 
     public WordUp(String word) {
-        this.word = word;
+        definition = new DefinitionInformation(word);
         api = new OxfordAPIInfo();
+        this.deriveBaseWord();
+        this.deriveDefinition();
     }
 
-    public DefinitionInformation determineDefinition(String baseWord) {
+    public DefinitionInformation determineDefinition(DefinitionInformation def) {
         int responseCode;
         DefinitionInformation definition = null;
-        definitionConnection = getConnection("entries", baseWord);
+        definitionConnection = getConnection("entries",def.getRootWord());
         try {
             responseCode = definitionConnection.getResponseCode();
             if (responseCode == 200) {
                 JsonObject JSONResponse = getURLResponse(definitionConnection);
-                definition = retrieveDefinition(JSONResponse);
+                definition = retrieveDefinition(def, JSONResponse);
             }
         } catch (IOException e) {
             shriekAndDie(definitionConnection, e);
@@ -70,9 +71,10 @@ public class WordUp {
         connection.disconnect();
         System.exit(-1);
     }
-
-    private DefinitionInformation retrieveDefinition(JsonObject rootJSONObject) {
-        DefinitionInformation def = new DefinitionInformation();
+    /*
+    THIS IS SHIT CODE
+     */
+    private DefinitionInformation retrieveDefinition(DefinitionInformation def, JsonObject rootJSONObject) {
         def.setEtymologies(fetchEtymologies(rootJSONObject));
         //TODO:get phonetic spelling
         def.setLexicalCategories(fetchDefinitions(rootJSONObject));
@@ -147,7 +149,6 @@ public class WordUp {
             d = definitionJO.get("definitions").getAsJsonArray().get(0).getAsString(); //always seems to be a lone definition.
         if (definitionJO.has("examples"))
             e = getExamples(definitionJO);
-        System.out.println(d + e);
         return new PossibleDefinition(d, e);
     }
 
@@ -228,7 +229,6 @@ public class WordUp {
 
     private JsonObject getURLResponse(HttpsURLConnection connection) {
         try {
-            System.out.println("response is: " + connection.getResponseCode());//scaffolding
             BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             JsonParser jp = new JsonParser();
             JsonElement je = jp.parse(reader);
@@ -239,9 +239,7 @@ public class WordUp {
         }
     }
 
-    public String getWord() {
-        return word;
-    }
+
 
     public int getInflectionResponseCode() {
         int responseCode = -1;
@@ -267,17 +265,10 @@ public class WordUp {
         return definition;
     }
 
-    public void setDefinition(DefinitionInformation definition) {
-        this.definition = definition;
-    }
-
     public String getBaseWord() {
-        return baseWord;
+        return this.definition.getRootWord();
     }
 
-    public void setBaseWord(String baseWord) {
-        this.baseWord = baseWord;
-    }
 
     public static void main(String[] args) {
           String word = "testing";
@@ -286,29 +277,39 @@ public class WordUp {
             word = args[0];
         }
         WordUp w = new WordUp(word);
-        w.setBaseWord(w.determineBaseWord(w.getWord()));
-        w.setDefinition(w.determineDefinition(w.getBaseWord()));
         System.out.println(w.getDefinition().toString());
+    }
+
+    public void deriveDefinition() {
+        this.definition = determineDefinition(this.definition);
+    }
+
+    public void deriveBaseWord() {
+        this.definition.setRootWord(determineBaseWord(this.definition.getQueriedWord()));
     }
 
 
     public List<PossibleDefinition> getSubsenses() {
+
         Iterator<LexicalCategory> lc = this.definition.getLexicalCategories().iterator();
         List<PossibleDefinition> pd = new ArrayList<>();
         while (lc.hasNext()) {
             PossibleDefinition def = lc.next().getSense();
             pd.add(def);//add the root definition (sense)
-         //   if (!def.getSubsenses().isEmpty()) {  //this might be redundant... does hasnext throw an exception if the list is empty?
-                Iterator<PossibleDefinition> subsense = def.getSubsenses().iterator();
-                while (subsense.hasNext()) {
-                    pd.add(subsense.next());
-                }
-        //    }
+            //   if (!def.getSubsenses().isEmpty()) {  //this might be redundant... does hasnext throw an exception if the list is empty?
+            Iterator<PossibleDefinition> subsense = def.getSubsenses().iterator();
+            while (subsense.hasNext()) {
+                pd.add(subsense.next());
+            }
+            //    }
         }
         return pd;
     }
 
 
+    public String getWord() {
+        return this.definition.getQueriedWord();
+    }
 }
 
 class OxfordAPIInfo {
@@ -389,8 +390,23 @@ class PossibleDefinition {
 
 class DefinitionInformation {
     private String etymologies;
+    private String queriedWord;
+    private String rootWord;
     private String phoneticSpelling;
     private List<LexicalCategory> lexicalCategories;
+
+
+    public String getQueriedWord() {
+        return queriedWord;
+    }
+
+    public String getRootWord() {
+        return rootWord;
+    }
+
+    public void setRootWord(String rootWord) {
+        this.rootWord = rootWord;
+    }
 
     public String getEtymologies() {
         return etymologies;
@@ -409,17 +425,20 @@ class DefinitionInformation {
     }
 
 
-    public DefinitionInformation() {
+    public DefinitionInformation(String queriedWord) {
+        this.queriedWord = queriedWord;
         lexicalCategories = new ArrayList<>();
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        //get word
-        //get baseword
-        sb.append(phoneticSpelling + "\n");
-        sb.append("origin: " + etymologies + "\n");
+        sb.append("Queried word: " + this.queriedWord + "\n");
+        sb.append("Root word: " + this.rootWord + "\n");
+        if (phoneticSpelling != null)
+            sb.append(phoneticSpelling + "\n");
+        if (etymologies != null && ! etymologies.equals(""))
+            sb.append("Origin: " + etymologies + "\n");
         for (LexicalCategory lc :
                 lexicalCategories) {
             sb.append(lc.toString());
