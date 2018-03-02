@@ -11,8 +11,7 @@ import java.util.List;
 import com.google.gson.*;
 import javax.net.ssl.HttpsURLConnection;
 
-//TODO: Change the way that examples in definitions are stored.  An array would be more appropriate.
-//TODO: DefinitionInformation class should hold 'word' and 'baseword' variables.
+//TODO: OPTIONAL: Change the way that examples in definitions are stored.  An array would be more appropriate.
 public class WordUp {
     private static OxfordAPIInfo api;
     private DefinitionInformation definition;
@@ -25,6 +24,16 @@ public class WordUp {
         api = new OxfordAPIInfo();
         this.deriveBaseWord();
         this.deriveDefinition();
+    }
+
+    public static void main(String[] args) {
+        String word = "testing";
+        if(args.length > 0){
+            //TODO: check for phrases or multiple words
+            word = args[0];
+        }
+        WordUp w = new WordUp(word);
+        System.out.println(w.getDefinition().toString());
     }
 
     public DefinitionInformation determineDefinition(DefinitionInformation def) {
@@ -71,12 +80,14 @@ public class WordUp {
         connection.disconnect();
         System.exit(-1);
     }
+
     /*
     THIS IS SHIT CODE
+     It is not modular at all.  It's just changing the def passed in.TODO: FIX IT!
      */
     private DefinitionInformation retrieveDefinition(DefinitionInformation def, JsonObject rootJSONObject) {
         def.setEtymologies(fetchEtymologies(rootJSONObject));
-        //TODO:get phonetic spelling
+        def.setPhoneticSpelling(fetchPhoneticSpelling(rootJSONObject));
         def.setLexicalCategories(fetchDefinitions(rootJSONObject));
         return def;
     }
@@ -84,7 +95,7 @@ public class WordUp {
     private List<LexicalCategory> fetchDefinitions(JsonObject rootJSONObject) {
         List<LexicalCategory> senses;
         JsonObject lexicalEntries = traverseAPI(rootJSONObject, "results");
-        //This is an array of Json objects that contain multiple entries.
+        //This is an array of Json objects that contains multiple entries.
         //Each entry is for a different lexical category
         senses = getEachLexicalCategory(lexicalEntries);
         return senses;
@@ -138,7 +149,7 @@ public class WordUp {
     }
 
     /**
-     * extracts a definition and example from a JsonObject if the member elements exist, or usese 'null' values otherwise.
+     * extracts a definition and example from a JsonObject if the member elements exist, or uses 'null' values otherwise.
      * @param definitionJO
      * @return a PossibleDefinition with the extracted values
      */
@@ -161,7 +172,7 @@ public class WordUp {
         StringBuilder examples = new StringBuilder();
         JsonArray ja = jo.get("examples").getAsJsonArray();
         for (JsonElement je : ja) {
-            examples.append("'" + je.getAsJsonObject().get("text").getAsString() + "'\n");
+            examples.append("\t'" + je.getAsJsonObject().get("text").getAsString() + "'\n");
         }
         return examples.toString();
     }
@@ -199,6 +210,15 @@ public class WordUp {
         return ety;
     }
 
+    private String fetchPhoneticSpelling(JsonObject rootJSONObject) {
+        String phoneSpell = "";
+        String[] path = {"results", "lexicalEntries", "pronunciations"};
+        JsonObject j = traverseAPI(rootJSONObject, path);
+        if (j.has("phoneticSpelling")) {
+            phoneSpell = j.get("phoneticSpelling").getAsString();
+        }
+        return phoneSpell;
+    }
     /**
      * Attempts to connect to the Oxford API with the supplied app_id and app_key.
      * This method is used for determining both the definition and the lemma of the queried word.
@@ -270,16 +290,6 @@ public class WordUp {
     }
 
 
-    public static void main(String[] args) {
-          String word = "testing";
-        if(args.length > 0){
-            //TODO: check for phrases or multiple words
-            word = args[0];
-        }
-        WordUp w = new WordUp(word);
-        System.out.println(w.getDefinition().toString());
-    }
-
     public void deriveDefinition() {
         this.definition = determineDefinition(this.definition);
     }
@@ -288,7 +298,6 @@ public class WordUp {
         this.definition.setRootWord(determineBaseWord(this.definition.getQueriedWord()));
     }
 
-
     public List<PossibleDefinition> getSubsenses() {
 
         Iterator<LexicalCategory> lc = this.definition.getLexicalCategories().iterator();
@@ -296,7 +305,6 @@ public class WordUp {
         while (lc.hasNext()) {
             PossibleDefinition def = lc.next().getSense();
             pd.add(def);//add the root definition (sense)
-            //   if (!def.getSubsenses().isEmpty()) {  //this might be redundant... does hasnext throw an exception if the list is empty?
             Iterator<PossibleDefinition> subsense = def.getSubsenses().iterator();
             while (subsense.hasNext()) {
                 pd.add(subsense.next());
@@ -305,7 +313,6 @@ public class WordUp {
         }
         return pd;
     }
-
 
     public String getWord() {
         return this.definition.getQueriedWord();
@@ -319,130 +326,7 @@ class OxfordAPIInfo {
 }
 
 
-class LexicalCategory {
-    private String category;
-    private PossibleDefinition sense;
-
-    LexicalCategory(String category, PossibleDefinition sense) {
-        this.category = category;
-        this.sense = sense;
-    }
-
-    public PossibleDefinition getSense() {
-        return sense;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Category: " + category + "\n");
-        sb.append(sense.toString() + "\n");
-        return sb.toString();
-    }
-}
-
-class PossibleDefinition {
-    private String definition;
-    private String example;
-    private List<PossibleDefinition> subsenses;
-
-    public PossibleDefinition() {
-        this(null, null);
-    }
-
-    public PossibleDefinition(String definition, String example) {
-        this.definition = definition;
-        this.example = example;
-        subsenses = new ArrayList<>();
-    }
-
-    public List<PossibleDefinition> getSubsenses() {
-        return subsenses;
-    }
-
-    public void addSubSense(PossibleDefinition definition) {
-        subsenses.add(definition);
-    }
-
-    public void addSubSenses(List<PossibleDefinition> subsenses) {
-        for (PossibleDefinition pd :
-                subsenses) {
-            this.addSubSense(pd);
-        }
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Definition: " + this.definition + "\n");
-        if (example != null)
-            sb.append("\u0009" + example);
-        if (!this.subsenses.isEmpty())
-            for (PossibleDefinition pd :
-                    subsenses) {
-                sb.append(pd.toString());
-            }
-        sb.append("");//newline
-        return sb.toString();
-    }
-
-}
-
-class DefinitionInformation {
-    private String etymologies;
-    private String queriedWord;
-    private String rootWord;
-    private String phoneticSpelling;
-    private List<LexicalCategory> lexicalCategories;
 
 
-    public String getQueriedWord() {
-        return queriedWord;
-    }
-
-    public String getRootWord() {
-        return rootWord;
-    }
-
-    public void setRootWord(String rootWord) {
-        this.rootWord = rootWord;
-    }
-
-    public String getEtymologies() {
-        return etymologies;
-    }
-
-    public void setEtymologies(String etymologies) {
-        this.etymologies = etymologies;
-    }
-
-    public List<LexicalCategory> getLexicalCategories() {
-        return lexicalCategories;
-    }
-
-    public void setLexicalCategories(List<LexicalCategory> lexicalCategories) {
-        this.lexicalCategories = lexicalCategories;
-    }
 
 
-    public DefinitionInformation(String queriedWord) {
-        this.queriedWord = queriedWord;
-        lexicalCategories = new ArrayList<>();
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Queried word: " + this.queriedWord + "\n");
-        sb.append("Root word: " + this.rootWord + "\n");
-        if (phoneticSpelling != null)
-            sb.append(phoneticSpelling + "\n");
-        if (etymologies != null && ! etymologies.equals(""))
-            sb.append("Origin: " + etymologies + "\n");
-        for (LexicalCategory lc :
-                lexicalCategories) {
-            sb.append(lc.toString());
-        }
-        return sb.toString();
-    }
-}

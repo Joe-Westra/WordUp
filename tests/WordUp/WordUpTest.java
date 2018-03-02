@@ -27,7 +27,7 @@ class WordUpTest {
 
     @Test
     void fakeWordsGetAppropriateResponseCode() {
-        //TODO: Refactoring now makes this throw an exception prior to the response code being evaluated.
+        //Refactoring now makes this throw an exception prior to the response code being evaluated.
         WordUp wu = new WordUp("asdf");
         assertEquals(404, wu.getInflectionResponseCode());
     }
@@ -90,9 +90,9 @@ class WordUpTest {
         WordUp wu = new WordUp("dumping");
         assertEquals("Queried word: dumping\n" +
                         "Root word: dump\n" +
+                        "Phonetic Spelling: dʌmp\n" +
                         "Origin: Middle English: perhaps from Old Norse; related to Danish dumpe and Norwegian dumpa ‘fall suddenly’ (the original sense in English); in later use partly imitative; compare with thump\n" +
                         "Category: Noun\n" +
-                        "Definition: null\n" +
                         "Definition: a site for depositing rubbish.\n" +
                         "Definition: a heap of rubbish left at a dump.\n" +
                         "Definition: a place where a particular kind of waste, especially dangerous waste, is left\n" +
@@ -106,7 +106,6 @@ class WordUpTest {
                         "Definition: an act of defecation.\n" +
                         "\n" +
                         "Category: Verb\n" +
-                        "Definition: null\n" +
                         "Definition: deposit or dispose of (rubbish, waste, or unwanted material), typically in a careless or hurried way\n" +
                         "\t'trucks dumped 1,900 tons of refuse here'\n" +
                         "Definition: abandon (something) hurriedly in order to make an escape\n" +
@@ -124,4 +123,9 @@ class WordUpTest {
                         "\n",
                 wu.getDefinition().toString());
     }
+
+/*    @Test
+    void fourOfourErrorsPromptForANewSpelling(){ //or automatically offer spelling corrections
+
+    }*/
 }
