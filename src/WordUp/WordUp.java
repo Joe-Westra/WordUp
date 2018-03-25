@@ -10,7 +10,8 @@ import java.util.Iterator;
 import java.util.List;
 import com.google.gson.*;
 import javax.net.ssl.HttpsURLConnection;
-
+//TODO: Implement spell correction
+//TODO: If API connection attempt fails, try again x amount of
 //TODO: OPTIONAL: Change the way that examples in definitions are stored.  An array would be more appropriate.
 public class WordUp {
     private static OxfordAPIInfo api;
@@ -26,6 +27,8 @@ public class WordUp {
         this.deriveDefinition();
     }
 
+
+
     public static void main(String[] args) {
         String word = "testing";
         if(args.length > 0){
@@ -35,6 +38,8 @@ public class WordUp {
         WordUp w = new WordUp(word);
         System.out.println(w.getDefinition().toString());
     }
+
+
 
     public DefinitionInformation determineDefinition(DefinitionInformation def) {
         int responseCode;
@@ -51,6 +56,8 @@ public class WordUp {
         }
         return definition;
     }
+
+
 
     public String determineBaseWord(String word) {
         int responseCode;
@@ -75,11 +82,15 @@ public class WordUp {
         return baseWord;
     }
 
+
+
     private void shriekAndDie(HttpsURLConnection connection, IOException e) {
         e.printStackTrace();
         connection.disconnect();
         System.exit(-1);
     }
+
+
 
     /*
     THIS IS SHIT CODE
@@ -92,6 +103,8 @@ public class WordUp {
         return def;
     }
 
+
+
     private List<LexicalCategory> fetchDefinitions(JsonObject rootJSONObject) {
         List<LexicalCategory> senses;
         JsonObject lexicalEntries = traverseAPI(rootJSONObject, "results");
@@ -100,6 +113,8 @@ public class WordUp {
         senses = getEachLexicalCategory(lexicalEntries);
         return senses;
     }
+
+
 
     private List<LexicalCategory> getEachLexicalCategory(JsonObject lexicalEntries) {
         List<LexicalCategory> lc = new ArrayList<>();
@@ -113,6 +128,8 @@ public class WordUp {
         return lc;
     }
 
+
+
     private PossibleDefinition getEachEntry(JsonObject jo) {
         PossibleDefinition sense = new PossibleDefinition();
         Iterator<JsonElement> it = jo.get("entries").getAsJsonArray().iterator();
@@ -122,6 +139,8 @@ public class WordUp {
         }
         return sense;
     }
+
+
 
     private List<PossibleDefinition> getEachSense(JsonObject jo) {
         List<PossibleDefinition> senses = new ArrayList<>();
@@ -148,6 +167,8 @@ public class WordUp {
         return subsenses;
     }
 
+
+
     /**
      * extracts a definition and example from a JsonObject if the member elements exist, or uses 'null' values otherwise.
      * @param definitionJO
@@ -163,6 +184,8 @@ public class WordUp {
         return new PossibleDefinition(d, e);
     }
 
+
+
     /**
      * Extracts all 'examples' from a JsonObject, concatenating them into one string.
      * @param jo
@@ -177,6 +200,8 @@ public class WordUp {
         return examples.toString();
     }
 
+
+
     /**
      * This method walks through an unspecified amount of levels of the API's JSON response.
      * @param rootJSONObject
@@ -190,6 +215,7 @@ public class WordUp {
         }
         return j;
     }
+
 
 
     /**
@@ -210,6 +236,8 @@ public class WordUp {
         return ety;
     }
 
+
+
     private String fetchPhoneticSpelling(JsonObject rootJSONObject) {
         String phoneSpell = "";
         String[] path = {"results", "lexicalEntries", "pronunciations"};
@@ -219,6 +247,9 @@ public class WordUp {
         }
         return phoneSpell;
     }
+
+
+
     /**
      * Attempts to connect to the Oxford API with the supplied app_id and app_key.
      * This method is used for determining both the definition and the lemma of the queried word.
@@ -241,11 +272,15 @@ public class WordUp {
         }
     }
 
+
+
     public String retrieveBaseWord(JsonObject jo) {
         String[] path = {"results", "lexicalEntries", "inflectionOf"};
         String base = traverseAPI(jo, path).get("text").toString();
         return base.substring(1, base.length() - 1); //remove quotations
     }
+
+
 
     private JsonObject getURLResponse(HttpsURLConnection connection) {
         try {
@@ -271,6 +306,8 @@ public class WordUp {
         return responseCode;
     }
 
+
+
     public int getDefinitionResponseCode() {
         int responseCode = -1;
         try {
@@ -281,22 +318,30 @@ public class WordUp {
         return responseCode;
     }
 
+
+
     public DefinitionInformation getDefinition() {
         return definition;
     }
 
-    public String getBaseWord() {
-        return this.definition.getRootWord();
+
+    public String getWord() {
+        return this.definition.getQueriedWord();
     }
+
+
+    public String getBaseWord() { return this.definition.getRootWord(); }
 
 
     public void deriveDefinition() {
         this.definition = determineDefinition(this.definition);
     }
 
+
     public void deriveBaseWord() {
         this.definition.setRootWord(determineBaseWord(this.definition.getQueriedWord()));
     }
+
 
     public List<PossibleDefinition> getSubsenses() {
 
@@ -309,14 +354,10 @@ public class WordUp {
             while (subsense.hasNext()) {
                 pd.add(subsense.next());
             }
-            //    }
         }
         return pd;
     }
 
-    public String getWord() {
-        return this.definition.getQueriedWord();
-    }
 }
 
 class OxfordAPIInfo {
