@@ -20,11 +20,13 @@ class WordUpTest {
         assertEquals("testing", w.getWord());
     }
 
+    //TODO: refactor to have an error thrown instead.
     @Test
     void getsResponseFromInflectionAPI() {
         assertEquals(200, w.getInflectionResponseCode());
     }
 
+    //TODO: refactor to have an error thrown instead.
     @Test
     void fakeWordsGetAppropriateResponseCode() {
         //Refactoring now makes this throw an exception prior to the response code being evaluated.
@@ -39,6 +41,7 @@ class WordUpTest {
         assertEquals("dump", wy.getBaseWord());
     }
 
+    //TODO: refactor to have an error thrown instead.
     @Test
     void baseWordProvidesAValidDictionaryQuery() {
         assertEquals(200, w.getDefinitionResponseCode());

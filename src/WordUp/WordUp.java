@@ -14,7 +14,6 @@ import javax.net.ssl.HttpsURLConnection;
 //TODO: If API connection attempt fails, try again x amount of
 //TODO: OPTIONAL: Change the way that examples in definitions are stored.  An array would be more appropriate.
 public class WordUp {
-    private static OxfordAPIInfo api;
     private DefinitionInformation definition;
     private HttpsURLConnection inflectionConnection;
     private HttpsURLConnection definitionConnection;
@@ -22,7 +21,6 @@ public class WordUp {
 
     public WordUp(String word) {
         definition = new DefinitionInformation(word);
-        api = new OxfordAPIInfo();
         this.deriveBaseWord();
         this.deriveDefinition();
     }
@@ -42,13 +40,14 @@ public class WordUp {
 
 
     public DefinitionInformation determineDefinition(DefinitionInformation def) {
-        int responseCode;
         DefinitionInformation definition = null;
-        definitionConnection = getConnection("entries",def.getRootWord());
+        int responseCode;
         try {
+            OxfordFetcher oxfordAPICommunicator = new OxfordFetcher("entries", def.getRootWord());
+            definitionConnection = oxfordAPICommunicator.getConnection();
             responseCode = definitionConnection.getResponseCode();
             if (responseCode == 200) {
-                JsonObject JSONResponse = getURLResponse(definitionConnection);
+                JsonObject JSONResponse = oxfordAPICommunicator.getRootJsonObject();
                 definition = retrieveDefinition(def, JSONResponse);
             }
         } catch (IOException e) {
@@ -58,21 +57,21 @@ public class WordUp {
     }
 
 
-
+    /**
+     * Queries the 'inflections' API of the Oxford dictionary.
+     * This API takes a word and determines the root of the word.
+     * Only these root words are usable for definition queries from the API.
+     * @param word the raw word that a definition is saught for
+     * @return the base word of the user-queried word
+     */
     public String determineBaseWord(String word) {
-        int responseCode;
-
         String baseWord = "";
-        inflectionConnection = getConnection("inflections", word.toLowerCase());
         try {
-            responseCode = inflectionConnection.getResponseCode();
-            if (responseCode == 200) {
-                JsonObject JSONResponse = getURLResponse(inflectionConnection);
-                baseWord = retrieveBaseWord(JSONResponse);
-            } else {
-                System.out.println("error....\n" +
-                        "Response code: " + responseCode);
-            }
+            // Query the 'inflections' API from oxfords
+            OxfordFetcher oxfordAPICommunicator = new OxfordFetcher("inflections", word.toLowerCase());
+            inflectionConnection = oxfordAPICommunicator.getConnection();
+            JsonObject JSONResponse = oxfordAPICommunicator.getRootJsonObject();
+            baseWord = retrieveBaseWord(JSONResponse);
         } catch (UnknownHostException exception) {
             System.out.println("Please check your internet connection and try again.");
             shriekAndDie(inflectionConnection, exception);
@@ -97,10 +96,12 @@ public class WordUp {
      It is not modular at all.  It's just changing the def passed in.TODO: FIX IT!
      */
     private DefinitionInformation retrieveDefinition(DefinitionInformation def, JsonObject rootJSONObject) {
-        def.setEtymologies(fetchEtymologies(rootJSONObject));
-        def.setPhoneticSpelling(fetchPhoneticSpelling(rootJSONObject));
-        def.setLexicalCategories(fetchDefinitions(rootJSONObject));
-        return def;
+        DefinitionInformation definition = def;// new DefinitionInformation();
+        definition.setRootWord(def.getRootWord());
+        definition.setEtymologies(fetchEtymologies(rootJSONObject));
+        definition.setPhoneticSpelling(fetchPhoneticSpelling(rootJSONObject));
+        definition.setLexicalCategories(fetchDefinitions(rootJSONObject));
+        return definition;
     }
 
 
@@ -250,48 +251,10 @@ public class WordUp {
 
 
 
-    /**
-     * Attempts to connect to the Oxford API with the supplied app_id and app_key.
-     * This method is used for determining both the definition and the lemma of the queried word.
-     * @param type
-     * @param word
-     * @return
-     */
-    private HttpsURLConnection getConnection(String type, String word) {
-        try {
-            URL url = new URL(api.BASE_URL + "/" + type + "/en/" + word);
-            HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
-            connection.setRequestProperty("Accept", "application/json");
-            connection.setRequestProperty("app_id", api.APP_ID);
-            connection.setRequestProperty("app_key", api.APP_KEY);
-            return connection;
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.exit(-1);
-            return null;
-        }
-    }
-
-
-
     public String retrieveBaseWord(JsonObject jo) {
         String[] path = {"results", "lexicalEntries", "inflectionOf"};
         String base = traverseAPI(jo, path).get("text").toString();
         return base.substring(1, base.length() - 1); //remove quotations
-    }
-
-
-
-    private JsonObject getURLResponse(HttpsURLConnection connection) {
-        try {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            JsonParser jp = new JsonParser();
-            JsonElement je = jp.parse(reader);
-            return je.getAsJsonObject();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
     }
 
 
@@ -358,12 +321,6 @@ public class WordUp {
         return pd;
     }
 
-}
-
-class OxfordAPIInfo {
-    final String BASE_URL = "https://od-api.oxforddictionaries.com/api/v1";
-    final String APP_ID = "3f6b9965";
-    final String APP_KEY = "54a6ca12f6ef562c890038e2d051fc5c";
 }
 
 

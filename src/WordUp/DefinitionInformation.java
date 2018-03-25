@@ -15,6 +15,11 @@ public class DefinitionInformation {
         return queriedWord;
     }
 
+
+    public void setQueriedWord(String queriedWord) {
+        this.queriedWord = queriedWord;
+    }
+
     public String getRootWord() {
         return rootWord;
     }
@@ -37,6 +42,10 @@ public class DefinitionInformation {
 
     public void setLexicalCategories(List<LexicalCategory> lexicalCategories) {
         this.lexicalCategories = lexicalCategories;
+    }
+
+    public DefinitionInformation(){
+        this("");
     }
 
     public DefinitionInformation(String queriedWord) {
