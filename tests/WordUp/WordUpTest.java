@@ -20,32 +20,15 @@ class WordUpTest {
         assertEquals("testing", w.getWord());
     }
 
-    //TODO: refactor to have an error thrown instead.
-    @Test
-    void getsResponseFromInflectionAPI() {
-        assertEquals(200, w.getInflectionResponseCode());
-    }
-
-    //TODO: refactor to have an error thrown instead.
-    @Test
-    void fakeWordsGetAppropriateResponseCode() {
-        //Refactoring now makes this throw an exception prior to the response code being evaluated.
-        WordUp wu = new WordUp("asdf");
-        assertEquals(404, wu.getInflectionResponseCode());
-    }
 
     @Test
     void properRootWordsAreIdentified() {
         WordUp wy = new WordUp("dumping");
-        //wy.deriveBaseWord();
         assertEquals("dump", wy.getBaseWord());
     }
 
     //TODO: refactor to have an error thrown instead.
-    @Test
-    void baseWordProvidesAValidDictionaryQuery() {
-        assertEquals(200, w.getDefinitionResponseCode());
-    }
+
 
     @Test
     void definitionIsNotNull() {
@@ -127,8 +110,4 @@ class WordUpTest {
                 wu.getDefinition().toString());
     }
 
-/*    @Test
-    void fourOfourErrorsPromptForANewSpelling(){ //or automatically offer spelling corrections
-
-    }*/
 }

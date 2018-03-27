@@ -45,14 +45,18 @@ public class OxfordFetcher {
      * @param connection
      * @return
      */
-    private JsonObject getRootJsonObject(HttpsURLConnection connection) throws IOException{
-        if (connection.getResponseCode() == 202){
+    private JsonObject getRootJsonObject(HttpsURLConnection connection) throws NullPointerException, IOException{
+        int responseCode = connection.getResponseCode();
+        if (responseCode == 200){
             BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             JsonParser jp = new JsonParser();
             JsonElement je = (jp.parse(br));
             return je.getAsJsonObject();
-        }else{
-            throw new IOException("Non-202 response: " + connection.getResponseCode());
+        }else if (responseCode == 404){
+            throw new NullPointerException("Non-200 response: " + responseCode);
+
+        }else {
+            throw new IOException("Non-200 response: " + responseCode);
         }
     }
 
