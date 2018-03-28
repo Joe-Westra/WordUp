@@ -1,9 +1,7 @@
 package WordUp;
 
-import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URL;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -12,17 +10,17 @@ import com.google.gson.*;
 import javax.net.ssl.HttpsURLConnection;
 //TODO: Implement spell correction
 //TODO: If API connection attempt fails, try again x amount of
-//TODO: OPTIONAL: Change the way that examples in definitions are stored.  An array would be more appropriate.
+//TODO: OPTIONAL: Change the way that examples in definitions are stored.  An array would be more appropriate for database insertion and retrieval.
+//TODO: Implement a database!
 public class WordUp {
-    private DefinitionInformation definition;
-    private HttpsURLConnection inflectionConnection;
-    private HttpsURLConnection definitionConnection;
+    private String queriedWord, rootWord;
+    private DefinitionInformation definition;  //contains all the information of a retrieved definition.
 
 
     public WordUp(String word) {
-        definition = new DefinitionInformation(word);
-        this.deriveBaseWord();
-        this.deriveDefinition();
+        queriedWord = word;
+        rootWord = determineBaseWord(queriedWord);
+        definition = determineDefinition(queriedWord, rootWord);
     }
 
 
@@ -39,16 +37,18 @@ public class WordUp {
 
 
 
-    public DefinitionInformation determineDefinition(DefinitionInformation def) {
+    public DefinitionInformation determineDefinition(String queriedWord, String baseWord) {
         DefinitionInformation definition = null;
         int responseCode;
+        HttpsURLConnection definitionConnection = null;
         try {
-            OxfordFetcher oxfordAPICommunicator = new OxfordFetcher("entries", def.getRootWord());
+            String apiQueryType = "entries";
+            OxfordFetcher oxfordAPICommunicator = new OxfordFetcher(apiQueryType, baseWord);
             definitionConnection = oxfordAPICommunicator.getConnection();
             responseCode = definitionConnection.getResponseCode();
             if (responseCode == 200) {
                 JsonObject JSONResponse = oxfordAPICommunicator.getRootJsonObject();
-                definition = retrieveDefinition(def, JSONResponse);
+                definition = retrieveDefinition(queriedWord, baseWord, JSONResponse);
             }
         } catch (IOException e) {
             shriekAndDie(definitionConnection, e);
@@ -66,15 +66,29 @@ public class WordUp {
      */
     public String determineBaseWord(String word) {
         String baseWord = "";
+        HttpsURLConnection inflectionConnection = null;
         try {
             // Query the 'inflections' API from oxfords
-            OxfordFetcher oxfordAPICommunicator = new OxfordFetcher("inflections", word.toLowerCase());
+            String apiQueryType = "inflections";
+            OxfordFetcher oxfordAPICommunicator = new OxfordFetcher(apiQueryType, word.toLowerCase());
             inflectionConnection = oxfordAPICommunicator.getConnection();
+
+            // Retrieve the JSON response and parse as a gson.JsonObject
             JsonObject JSONResponse = oxfordAPICommunicator.getRootJsonObject();
+
+            // From the JsonObject, fetch the root form of the queried word
             baseWord = retrieveBaseWord(JSONResponse);
+
         } catch (UnknownHostException exception) {
-            System.out.println("Please check your internet connection and try again.");
-            shriekAndDie(inflectionConnection, exception);
+            System.out.println("Please check your internet connection and try again, " +
+                    "the IP address of the Oxford Dictionary could not be determined.");
+            inflectionConnection.disconnect();
+            System.exit(-1);
+        } catch (FileNotFoundException exception){
+            System.out.println("No root word for queried word.  Please check spelling.");
+            inflectionConnection.disconnect();
+            System.exit(-1);
+            //TODO: implement spell check!
         } catch (IOException e) {
             shriekAndDie(inflectionConnection, e);
         }
@@ -82,7 +96,12 @@ public class WordUp {
     }
 
 
-
+    /**
+     * Convenience method for closing any connections whose manipulation incurs an error.
+     * Error stack trace is printed before the program exits with non-zero error code.
+     * @param connection the HTTP connection to close
+     * @param e the error thrown
+     */
     private void shriekAndDie(HttpsURLConnection connection, IOException e) {
         e.printStackTrace();
         connection.disconnect();
@@ -90,17 +109,27 @@ public class WordUp {
     }
 
 
-
-    /*
-    THIS IS SHIT CODE
-     It is not modular at all.  It's just changing the def passed in.TODO: FIX IT!
+    /**
+     * Delegates the majority of the work for this class.
+     * Saves the queried word and root word into a new DefinitionInformation object.
+     * Definition information is extracted from the root JsonObject p
+     *
+     * @param queriedWord the original queried word
+     * @param rootWord the extracted root word
+     * @param rootJSONObject the root level gson.JsonObject
+     * @return a DefinitionInformation object containing all relevant information.
      */
-    private DefinitionInformation retrieveDefinition(DefinitionInformation def, JsonObject rootJSONObject) {
-        DefinitionInformation definition = def;// new DefinitionInformation();
-        definition.setRootWord(def.getRootWord());
+    private DefinitionInformation retrieveDefinition(String queriedWord, String rootWord, JsonObject rootJSONObject) {
+        //TODO: query database for root word before accessing the API.
+        DefinitionInformation definition = new DefinitionInformation();
+        definition.setQueriedWord(queriedWord);
+        definition.setRootWord(rootWord);
+
+        //parse the rootJSONObject for additional definition information
         definition.setEtymologies(fetchEtymologies(rootJSONObject));
         definition.setPhoneticSpelling(fetchPhoneticSpelling(rootJSONObject));
         definition.setLexicalCategories(fetchDefinitions(rootJSONObject));
+
         return definition;
     }
 
@@ -123,7 +152,7 @@ public class WordUp {
         while (it.hasNext()) {
             JsonObject jo = it.next().getAsJsonObject();
             String category = jo.get("lexicalCategory").getAsString();
-            PossibleDefinition pd = getEachEntry(jo);
+            List<PossibleDefinition> pd = getEachEntry(jo);
             lc.add(new LexicalCategory(category, pd));
         }
         return lc;
@@ -131,14 +160,14 @@ public class WordUp {
 
 
 
-    private PossibleDefinition getEachEntry(JsonObject jo) {
-        PossibleDefinition sense = new PossibleDefinition();
+    private List<PossibleDefinition> getEachEntry(JsonObject jo) {
+        List<PossibleDefinition> senses = new ArrayList<>();
         Iterator<JsonElement> it = jo.get("entries").getAsJsonArray().iterator();
         while (it.hasNext()) {
             JsonObject j = it.next().getAsJsonObject();
-            sense.addSubSenses(getEachSense(j));
+            senses.addAll(getEachSense(j));
         }
-        return sense;
+        return senses;
     }
 
 
@@ -171,7 +200,7 @@ public class WordUp {
 
 
     /**
-     * extracts a definition and example from a JsonObject if the member elements exist, or uses 'null' values otherwise.
+     * Extracts a definition and example from a JsonObject if the member elements exist, or uses 'null' values otherwise.
      * @param definitionJO
      * @return a PossibleDefinition with the extracted values
      */
@@ -179,7 +208,9 @@ public class WordUp {
         String d = null;
         String e = null;
         if (definitionJO.has("definitions"))
-            d = definitionJO.get("definitions").getAsJsonArray().get(0).getAsString(); //always seems to be a lone definition.
+            d = definitionJO.get("definitions").getAsJsonArray().get(0).getAsString(); //always seems to be a lone definition but this may be incorrect.  TODO: fix this assumption
+        else
+            System.out.println("why parse a definition if there is none... hmmmm?");
         if (definitionJO.has("examples"))
             e = getExamples(definitionJO);
         return new PossibleDefinition(d, e);
@@ -258,52 +289,14 @@ public class WordUp {
     }
 
 
-
-    public int getInflectionResponseCode() {
-        int responseCode = -1;
-        try {
-            responseCode = inflectionConnection.getResponseCode();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return responseCode;
-    }
+    public DefinitionInformation getDefinition() { return definition; }
 
 
-
-    public int getDefinitionResponseCode() {
-        int responseCode = -1;
-        try {
-            responseCode = definitionConnection.getResponseCode();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return responseCode;
-    }
+    public String getWord() { return this.definition.getQueriedWord(); }
 
 
+    public String getRootWord() { return this.definition.getRootWord(); }
 
-    public DefinitionInformation getDefinition() {
-        return definition;
-    }
-
-
-    public String getWord() {
-        return this.definition.getQueriedWord();
-    }
-
-
-    public String getBaseWord() { return this.definition.getRootWord(); }
-
-
-    public void deriveDefinition() {
-        this.definition = determineDefinition(this.definition);
-    }
-
-
-    public void deriveBaseWord() {
-        this.definition.setRootWord(determineBaseWord(this.definition.getQueriedWord()));
-    }
 
 
     public List<PossibleDefinition> getSubsenses() {
@@ -311,9 +304,8 @@ public class WordUp {
         Iterator<LexicalCategory> lc = this.definition.getLexicalCategories().iterator();
         List<PossibleDefinition> pd = new ArrayList<>();
         while (lc.hasNext()) {
-            PossibleDefinition def = lc.next().getSense();
-            pd.add(def);//add the root definition (sense)
-            Iterator<PossibleDefinition> subsense = def.getSubsenses().iterator();
+            List<PossibleDefinition> def = lc.next().getSenses();
+            Iterator<PossibleDefinition> subsense = def.iterator();
             while (subsense.hasNext()) {
                 pd.add(subsense.next());
             }

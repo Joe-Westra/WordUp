@@ -18,10 +18,6 @@ public class PossibleDefinition {
         subsenses = new ArrayList<>();
     }
 
-    public List<PossibleDefinition> getSubsenses() {
-        return subsenses;
-    }
-
     public void addSubSense(PossibleDefinition definition) {
         subsenses.add(definition);
     }
@@ -44,7 +40,7 @@ public class PossibleDefinition {
                     subsenses) {
                 sb.append(pd.toString());
             }
-        sb.append("");//newline
+        //sb.append("");//newline
         return sb.toString();
     }
 }

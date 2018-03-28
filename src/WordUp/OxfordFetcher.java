@@ -17,21 +17,11 @@ import java.io.InputStreamReader;
 import java.net.URL;
 
 
-
 public class OxfordFetcher {
     final static String BASE_URL = "https://od-api.oxforddictionaries.com/api/v1";
     final static String APP_ID = "3f6b9965";
     final static String APP_KEY = "54a6ca12f6ef562c890038e2d051fc5c";
     private HttpsURLConnection connection;
-
-    public HttpsURLConnection getConnection() {
-        return connection;
-    }
-
-    public JsonObject getRootJsonObject() {
-        return rootJsonObject;
-    }
-
     private JsonObject rootJsonObject;
 
 
@@ -40,25 +30,21 @@ public class OxfordFetcher {
         rootJsonObject = getRootJsonObject(connection);
     }
 
+
+
     /**
      * Parses a gson.JsonObject from a given HttpsUrlConnection response
      * @param connection
      * @return
      */
-    private JsonObject getRootJsonObject(HttpsURLConnection connection) throws NullPointerException, IOException{
-        int responseCode = connection.getResponseCode();
-        if (responseCode == 200){
-            BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            JsonParser jp = new JsonParser();
-            JsonElement je = (jp.parse(br));
-            return je.getAsJsonObject();
-        }else if (responseCode == 404){
-            throw new NullPointerException("Non-200 response: " + responseCode);
-
-        }else {
-            throw new IOException("Non-200 response: " + responseCode);
-        }
+    private JsonObject getRootJsonObject(HttpsURLConnection connection) throws NullPointerException, IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+        JsonParser jp = new JsonParser();
+        JsonElement je = (jp.parse(br));
+        return je.getAsJsonObject();
     }
+
+
 
 
     /**
@@ -80,7 +66,12 @@ public class OxfordFetcher {
             //TODO: try again... spell check, dns error?  bad gateway?
             e.printStackTrace();
             System.exit(-1);
-            throw new IOException();
+            throw new IOException("Typo?  DNS error?  Bad gateway?  No internet connection?");
         }
     }
+
+
+    public HttpsURLConnection getConnection() { return connection; }
+
+    public JsonObject getRootJsonObject() { return rootJsonObject; }
 }

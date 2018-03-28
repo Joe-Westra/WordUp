@@ -24,7 +24,7 @@ class WordUpTest {
     @Test
     void properRootWordsAreIdentified() {
         WordUp wy = new WordUp("dumping");
-        assertEquals("dump", wy.getBaseWord());
+        assertEquals("dump", wy.getRootWord());
     }
 
     //TODO: refactor to have an error thrown instead.
@@ -85,10 +85,13 @@ class WordUpTest {
                         "\t'a nuclear waste dump'\n" +
                         "Definition: a place where weapons and other military equipment is stored\n" +
                         "\t'an ammunitions dump'\n" +
+                        "\n" +
                         "Definition: an unpleasant or dreary place\n" +
                         "\t'why are you living in a dump like this?'\n" +
+                        "\n" +
                         "Definition: an act of copying stored data to a different location, performed typically as a protection against loss.\n" +
                         "Definition: a printout or list of the contents of a computer's memory, occurring typically after a system failure.\n" +
+                        "\n" +
                         "Definition: an act of defecation.\n" +
                         "\n" +
                         "Category: Verb\n" +
@@ -104,6 +107,7 @@ class WordUpTest {
                         "\t'these countries have been dumping cheap fertilizers on the UK market'\n" +
                         "Definition: sell off (assets) rapidly\n" +
                         "\t'investors dumped shares in scores of other consumer-goods firms'\n" +
+                        "\n" +
                         "Definition: copy (stored data) to a different location, especially so as to protect against loss.\n" +
                         "Definition: print out or list the contents of (a store), especially after a system failure.\n" +
                         "\n",

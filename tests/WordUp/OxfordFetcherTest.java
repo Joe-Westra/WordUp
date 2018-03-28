@@ -17,18 +17,8 @@ class OxfordFetcherTest {
 
 
     @Test
-    void getsResponseFromInflectionAPI() {
-        assertEquals(200, w.getInflectionResponseCode());
-    }
-
-    @Test
     void fakeWordsGetAppropriateResponseCode() {
         assertThrows(NullPointerException.class, () -> new WordUp("bunk_word"));
-    }
-
-    @Test
-    void baseWordProvidesAValidDictionaryQuery() {
-        assertEquals(200, w.getDefinitionResponseCode());
     }
 
     /*    @Test
