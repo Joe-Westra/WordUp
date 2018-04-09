@@ -5,16 +5,13 @@ import java.util.List;
 
 public class PossibleDefinition {
     private String definition;
-    private String example;
+    private List<String> examples;
     private List<PossibleDefinition> subsenses;
 
-    public PossibleDefinition() {
-        this(null, null);
-    }
 
-    public PossibleDefinition(String definition, String example) {
+    public PossibleDefinition(String definition, List<String> examples) {
         this.definition = definition;
-        this.example = example;
+        this.examples = examples;
         subsenses = new ArrayList<>();
     }
 
@@ -33,14 +30,14 @@ public class PossibleDefinition {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Definition: " + this.definition + "\n");
-        if (example != null)
-            sb.append(example);
+        if (! examples.isEmpty())
+            for (String example : examples)
+                sb.append("\t'" + example + "'\n");
+
         if (!this.subsenses.isEmpty())
-            for (PossibleDefinition pd :
-                    subsenses) {
+            for (PossibleDefinition pd : subsenses)
                 sb.append(pd.toString());
-            }
-        //sb.append("");//newline
+
         return sb.toString();
     }
 }

@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16db3b39-4352-4287-8e7c-b18d2edcf8ef" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/WordUp/MySQLConnector.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/tests/WordUp/MySQLConnectorTest.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/WordUp.iml" afterPath="$PROJECT_DIR$/WordUp.iml" />
+      <change beforePath="$PROJECT_DIR$/DB_Schema" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DB_Schema.dia" afterPath="$PROJECT_DIR$/DB_Schema.dia" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change beforePath="$PROJECT_DIR$/WordUp.iml2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/WordUp/MySQLConnector.java" afterPath="$PROJECT_DIR$/src/WordUp/MySQLConnector.java" />
+      <change beforePath="$PROJECT_DIR$/src/WordUp/PossibleDefinition.java" afterPath="$PROJECT_DIR$/src/WordUp/PossibleDefinition.java" />
+      <change beforePath="$PROJECT_DIR$/src/WordUp/WordUp.java" afterPath="$PROJECT_DIR$/src/WordUp/WordUp.java" />
+      <change beforePath="$PROJECT_DIR$/tests/WordUp/MySQLConnectorTest.java" afterPath="$PROJECT_DIR$/tests/WordUp/MySQLConnectorTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,17 +46,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="WordUp.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WordUp.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/WordUp/WordUp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="16" column="41" lean-forward="false" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+            <state relative-caret-position="-72">
+              <caret line="222" column="68" lean-forward="false" selection-start-line="222" selection-start-column="68" selection-end-line="222" selection-end-column="68" />
               <folding>
                 <element signature="method#main#0;class#WordUp#0" expanded="false" />
+                <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
+                <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
+                <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+                <element signature="method#retrieveDefinition#0;class#WordUp#0" expanded="false" />
                 <element signature="method#fetchDefinitions#0;class#WordUp#0" expanded="false" />
+                <element signature="method#getEachLexicalCategory#0;class#WordUp#0" expanded="false" />
+                <element signature="method#getEachEntry#0;class#WordUp#0" expanded="false" />
                 <element signature="method#getEachSense#0;class#WordUp#0" expanded="false" />
-                <element signature="method#digestDefinitionIfPresent#0;class#WordUp#0" expanded="false" />
-                <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
+                <element signature="method#getEachSubsense#0;class#WordUp#0" expanded="false" />
                 <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
                 <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
                 <element signature="method#fetchPhoneticSpelling#0;class#WordUp#0" expanded="false" />
@@ -66,14 +75,17 @@
       <file leaf-file-name="MySQLConnector.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WordUp/MySQLConnector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="63" column="48" lean-forward="true" selection-start-line="63" selection-start-column="48" selection-end-line="63" selection-end-column="48" />
+            <state relative-caret-position="119">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="method#MySQLConnector#0;class#MySQLConnector#0" expanded="false" />
                 <element signature="method#getConnection#0;class#MySQLConnector#0" expanded="false" />
-                <marker date="1523225014868" expanded="true" signature="1649:1905" ph="create table... if" />
-                <marker date="1523225014868" expanded="true" signature="1998:2334" ph="create table... if" />
+                <marker date="1523301611475" expanded="true" signature="1661:1871" ph="create table... if" />
+                <marker date="1523301611475" expanded="true" signature="1997:2269" ph="create table... if" />
+                <marker date="1523301611475" expanded="true" signature="1997:3758" ph="create table... if" />
+                <marker date="1523301611475" expanded="true" signature="2396:2756" ph="create table... if" />
+                <marker date="1523301611475" expanded="true" signature="2879:3336" ph="create table... if" />
+                <marker date="1523301611475" expanded="true" signature="3460:3708" ph="create table... if" />
               </folding>
             </state>
           </provider>
@@ -89,7 +101,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="exampleresponse.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="exampleresponse.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/exampleresponse.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2533">
@@ -99,20 +111,53 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="PossibleDefinition.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/WordUp/PossibleDefinition.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WordUpTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/WordUp/WordUpTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-739">
+              <caret line="44" column="9" lean-forward="false" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="MySQLConnectorTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/WordUp/MySQLConnectorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="25" column="19" lean-forward="false" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+            <state relative-caret-position="408">
+              <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#285#286#0" expanded="true" />
-                <element signature="e#333#334#0" expanded="true" />
-                <element signature="e#379#380#0" expanded="true" />
-                <element signature="e#432#433#0" expanded="true" />
-                <element signature="e#474#475#0" expanded="true" />
-                <element signature="e#551#552#0" expanded="true" />
+                <element signature="e#254#255#0" expanded="true" />
+                <element signature="e#302#303#0" expanded="true" />
+                <element signature="e#348#349#0" expanded="true" />
+                <element signature="e#401#402#0" expanded="true" />
+                <element signature="e#453#454#0" expanded="true" />
+                <element signature="e#535#536#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="34">
+                <caret line="2" column="124" lean-forward="false" selection-start-line="2" selection-start-column="124" selection-end-line="2" selection-end-column="124" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -153,17 +198,17 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/tests/tests.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/WordUp/DefinitionInformation.java" />
         <option value="$PROJECT_DIR$/tests/WordUp/OxfordFetcherTest.java" />
         <option value="$PROJECT_DIR$/src/WordUp/OxfordFetcher.java" />
         <option value="$PROJECT_DIR$/src/WordUp/LexicalCategory.java" />
-        <option value="$PROJECT_DIR$/src/WordUp/WordUp.java" />
-        <option value="$PROJECT_DIR$/src/WordUp/PossibleDefinition.java" />
         <option value="$PROJECT_DIR$/tests/WordUp/WordUpTest.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/74682b29-7a93-410c-a96e-2dd5fc93e85d/console.sql" />
-        <option value="$PROJECT_DIR$/tests/WordUp/MySQLConnectorTest.java" />
         <option value="$PROJECT_DIR$/src/WordUp/MySQLConnector.java" />
+        <option value="$PROJECT_DIR$/src/WordUp/WordUp.java" />
+        <option value="$PROJECT_DIR$/src/WordUp/PossibleDefinition.java" />
+        <option value="$PROJECT_DIR$/tests/WordUp/MySQLConnectorTest.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -281,7 +326,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Android JUnit.MySQLConnectorTest">
+  <component name="RunManager" selected="JUnit.allTests">
     <configuration name="MySQLConnectorTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -859,44 +904,44 @@
       <workItem from="1522116649979" duration="11879000" />
       <workItem from="1522294229815" duration="27000" />
       <workItem from="1522718347420" duration="14706000" />
-      <workItem from="1523169412327" duration="6912000" />
+      <workItem from="1523169412327" duration="13432000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MySQLConnectorTest - 2018.04.06 at 07h 35m 44s.xml">
+    <history-entry file="MySQLConnectorTest - 2018.04.09 at 11h 53m 30s.xml">
       <configuration name="MySQLConnectorTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="MySQLConnectorTest - 2018.04.08 at 12h 56m 50s.xml">
+    <history-entry file="MySQLConnectorTest - 2018.04.09 at 11h 57m 55s.xml">
       <configuration name="MySQLConnectorTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="MySQLConnectorTest - 2018.04.08 at 13h 07m 20s.xml">
+    <history-entry file="MySQLConnectorTest - 2018.04.09 at 12h 06m 22s.xml">
       <configuration name="MySQLConnectorTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="MySQLConnectorTest - 2018.04.08 at 14h 26m 08s.xml">
+    <history-entry file="MySQLConnectorTest - 2018.04.09 at 12h 06m 39s.xml">
       <configuration name="MySQLConnectorTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="MySQLConnectorTest - 2018.04.08 at 14h 26m 28s.xml">
+    <history-entry file="MySQLConnectorTest - 2018.04.09 at 12h 14m 50s.xml">
       <configuration name="MySQLConnectorTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="MySQLConnectorTest - 2018.04.08 at 14h 27m 02s.xml">
+    <history-entry file="MySQLConnectorTest - 2018.04.09 at 12h 16m 49s.xml">
       <configuration name="MySQLConnectorTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="MySQLConnectorTest - 2018.04.08 at 14h 32m 20s.xml">
-      <configuration name="MySQLConnectorTest" configurationId="AndroidJUnit" />
+    <history-entry file="allTests - 2018.04.09 at 12h 21m 19s.xml">
+      <configuration name="allTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MySQLConnectorTest - 2018.04.08 at 14h 33m 10s.xml">
-      <configuration name="MySQLConnectorTest" configurationId="AndroidJUnit" />
+    <history-entry file="allTests - 2018.04.09 at 12h 29m 45s.xml">
+      <configuration name="allTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MySQLConnectorTest - 2018.04.08 at 15h 03m 40s.xml">
-      <configuration name="MySQLConnectorTest" configurationId="AndroidJUnit" />
+    <history-entry file="allTests - 2018.04.09 at 12h 31m 29s.xml">
+      <configuration name="allTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OxfordFetcherTest - 2018.04.03 at 19h 54m 57s.xml">
-      <configuration name="OxfordFetcherTest" configurationId="AndroidJUnit" />
+    <history-entry file="allTests - 2018.04.09 at 12h 32m 13s.xml">
+      <configuration name="allTests" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172420000" />
+    <option name="totallyTimeSpent" value="178940000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -908,7 +953,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="81" width="1372" height="690" extended-state="6" />
+    <frame x="-3" y="81" width="1926" height="1002" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -919,20 +964,21 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29590017" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29553264" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963374" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852387" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21033868" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25075528" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25026625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32646048" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2608213" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32976827" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21191294" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -941,7 +987,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963374" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32741398" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -988,7 +1033,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/tests/WordUp/MySQLConnectorTest.java</url>
-          <line>10</line>
+          <line>8</line>
           <properties />
           <option name="timeStamp" value="23" />
         </line-breakpoint>
@@ -1020,10 +1065,15 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#main#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
+            <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#retrieveDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchDefinitions#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachLexicalCategory#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachEntry#0;class#WordUp#0" expanded="false" />
             <element signature="method#getEachSense#0;class#WordUp#0" expanded="false" />
-            <element signature="method#digestDefinitionIfPresent#0;class#WordUp#0" expanded="false" />
-            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachSubsense#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchPhoneticSpelling#0;class#WordUp#0" expanded="false" />
@@ -1051,10 +1101,15 @@
           <caret line="258" column="62" lean-forward="false" selection-start-line="258" selection-start-column="62" selection-end-line="258" selection-end-column="62" />
           <folding>
             <element signature="method#main#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
+            <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#retrieveDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchDefinitions#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachLexicalCategory#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachEntry#0;class#WordUp#0" expanded="false" />
             <element signature="method#getEachSense#0;class#WordUp#0" expanded="false" />
-            <element signature="method#digestDefinitionIfPresent#0;class#WordUp#0" expanded="false" />
-            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachSubsense#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchPhoneticSpelling#0;class#WordUp#0" expanded="false" />
@@ -1092,10 +1147,15 @@
           <caret line="258" column="62" lean-forward="false" selection-start-line="258" selection-start-column="62" selection-end-line="258" selection-end-column="62" />
           <folding>
             <element signature="method#main#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
+            <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#retrieveDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchDefinitions#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachLexicalCategory#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachEntry#0;class#WordUp#0" expanded="false" />
             <element signature="method#getEachSense#0;class#WordUp#0" expanded="false" />
-            <element signature="method#digestDefinitionIfPresent#0;class#WordUp#0" expanded="false" />
-            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachSubsense#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchPhoneticSpelling#0;class#WordUp#0" expanded="false" />
@@ -1123,10 +1183,15 @@
           <caret line="258" column="62" lean-forward="false" selection-start-line="258" selection-start-column="62" selection-end-line="258" selection-end-column="62" />
           <folding>
             <element signature="method#main#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
+            <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#retrieveDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchDefinitions#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachLexicalCategory#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachEntry#0;class#WordUp#0" expanded="false" />
             <element signature="method#getEachSense#0;class#WordUp#0" expanded="false" />
-            <element signature="method#digestDefinitionIfPresent#0;class#WordUp#0" expanded="false" />
-            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachSubsense#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchPhoneticSpelling#0;class#WordUp#0" expanded="false" />
@@ -1154,10 +1219,15 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#main#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
+            <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#retrieveDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchDefinitions#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachLexicalCategory#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachEntry#0;class#WordUp#0" expanded="false" />
             <element signature="method#getEachSense#0;class#WordUp#0" expanded="false" />
-            <element signature="method#digestDefinitionIfPresent#0;class#WordUp#0" expanded="false" />
-            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachSubsense#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchPhoneticSpelling#0;class#WordUp#0" expanded="false" />
@@ -1185,10 +1255,15 @@
           <caret line="249" column="33" lean-forward="false" selection-start-line="249" selection-start-column="33" selection-end-line="249" selection-end-column="33" />
           <folding>
             <element signature="method#main#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
+            <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#retrieveDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchDefinitions#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachLexicalCategory#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachEntry#0;class#WordUp#0" expanded="false" />
             <element signature="method#getEachSense#0;class#WordUp#0" expanded="false" />
-            <element signature="method#digestDefinitionIfPresent#0;class#WordUp#0" expanded="false" />
-            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachSubsense#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchPhoneticSpelling#0;class#WordUp#0" expanded="false" />
@@ -1226,10 +1301,15 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#main#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
+            <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#retrieveDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchDefinitions#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachLexicalCategory#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachEntry#0;class#WordUp#0" expanded="false" />
             <element signature="method#getEachSense#0;class#WordUp#0" expanded="false" />
-            <element signature="method#digestDefinitionIfPresent#0;class#WordUp#0" expanded="false" />
-            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachSubsense#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchPhoneticSpelling#0;class#WordUp#0" expanded="false" />
@@ -1257,10 +1337,15 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#main#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
+            <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#retrieveDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchDefinitions#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachLexicalCategory#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachEntry#0;class#WordUp#0" expanded="false" />
             <element signature="method#getEachSense#0;class#WordUp#0" expanded="false" />
-            <element signature="method#digestDefinitionIfPresent#0;class#WordUp#0" expanded="false" />
-            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachSubsense#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchPhoneticSpelling#0;class#WordUp#0" expanded="false" />
@@ -1288,10 +1373,15 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#main#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
+            <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#retrieveDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchDefinitions#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachLexicalCategory#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachEntry#0;class#WordUp#0" expanded="false" />
             <element signature="method#getEachSense#0;class#WordUp#0" expanded="false" />
-            <element signature="method#digestDefinitionIfPresent#0;class#WordUp#0" expanded="false" />
-            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachSubsense#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchPhoneticSpelling#0;class#WordUp#0" expanded="false" />
@@ -1319,10 +1409,15 @@
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding>
             <element signature="method#main#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
+            <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#retrieveDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchDefinitions#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachLexicalCategory#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachEntry#0;class#WordUp#0" expanded="false" />
             <element signature="method#getEachSense#0;class#WordUp#0" expanded="false" />
-            <element signature="method#digestDefinitionIfPresent#0;class#WordUp#0" expanded="false" />
-            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachSubsense#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchPhoneticSpelling#0;class#WordUp#0" expanded="false" />
@@ -1338,10 +1433,15 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#main#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
+            <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#retrieveDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchDefinitions#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachLexicalCategory#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachEntry#0;class#WordUp#0" expanded="false" />
             <element signature="method#getEachSense#0;class#WordUp#0" expanded="false" />
-            <element signature="method#digestDefinitionIfPresent#0;class#WordUp#0" expanded="false" />
-            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachSubsense#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchPhoneticSpelling#0;class#WordUp#0" expanded="false" />
@@ -1357,10 +1457,15 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#main#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
+            <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#retrieveDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchDefinitions#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachLexicalCategory#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachEntry#0;class#WordUp#0" expanded="false" />
             <element signature="method#getEachSense#0;class#WordUp#0" expanded="false" />
-            <element signature="method#digestDefinitionIfPresent#0;class#WordUp#0" expanded="false" />
-            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachSubsense#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchPhoneticSpelling#0;class#WordUp#0" expanded="false" />
@@ -1376,10 +1481,15 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#main#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
+            <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#retrieveDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchDefinitions#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachLexicalCategory#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachEntry#0;class#WordUp#0" expanded="false" />
             <element signature="method#getEachSense#0;class#WordUp#0" expanded="false" />
-            <element signature="method#digestDefinitionIfPresent#0;class#WordUp#0" expanded="false" />
-            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachSubsense#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchPhoneticSpelling#0;class#WordUp#0" expanded="false" />
@@ -1396,10 +1506,15 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#main#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
+            <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#retrieveDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchDefinitions#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachLexicalCategory#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachEntry#0;class#WordUp#0" expanded="false" />
             <element signature="method#getEachSense#0;class#WordUp#0" expanded="false" />
-            <element signature="method#digestDefinitionIfPresent#0;class#WordUp#0" expanded="false" />
-            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachSubsense#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchPhoneticSpelling#0;class#WordUp#0" expanded="false" />
@@ -1502,28 +1617,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/WordUp/WordUpTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#660#661#0" expanded="false" />
-            <element signature="e#708#709#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="85">
-            <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/sql/Statement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1540,27 +1633,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WordUp/PossibleDefinition.java">
+    <entry file="file://$PROJECT_DIR$/exampleresponse.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        <state relative-caret-position="2533">
+          <caret line="149" column="71" lean-forward="false" selection-start-line="149" selection-start-column="71" selection-end-line="149" selection-end-column="71" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/WordUp/MySQLConnectorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="25" column="19" lean-forward="false" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#285#286#0" expanded="true" />
-            <element signature="e#333#334#0" expanded="true" />
-            <element signature="e#379#380#0" expanded="true" />
-            <element signature="e#432#433#0" expanded="true" />
-            <element signature="e#474#475#0" expanded="true" />
-            <element signature="e#551#552#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1572,44 +1649,87 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/WordUp/WordUpTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-739">
+          <caret line="44" column="9" lean-forward="false" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WordUp/PossibleDefinition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/WordUp/MySQLConnector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="63" column="48" lean-forward="true" selection-start-line="63" selection-start-column="48" selection-end-line="63" selection-end-column="48" />
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#MySQLConnector#0;class#MySQLConnector#0" expanded="false" />
             <element signature="method#getConnection#0;class#MySQLConnector#0" expanded="false" />
-            <marker date="1523225014868" expanded="true" signature="1649:1905" ph="create table... if" />
-            <marker date="1523225014868" expanded="true" signature="1998:2334" ph="create table... if" />
+            <marker date="1523301611475" expanded="true" signature="1661:1871" ph="create table... if" />
+            <marker date="1523301611475" expanded="true" signature="1997:2269" ph="create table... if" />
+            <marker date="1523301611475" expanded="true" signature="1997:3758" ph="create table... if" />
+            <marker date="1523301611475" expanded="true" signature="2396:2756" ph="create table... if" />
+            <marker date="1523301611475" expanded="true" signature="2879:3336" ph="create table... if" />
+            <marker date="1523301611475" expanded="true" signature="3460:3708" ph="create table... if" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/WordUp/MySQLConnectorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#254#255#0" expanded="true" />
+            <element signature="e#302#303#0" expanded="true" />
+            <element signature="e#348#349#0" expanded="true" />
+            <element signature="e#401#402#0" expanded="true" />
+            <element signature="e#453#454#0" expanded="true" />
+            <element signature="e#535#536#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="34">
+            <caret line="2" column="124" lean-forward="false" selection-start-line="2" selection-start-column="124" selection-end-line="2" selection-end-column="124" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WordUp/WordUp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="16" column="41" lean-forward="false" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+        <state relative-caret-position="-72">
+          <caret line="222" column="68" lean-forward="false" selection-start-line="222" selection-start-column="68" selection-end-line="222" selection-end-column="68" />
           <folding>
             <element signature="method#main#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineDefinition#0;class#WordUp#0" expanded="false" />
+            <element signature="method#determineBaseWord#0;class#WordUp#0" expanded="false" />
+            <element signature="method#shriekAndDie#0;class#WordUp#0" expanded="false" />
+            <element signature="method#retrieveDefinition#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchDefinitions#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachLexicalCategory#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachEntry#0;class#WordUp#0" expanded="false" />
             <element signature="method#getEachSense#0;class#WordUp#0" expanded="false" />
-            <element signature="method#digestDefinitionIfPresent#0;class#WordUp#0" expanded="false" />
-            <element signature="method#getExamples#0;class#WordUp#0" expanded="false" />
+            <element signature="method#getEachSubsense#0;class#WordUp#0" expanded="false" />
             <element signature="method#traverseAPI#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchEtymologies#0;class#WordUp#0" expanded="false" />
             <element signature="method#fetchPhoneticSpelling#0;class#WordUp#0" expanded="false" />
             <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#getSubsenses#0;class#WordUp#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exampleresponse.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2533">
-          <caret line="149" column="71" lean-forward="false" selection-start-line="149" selection-start-column="71" selection-end-line="149" selection-end-column="71" />
-          <folding />
         </state>
       </provider>
     </entry>

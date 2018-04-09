@@ -207,29 +207,30 @@ public class WordUp {
     private PossibleDefinition digestDefinitionIfPresent(JsonObject definitionJO) {
         String d = null;
         String e = null;
+        List<String> examples = new ArrayList<>();
         if (definitionJO.has("definitions"))
             d = definitionJO.get("definitions").getAsJsonArray().get(0).getAsString(); //always seems to be a lone definition but this may be incorrect.  TODO: fix this assumption
         else
             System.out.println("why parse a definition if there is none... hmmmm?");
         if (definitionJO.has("examples"))
-            e = getExamples(definitionJO);
-        return new PossibleDefinition(d, e);
+            examples = getExamples(definitionJO);
+        return new PossibleDefinition(d, examples);
     }
 
 
 
     /**
-     * Extracts all 'examples' from a JsonObject, concatenating them into one string.
+     * Extracts all 'examples' from a JsonObject, storing them in a list.
      * @param jo
-     * @return a formatted concatenation of all examples
+     * @return an ArrayList of all examples
      */
-    private String getExamples(JsonObject jo) {
-        StringBuilder examples = new StringBuilder();
+    private List<String> getExamples(JsonObject jo) {
+        List<String> examples = new ArrayList<>();
         JsonArray ja = jo.get("examples").getAsJsonArray();
         for (JsonElement je : ja) {
-            examples.append("\t'" + je.getAsJsonObject().get("text").getAsString() + "'\n");
+            examples.add(je.getAsJsonObject().get("text").getAsString());
         }
-        return examples.toString();
+        return examples;
     }
 
 

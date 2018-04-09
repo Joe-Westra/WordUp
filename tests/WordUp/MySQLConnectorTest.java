@@ -3,8 +3,6 @@ package WordUp;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.sql.SQLException;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -22,7 +20,7 @@ public class MySQLConnectorTest {
     }
 
     @Test
-    void containsSenseTable(){
-        assertTrue(connector.createTables(connector.getConnection()));
+    void createsAllTablesIfNotPresent(){
+        assertTrue(MySQLConnector.createTables(connector.getConnection()));
     }
 }
