@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PossibleDefinition {
+
     private String definition;
     private List<String> examples;
     private List<PossibleDefinition> subsenses;
@@ -40,4 +41,11 @@ public class PossibleDefinition {
 
         return sb.toString();
     }
+
+    public String getDefinition() { return definition; }
+
+    public List<String> getExamples() { return examples; }
+
+    public List<PossibleDefinition> getSubsenses() { return subsenses; }
+
 }

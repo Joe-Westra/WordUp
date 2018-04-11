@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16db3b39-4352-4287-8e7c-b18d2edcf8ef" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/DB_Schema" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/DB_Schema.dia" afterPath="$PROJECT_DIR$/DB_Schema.dia" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/WordUp.iml2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/WordUp/DefinitionInformation.java" afterPath="$PROJECT_DIR$/src/WordUp/DefinitionInformation.java" />
+      <change beforePath="$PROJECT_DIR$/src/WordUp/LexicalCategory.java" afterPath="$PROJECT_DIR$/src/WordUp/LexicalCategory.java" />
       <change beforePath="$PROJECT_DIR$/src/WordUp/MySQLConnector.java" afterPath="$PROJECT_DIR$/src/WordUp/MySQLConnector.java" />
       <change beforePath="$PROJECT_DIR$/src/WordUp/PossibleDefinition.java" afterPath="$PROJECT_DIR$/src/WordUp/PossibleDefinition.java" />
-      <change beforePath="$PROJECT_DIR$/src/WordUp/WordUp.java" afterPath="$PROJECT_DIR$/src/WordUp/WordUp.java" />
       <change beforePath="$PROJECT_DIR$/tests/WordUp/MySQLConnectorTest.java" afterPath="$PROJECT_DIR$/tests/WordUp/MySQLConnectorTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -46,7 +45,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="WordUp.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WordUp.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WordUp/WordUp.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-72">
@@ -75,38 +74,77 @@
       <file leaf-file-name="MySQLConnector.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WordUp/MySQLConnector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="354">
+              <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
               <folding>
-                <element signature="method#MySQLConnector#0;class#MySQLConnector#0" expanded="false" />
-                <element signature="method#getConnection#0;class#MySQLConnector#0" expanded="false" />
-                <marker date="1523301611475" expanded="true" signature="1661:1871" ph="create table... if" />
-                <marker date="1523301611475" expanded="true" signature="1997:2269" ph="create table... if" />
-                <marker date="1523301611475" expanded="true" signature="1997:3758" ph="create table... if" />
-                <marker date="1523301611475" expanded="true" signature="2396:2756" ph="create table... if" />
-                <marker date="1523301611475" expanded="true" signature="2879:3336" ph="create table... if" />
-                <marker date="1523301611475" expanded="true" signature="3460:3708" ph="create table... if" />
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;method#acquireConnection#0;class#MySQLConnector#0" expanded="false" />
+                <element signature="method#acquireConnection#0;class#MySQLConnector#0" expanded="false" />
+                <element signature="docComment;method#createTables#0;class#MySQLConnector#0" expanded="false" />
+                <marker date="1523421790513" expanded="true" signature="2023:2233" ph="create table... if" />
+                <marker date="1523421790513" expanded="true" signature="2359:2631" ph="create table... if" />
+                <marker date="1523421790513" expanded="true" signature="2758:3118" ph="create table... if" />
+                <marker date="1523421790513" expanded="true" signature="2758:3181" ph="create table... if" />
+                <marker date="1523421790513" expanded="true" signature="2758:3185" ph="create table... if" />
+                <marker date="1523421790513" expanded="true" signature="3308:3765" ph="create table... if" />
+                <marker date="1523421790513" expanded="true" signature="3889:4137" ph="create table... if" />
+                <marker date="1523421790513" expanded="true" signature="5464:5487" ph="SELECT LAST_... " />
+                <marker date="1523421790513" expanded="true" signature="6103:6126" ph="insert into DEFINITION... " />
+                <marker date="1523421790513" expanded="true" signature="6103:6172" ph="insert into DEFINITION... " />
+                <marker date="1523421790513" expanded="true" signature="6494:6517" ph="SELECT LAST_... " />
+                <marker date="1523421790513" expanded="true" signature="7193:7221" ph="drop table E... " />
+                <marker date="1523421790513" expanded="true" signature="7193:7233" ph="drop table i... " />
+                <marker date="1523421790513" expanded="true" signature="7193:7243" ph="drop table i... " />
+                <marker date="1523421790513" expanded="true" signature="7193:7258" ph="drop table i... " />
+                <marker date="1523421790513" expanded="true" signature="7193:7270" ph="drop table i... " />
+                <marker date="1523421790513" expanded="true" signature="7222:7223" ph="drop table E... " />
+                <marker date="1523421790513" expanded="true" signature="7222:7233" ph="drop table D... " />
+                <marker date="1523421790513" expanded="true" signature="7234:7243" ph="drop table L... " />
+                <marker date="1523421790513" expanded="true" signature="7244:7258" ph="drop table i... " />
+                <marker date="1523421790513" expanded="true" signature="7259:7270" ph="drop table L... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/74682b29-7a93-410c-a96e-2dd5fc93e85d/console.sql">
+      <file leaf-file-name="MySQLConnectorTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/WordUp/MySQLConnectorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="13" selection-end-column="39" />
+            <state relative-caret-position="299">
+              <caret line="50" column="14" lean-forward="false" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#310#311#0" expanded="true" />
+                <element signature="e#358#359#0" expanded="true" />
+                <element signature="e#404#405#0" expanded="true" />
+                <element signature="e#461#462#0" expanded="true" />
+                <element signature="e#513#514#0" expanded="true" />
+                <element signature="e#595#596#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LexicalCategory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/WordUp/LexicalCategory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="27" column="50" lean-forward="false" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="exampleresponse.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/exampleresponse.txt">
+      <file leaf-file-name="DefinitionInformation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/WordUp/DefinitionInformation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2533">
-              <caret line="149" column="71" lean-forward="false" selection-start-line="149" selection-start-column="71" selection-end-line="149" selection-end-column="71" />
-              <folding />
+            <state relative-caret-position="452">
+              <caret line="75" column="41" lean-forward="false" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
+              <folding>
+                <element signature="e#1062#1063#0" expanded="true" />
+                <element signature="e#1086#1087#0" expanded="true" />
+                <element signature="e#2032#2033#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -114,50 +152,9 @@
       <file leaf-file-name="PossibleDefinition.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WordUp/PossibleDefinition.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+            <state relative-caret-position="486">
+              <caret line="48" column="70" lean-forward="false" selection-start-line="48" selection-start-column="70" selection-end-line="48" selection-end-column="70" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WordUpTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/WordUp/WordUpTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-739">
-              <caret line="44" column="9" lean-forward="false" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MySQLConnectorTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/WordUp/MySQLConnectorTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#254#255#0" expanded="true" />
-                <element signature="e#302#303#0" expanded="true" />
-                <element signature="e#348#349#0" expanded="true" />
-                <element signature="e#401#402#0" expanded="true" />
-                <element signature="e#453#454#0" expanded="true" />
-                <element signature="e#535#536#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="34">
-                <caret line="2" column="124" lean-forward="false" selection-start-line="2" selection-start-column="124" selection-end-line="2" selection-end-column="124" />
-                <folding />
-              </first_editor>
-              <second_editor />
             </state>
           </provider>
         </entry>
@@ -198,17 +195,17 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/tests/tests.java" />
-        <option value="$PROJECT_DIR$/src/WordUp/DefinitionInformation.java" />
         <option value="$PROJECT_DIR$/tests/WordUp/OxfordFetcherTest.java" />
         <option value="$PROJECT_DIR$/src/WordUp/OxfordFetcher.java" />
-        <option value="$PROJECT_DIR$/src/WordUp/LexicalCategory.java" />
         <option value="$PROJECT_DIR$/tests/WordUp/WordUpTest.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/74682b29-7a93-410c-a96e-2dd5fc93e85d/console.sql" />
-        <option value="$PROJECT_DIR$/src/WordUp/MySQLConnector.java" />
         <option value="$PROJECT_DIR$/src/WordUp/WordUp.java" />
-        <option value="$PROJECT_DIR$/src/WordUp/PossibleDefinition.java" />
-        <option value="$PROJECT_DIR$/tests/WordUp/MySQLConnectorTest.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/WordUp/DefinitionInformation.java" />
+        <option value="$PROJECT_DIR$/src/WordUp/LexicalCategory.java" />
+        <option value="$PROJECT_DIR$/src/WordUp/PossibleDefinition.java" />
+        <option value="$PROJECT_DIR$/src/WordUp/MySQLConnector.java" />
+        <option value="$PROJECT_DIR$/tests/WordUp/MySQLConnectorTest.java" />
       </list>
     </option>
   </component>
@@ -326,7 +323,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.allTests">
+  <component name="RunManager" selected="Android JUnit.MySQLConnectorTest">
     <configuration name="MySQLConnectorTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -904,44 +901,44 @@
       <workItem from="1522116649979" duration="11879000" />
       <workItem from="1522294229815" duration="27000" />
       <workItem from="1522718347420" duration="14706000" />
-      <workItem from="1523169412327" duration="13432000" />
+      <workItem from="1523169412327" duration="30517000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MySQLConnectorTest - 2018.04.09 at 11h 53m 30s.xml">
+    <history-entry file="MySQLConnectorTest - 2018.04.10 at 21h 28m 51s.xml">
       <configuration name="MySQLConnectorTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="MySQLConnectorTest - 2018.04.09 at 11h 57m 55s.xml">
+    <history-entry file="MySQLConnectorTest - 2018.04.10 at 21h 36m 32s.xml">
       <configuration name="MySQLConnectorTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="MySQLConnectorTest - 2018.04.09 at 12h 06m 22s.xml">
+    <history-entry file="MySQLConnectorTest - 2018.04.10 at 21h 38m 02s.xml">
       <configuration name="MySQLConnectorTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="MySQLConnectorTest - 2018.04.09 at 12h 06m 39s.xml">
+    <history-entry file="MySQLConnectorTest - 2018.04.10 at 21h 38m 45s.xml">
       <configuration name="MySQLConnectorTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="MySQLConnectorTest - 2018.04.09 at 12h 14m 50s.xml">
+    <history-entry file="MySQLConnectorTest - 2018.04.10 at 21h 39m 36s.xml">
       <configuration name="MySQLConnectorTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="MySQLConnectorTest - 2018.04.09 at 12h 16m 49s.xml">
+    <history-entry file="MySQLConnectorTest - 2018.04.10 at 21h 40m 43s.xml">
       <configuration name="MySQLConnectorTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="allTests - 2018.04.09 at 12h 21m 19s.xml">
-      <configuration name="allTests" configurationId="JUnit" />
+    <history-entry file="MySQLConnectorTest - 2018.04.10 at 21h 42m 29s.xml">
+      <configuration name="MySQLConnectorTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="allTests - 2018.04.09 at 12h 29m 45s.xml">
-      <configuration name="allTests" configurationId="JUnit" />
+    <history-entry file="MySQLConnectorTest - 2018.04.10 at 21h 43m 18s.xml">
+      <configuration name="MySQLConnectorTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="allTests - 2018.04.09 at 12h 31m 29s.xml">
-      <configuration name="allTests" configurationId="JUnit" />
+    <history-entry file="MySQLConnectorTest - 2018.04.10 at 21h 44m 59s.xml">
+      <configuration name="MySQLConnectorTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="allTests - 2018.04.09 at 12h 32m 13s.xml">
-      <configuration name="allTests" configurationId="JUnit" />
+    <history-entry file="MySQLConnectorTest - 2018.04.10 at 21h 45m 14s.xml">
+      <configuration name="MySQLConnectorTest" configurationId="AndroidJUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178940000" />
+    <option name="totallyTimeSpent" value="196025000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -964,15 +961,15 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29553264" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2520046" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963374" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852387" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21033868" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25026625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13631523" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32646048" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3262032" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1033,7 +1030,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/tests/WordUp/MySQLConnectorTest.java</url>
-          <line>8</line>
+          <line>11</line>
           <properties />
           <option name="timeStamp" value="23" />
         </line-breakpoint>
@@ -1599,14 +1596,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WordUp/LexicalCategory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/WordUp/OxfordFetcherTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -1622,90 +1611,6 @@
         <state relative-caret-position="323">
           <caret line="42" column="17" lean-forward="false" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WordUp/DefinitionInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exampleresponse.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2533">
-          <caret line="149" column="71" lean-forward="false" selection-start-line="149" selection-start-column="71" selection-end-line="149" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/74682b29-7a93-410c-a96e-2dd5fc93e85d/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="13" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/WordUp/WordUpTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-739">
-          <caret line="44" column="9" lean-forward="false" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WordUp/PossibleDefinition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WordUp/MySQLConnector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="method#MySQLConnector#0;class#MySQLConnector#0" expanded="false" />
-            <element signature="method#getConnection#0;class#MySQLConnector#0" expanded="false" />
-            <marker date="1523301611475" expanded="true" signature="1661:1871" ph="create table... if" />
-            <marker date="1523301611475" expanded="true" signature="1997:2269" ph="create table... if" />
-            <marker date="1523301611475" expanded="true" signature="1997:3758" ph="create table... if" />
-            <marker date="1523301611475" expanded="true" signature="2396:2756" ph="create table... if" />
-            <marker date="1523301611475" expanded="true" signature="2879:3336" ph="create table... if" />
-            <marker date="1523301611475" expanded="true" signature="3460:3708" ph="create table... if" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/WordUp/MySQLConnectorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#254#255#0" expanded="true" />
-            <element signature="e#302#303#0" expanded="true" />
-            <element signature="e#348#349#0" expanded="true" />
-            <element signature="e#401#402#0" expanded="true" />
-            <element signature="e#453#454#0" expanded="true" />
-            <element signature="e#535#536#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="34">
-            <caret line="2" column="124" lean-forward="false" selection-start-line="2" selection-start-column="124" selection-end-line="2" selection-end-column="124" />
-            <folding />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -1729,6 +1634,119 @@
             <element signature="method#fetchPhoneticSpelling#0;class#WordUp#0" expanded="false" />
             <element signature="method#retrieveBaseWord#0;class#WordUp#0" expanded="false" />
             <element signature="method#getSubsenses#0;class#WordUp#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exampleresponse.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2533">
+          <caret line="149" column="71" lean-forward="false" selection-start-line="149" selection-start-column="71" selection-end-line="149" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/WordUp/WordUpTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-725">
+          <caret line="44" column="9" lean-forward="false" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="34">
+            <caret line="2" column="124" lean-forward="false" selection-start-line="2" selection-start-column="124" selection-end-line="2" selection-end-column="124" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WordUp/PossibleDefinition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="48" column="70" lean-forward="false" selection-start-line="48" selection-start-column="70" selection-end-line="48" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WordUp/DefinitionInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="75" column="41" lean-forward="false" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
+          <folding>
+            <element signature="e#1062#1063#0" expanded="true" />
+            <element signature="e#1086#1087#0" expanded="true" />
+            <element signature="e#2032#2033#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/74682b29-7a93-410c-a96e-2dd5fc93e85d/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="13" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WordUp/LexicalCategory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="27" column="50" lean-forward="false" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WordUp/MySQLConnector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#acquireConnection#0;class#MySQLConnector#0" expanded="false" />
+            <element signature="method#acquireConnection#0;class#MySQLConnector#0" expanded="false" />
+            <element signature="docComment;method#createTables#0;class#MySQLConnector#0" expanded="false" />
+            <marker date="1523421790513" expanded="true" signature="2023:2233" ph="create table... if" />
+            <marker date="1523421790513" expanded="true" signature="2359:2631" ph="create table... if" />
+            <marker date="1523421790513" expanded="true" signature="2758:3118" ph="create table... if" />
+            <marker date="1523421790513" expanded="true" signature="2758:3181" ph="create table... if" />
+            <marker date="1523421790513" expanded="true" signature="2758:3185" ph="create table... if" />
+            <marker date="1523421790513" expanded="true" signature="3308:3765" ph="create table... if" />
+            <marker date="1523421790513" expanded="true" signature="3889:4137" ph="create table... if" />
+            <marker date="1523421790513" expanded="true" signature="5464:5487" ph="SELECT LAST_... " />
+            <marker date="1523421790513" expanded="true" signature="6103:6126" ph="insert into DEFINITION... " />
+            <marker date="1523421790513" expanded="true" signature="6103:6172" ph="insert into DEFINITION... " />
+            <marker date="1523421790513" expanded="true" signature="6494:6517" ph="SELECT LAST_... " />
+            <marker date="1523421790513" expanded="true" signature="7193:7221" ph="drop table E... " />
+            <marker date="1523421790513" expanded="true" signature="7193:7233" ph="drop table i... " />
+            <marker date="1523421790513" expanded="true" signature="7193:7243" ph="drop table i... " />
+            <marker date="1523421790513" expanded="true" signature="7193:7258" ph="drop table i... " />
+            <marker date="1523421790513" expanded="true" signature="7193:7270" ph="drop table i... " />
+            <marker date="1523421790513" expanded="true" signature="7222:7223" ph="drop table E... " />
+            <marker date="1523421790513" expanded="true" signature="7222:7233" ph="drop table D... " />
+            <marker date="1523421790513" expanded="true" signature="7234:7243" ph="drop table L... " />
+            <marker date="1523421790513" expanded="true" signature="7244:7258" ph="drop table i... " />
+            <marker date="1523421790513" expanded="true" signature="7259:7270" ph="drop table L... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/WordUp/MySQLConnectorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="50" column="14" lean-forward="false" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#310#311#0" expanded="true" />
+            <element signature="e#358#359#0" expanded="true" />
+            <element signature="e#404#405#0" expanded="true" />
+            <element signature="e#461#462#0" expanded="true" />
+            <element signature="e#513#514#0" expanded="true" />
+            <element signature="e#595#596#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -72,4 +72,8 @@ public class DefinitionInformation {
         }
         return sb.toString();
     }
+
+    public String getPhoneticSpelling() {
+        return phoneticSpelling;
+    }
 }
