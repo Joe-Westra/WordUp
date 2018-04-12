@@ -5,20 +5,29 @@ import java.sql.*;
 import java.util.Properties;
 
 public class MySQLConnector {
-    final static String user = "java";
-    final static String password = "JavaPa$$";
-    final static String database = "wordup";
+    private String user = "java";
+    private String password = "JavaPa$$";
+    private String database = "wordup";
     private Connection connection;
 
 
     public MySQLConnector(){
+        this("java","JavaPa$$","wordup");
+    }
+
+    public MySQLConnector(String user, String password, String database){
+        this.user = user;
+        this.password = password;
+        this.database = database;
         try {
             // The newInstance() call is a work around for some
             // broken Java implementations
 
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-        } catch (Exception ex) {
-            // handle the error
+        } catch (Exception e) {
+            System.out.printf("ERROR: cannot access database '%s' with username '%s' and password '%s'.",database,user,password);
+            e.printStackTrace();
+            System.exit(-1);
         }
         connection = acquireConnection();
     }
@@ -146,18 +155,6 @@ public class MySQLConnector {
             }
 
         }
-
-
-
-
-
-
-
-
-        //populate ROOT_WORD table
-        //
-
-
     }
 
 
@@ -196,6 +193,37 @@ public class MySQLConnector {
     }
 
     public Connection getConnection() { return connection; }
+
+    public boolean DBContains(String rootWord){
+        try {
+            String quer = "select * from ROOT_WORDS where root_word = ?";
+            PreparedStatement prepstat = connection.prepareStatement(quer);
+            prepstat.setString(1, rootWord);
+            ResultSet rs = prepstat.executeQuery();
+            if (rs.next())
+                return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public DefinitionInformation fetchDefinition(String rootWord) {
+        String quer = "select quer_word,ROOT_WORDS.root_word,etymology,phonetic from QUERIED_WORDS,ROOT_WORDS where QUERIED_WORDS.root_word = ? and  ROOT_WORDS.root_word = ?";
+        DefinitionInformation definition = null;
+        try {
+            PreparedStatement ps = connection.prepareStatement(quer);
+            ps.setString(1, rootWord);
+            ps.setString(2, rootWord);
+            ResultSet rs = ps.executeQuery();
+
+            //parse the results
+            //TODO: THIS!
+            return null;
+        } catch (SQLException e) {
+            return null;
+        }
+    }
 }
 
 

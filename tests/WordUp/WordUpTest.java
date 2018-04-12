@@ -114,4 +114,8 @@ class WordUpTest {
                 wu.getDefinition().toString());
     }
 
+    @Test
+    void definitionRequestsCheckDBFirst(){
+
+    }
 }

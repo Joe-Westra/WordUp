@@ -10,16 +10,20 @@ import com.google.gson.*;
 import javax.net.ssl.HttpsURLConnection;
 //TODO: Implement spell correction
 //TODO: If API connection attempt fails, try again x amount of
-//TODO: OPTIONAL: Change the way that examples in definitions are stored.  An array would be more appropriate for database insertion and retrieval.
 //TODO: Implement a database!
 public class WordUp {
     private String queriedWord, rootWord;
     private DefinitionInformation definition;  //contains all the information of a retrieved definition.
+    private MySQLConnector mySQLConnector;
 
 
     public WordUp(String word) {
+        mySQLConnector = new MySQLConnector();
         queriedWord = word;
         rootWord = determineBaseWord(queriedWord);
+        if( mySQLConnector.DBContains(rootWord)){
+
+        }
         definition = determineDefinition(queriedWord, rootWord);
     }
 
