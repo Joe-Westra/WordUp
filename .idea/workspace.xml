@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16db3b39-4352-4287-8e7c-b18d2edcf8ef" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/WordUp/MySQLConnector.java" afterPath="$PROJECT_DIR$/src/WordUp/MySQLConnector.java" />
-      <change beforePath="$PROJECT_DIR$/src/WordUp/WordUp.java" afterPath="$PROJECT_DIR$/src/WordUp/WordUp.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -87,40 +85,40 @@
       <file leaf-file-name="MySQLConnector.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/WordUp/MySQLConnector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="257" column="70" lean-forward="true" selection-start-line="257" selection-start-column="70" selection-end-line="257" selection-end-column="70" />
+            <state relative-caret-position="366">
+              <caret line="256" column="79" lean-forward="false" selection-start-line="256" selection-start-column="71" selection-end-line="256" selection-end-column="79" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;method#acquireConnection#0;class#MySQLConnector#0" expanded="false" />
                 <element signature="method#acquireConnection#0;class#MySQLConnector#0" expanded="false" />
                 <element signature="docComment;method#createTables#0;class#MySQLConnector#0" expanded="false" />
-                <marker date="1524106810622" expanded="true" signature="2412:2622" ph="create table... if" />
-                <marker date="1524106810622" expanded="true" signature="2748:3020" ph="create table... if" />
-                <marker date="1524106810622" expanded="true" signature="3147:3507" ph="create table... if" />
-                <marker date="1524106810622" expanded="true" signature="3147:3570" ph="create table... if" />
-                <marker date="1524106810622" expanded="true" signature="3147:3574" ph="create table... if" />
-                <marker date="1524106810622" expanded="true" signature="3697:4154" ph="create table... if" />
-                <marker date="1524106810622" expanded="true" signature="4278:4526" ph="create table... if" />
-                <marker date="1524106810622" expanded="true" signature="5879:5902" ph="SELECT LAST_... " />
-                <marker date="1524106810622" expanded="true" signature="6489:6512" ph="insert into DEFINITION... " />
-                <marker date="1524106810622" expanded="true" signature="6489:6558" ph="insert into DEFINITION... " />
-                <marker date="1524106810622" expanded="true" signature="6885:6908" ph="SELECT LAST_... " />
-                <marker date="1524106810622" expanded="true" signature="7629:7657" ph="drop table E... " />
-                <marker date="1524106810622" expanded="true" signature="7629:7669" ph="drop table i... " />
-                <marker date="1524106810622" expanded="true" signature="7629:7679" ph="drop table i... " />
-                <marker date="1524106810622" expanded="true" signature="7629:7694" ph="drop table i... " />
-                <marker date="1524106810622" expanded="true" signature="7629:7706" ph="drop table i... " />
-                <marker date="1524106810622" expanded="true" signature="7658:7659" ph="drop table E... " />
-                <marker date="1524106810622" expanded="true" signature="7658:7669" ph="drop table D... " />
-                <marker date="1524106810622" expanded="true" signature="7670:7679" ph="drop table L... " />
-                <marker date="1524106810622" expanded="true" signature="7680:7694" ph="drop table i... " />
-                <marker date="1524106810622" expanded="true" signature="7695:7706" ph="drop table L... " />
-                <marker date="1524106810622" expanded="true" signature="7950:7994" ph="select * fro... ROOT_WORDS" />
-                <marker date="1524106810622" expanded="true" signature="8474:8624" ph="select quer_... QUERIED_WORDS" />
-                <marker date="1524106810622" expanded="true" signature="8653:8710" ph="select cat_i... LEXI_CAT" />
-                <marker date="1524106810622" expanded="true" signature="8739:8808" ph="select cat_i... LEXI_CAT" />
-                <marker date="1524106810622" expanded="true" signature="10457:10529" ph="select def_i... DEFINITION" />
-                <marker date="1524106810622" expanded="true" signature="10457:10544" ph="select def_i... DEFINITION" />
+                <marker date="1524109003112" expanded="true" signature="2435:2645" ph="create table... if" />
+                <marker date="1524109003112" expanded="true" signature="2771:3043" ph="create table... if" />
+                <marker date="1524109003112" expanded="true" signature="3170:3530" ph="create table... if" />
+                <marker date="1524109003112" expanded="true" signature="3170:3593" ph="create table... if" />
+                <marker date="1524109003112" expanded="true" signature="3170:3597" ph="create table... if" />
+                <marker date="1524109003112" expanded="true" signature="3720:4177" ph="create table... if" />
+                <marker date="1524109003112" expanded="true" signature="4301:4549" ph="create table... if" />
+                <marker date="1524109003112" expanded="true" signature="5902:5925" ph="SELECT LAST_... " />
+                <marker date="1524109003112" expanded="true" signature="6512:6535" ph="insert into DEFINITION... " />
+                <marker date="1524109003112" expanded="true" signature="6512:6581" ph="insert into DEFINITION... " />
+                <marker date="1524109003112" expanded="true" signature="6908:6931" ph="SELECT LAST_... " />
+                <marker date="1524109003112" expanded="true" signature="7652:7680" ph="drop table E... " />
+                <marker date="1524109003112" expanded="true" signature="7652:7692" ph="drop table i... " />
+                <marker date="1524109003112" expanded="true" signature="7652:7702" ph="drop table i... " />
+                <marker date="1524109003112" expanded="true" signature="7652:7717" ph="drop table i... " />
+                <marker date="1524109003112" expanded="true" signature="7652:7729" ph="drop table i... " />
+                <marker date="1524109003112" expanded="true" signature="7681:7682" ph="drop table E... " />
+                <marker date="1524109003112" expanded="true" signature="7681:7692" ph="drop table D... " />
+                <marker date="1524109003112" expanded="true" signature="7693:7702" ph="drop table L... " />
+                <marker date="1524109003112" expanded="true" signature="7703:7717" ph="drop table i... " />
+                <marker date="1524109003112" expanded="true" signature="7718:7729" ph="drop table L... " />
+                <marker date="1524109003112" expanded="true" signature="7973:8017" ph="select * fro... ROOT_WORDS" />
+                <marker date="1524109003112" expanded="true" signature="8497:8647" ph="select quer_... QUERIED_WORDS" />
+                <marker date="1524109003112" expanded="true" signature="8676:8733" ph="select cat_i... LEXI_CAT" />
+                <marker date="1524109003112" expanded="true" signature="8762:8831" ph="select cat_i... LEXI_CAT" />
+                <marker date="1524109003112" expanded="true" signature="10888:10960" ph="select def_i... DEFINITION" />
+                <marker date="1524109003112" expanded="true" signature="10888:10975" ph="select def_i... DEFINITION" />
               </folding>
             </state>
           </provider>
@@ -921,7 +919,7 @@
       <workItem from="1522294229815" duration="27000" />
       <workItem from="1522718347420" duration="14706000" />
       <workItem from="1523169412327" duration="45258000" />
-      <workItem from="1524012936592" duration="5982000" />
+      <workItem from="1524012936592" duration="7947000" />
     </task>
     <servers />
   </component>
@@ -958,7 +956,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="216748000" />
+    <option name="totallyTimeSpent" value="218713000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1649,40 +1647,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WordUp/MySQLConnector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="257" column="70" lean-forward="true" selection-start-line="257" selection-start-column="70" selection-end-line="257" selection-end-column="70" />
+        <state relative-caret-position="366">
+          <caret line="256" column="79" lean-forward="false" selection-start-line="256" selection-start-column="71" selection-end-line="256" selection-end-column="79" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#acquireConnection#0;class#MySQLConnector#0" expanded="false" />
             <element signature="method#acquireConnection#0;class#MySQLConnector#0" expanded="false" />
             <element signature="docComment;method#createTables#0;class#MySQLConnector#0" expanded="false" />
-            <marker date="1524106810622" expanded="true" signature="2412:2622" ph="create table... if" />
-            <marker date="1524106810622" expanded="true" signature="2748:3020" ph="create table... if" />
-            <marker date="1524106810622" expanded="true" signature="3147:3507" ph="create table... if" />
-            <marker date="1524106810622" expanded="true" signature="3147:3570" ph="create table... if" />
-            <marker date="1524106810622" expanded="true" signature="3147:3574" ph="create table... if" />
-            <marker date="1524106810622" expanded="true" signature="3697:4154" ph="create table... if" />
-            <marker date="1524106810622" expanded="true" signature="4278:4526" ph="create table... if" />
-            <marker date="1524106810622" expanded="true" signature="5879:5902" ph="SELECT LAST_... " />
-            <marker date="1524106810622" expanded="true" signature="6489:6512" ph="insert into DEFINITION... " />
-            <marker date="1524106810622" expanded="true" signature="6489:6558" ph="insert into DEFINITION... " />
-            <marker date="1524106810622" expanded="true" signature="6885:6908" ph="SELECT LAST_... " />
-            <marker date="1524106810622" expanded="true" signature="7629:7657" ph="drop table E... " />
-            <marker date="1524106810622" expanded="true" signature="7629:7669" ph="drop table i... " />
-            <marker date="1524106810622" expanded="true" signature="7629:7679" ph="drop table i... " />
-            <marker date="1524106810622" expanded="true" signature="7629:7694" ph="drop table i... " />
-            <marker date="1524106810622" expanded="true" signature="7629:7706" ph="drop table i... " />
-            <marker date="1524106810622" expanded="true" signature="7658:7659" ph="drop table E... " />
-            <marker date="1524106810622" expanded="true" signature="7658:7669" ph="drop table D... " />
-            <marker date="1524106810622" expanded="true" signature="7670:7679" ph="drop table L... " />
-            <marker date="1524106810622" expanded="true" signature="7680:7694" ph="drop table i... " />
-            <marker date="1524106810622" expanded="true" signature="7695:7706" ph="drop table L... " />
-            <marker date="1524106810622" expanded="true" signature="7950:7994" ph="select * fro... ROOT_WORDS" />
-            <marker date="1524106810622" expanded="true" signature="8474:8624" ph="select quer_... QUERIED_WORDS" />
-            <marker date="1524106810622" expanded="true" signature="8653:8710" ph="select cat_i... LEXI_CAT" />
-            <marker date="1524106810622" expanded="true" signature="8739:8808" ph="select cat_i... LEXI_CAT" />
-            <marker date="1524106810622" expanded="true" signature="10457:10529" ph="select def_i... DEFINITION" />
-            <marker date="1524106810622" expanded="true" signature="10457:10544" ph="select def_i... DEFINITION" />
+            <marker date="1524109003112" expanded="true" signature="2435:2645" ph="create table... if" />
+            <marker date="1524109003112" expanded="true" signature="2771:3043" ph="create table... if" />
+            <marker date="1524109003112" expanded="true" signature="3170:3530" ph="create table... if" />
+            <marker date="1524109003112" expanded="true" signature="3170:3593" ph="create table... if" />
+            <marker date="1524109003112" expanded="true" signature="3170:3597" ph="create table... if" />
+            <marker date="1524109003112" expanded="true" signature="3720:4177" ph="create table... if" />
+            <marker date="1524109003112" expanded="true" signature="4301:4549" ph="create table... if" />
+            <marker date="1524109003112" expanded="true" signature="5902:5925" ph="SELECT LAST_... " />
+            <marker date="1524109003112" expanded="true" signature="6512:6535" ph="insert into DEFINITION... " />
+            <marker date="1524109003112" expanded="true" signature="6512:6581" ph="insert into DEFINITION... " />
+            <marker date="1524109003112" expanded="true" signature="6908:6931" ph="SELECT LAST_... " />
+            <marker date="1524109003112" expanded="true" signature="7652:7680" ph="drop table E... " />
+            <marker date="1524109003112" expanded="true" signature="7652:7692" ph="drop table i... " />
+            <marker date="1524109003112" expanded="true" signature="7652:7702" ph="drop table i... " />
+            <marker date="1524109003112" expanded="true" signature="7652:7717" ph="drop table i... " />
+            <marker date="1524109003112" expanded="true" signature="7652:7729" ph="drop table i... " />
+            <marker date="1524109003112" expanded="true" signature="7681:7682" ph="drop table E... " />
+            <marker date="1524109003112" expanded="true" signature="7681:7692" ph="drop table D... " />
+            <marker date="1524109003112" expanded="true" signature="7693:7702" ph="drop table L... " />
+            <marker date="1524109003112" expanded="true" signature="7703:7717" ph="drop table i... " />
+            <marker date="1524109003112" expanded="true" signature="7718:7729" ph="drop table L... " />
+            <marker date="1524109003112" expanded="true" signature="7973:8017" ph="select * fro... ROOT_WORDS" />
+            <marker date="1524109003112" expanded="true" signature="8497:8647" ph="select quer_... QUERIED_WORDS" />
+            <marker date="1524109003112" expanded="true" signature="8676:8733" ph="select cat_i... LEXI_CAT" />
+            <marker date="1524109003112" expanded="true" signature="8762:8831" ph="select cat_i... LEXI_CAT" />
+            <marker date="1524109003112" expanded="true" signature="10888:10960" ph="select def_i... DEFINITION" />
+            <marker date="1524109003112" expanded="true" signature="10888:10975" ph="select def_i... DEFINITION" />
           </folding>
         </state>
       </provider>

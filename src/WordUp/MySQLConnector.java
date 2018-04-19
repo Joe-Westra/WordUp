@@ -2,6 +2,7 @@ package WordUp;
 
 
 import java.sql.*;
+import java.util.List;
 import java.util.Properties;
 
 public class MySQLConnector {
@@ -251,9 +252,10 @@ public class MySQLConnector {
 
 
                 //get each definition from the category
-                PreparedStatement psdefs = connection.prepareStatement(getDefs);
-                ps.setString(1, cat_id);
-                ResultSet rsdefs = ps.executeQuery();
+
+
+                ResultSet rsdefs = getRSforDefs(Integer.valueOf(cat_id),SQLNULL);
+
 
                 //LexicalCategory lc = new LexicalCategory(category,);
             }
@@ -265,7 +267,24 @@ public class MySQLConnector {
     }
 
 
+    /**
+     * This method parses a ResultSet,
+     * @param rs
+     * @return
+     */
+    private List<PossibleDefinition> getDefs(ResultSet rs){
 
+
+    }
+
+    /**
+     * This method queries the database for all definitions that have 'parent_id' and 'cat_id' attributes
+     * as passed in as parameters.
+     * @param catID category id for the sought definition
+     * @param parentID parent id for the sought definition
+     * @return A ResultSet from the query
+     * @throws SQLException
+     */
     private ResultSet getRSforDefs(int catID, int parentID) throws SQLException{
         String defQuer = "select def_id, parent_id, definition from DEFINITION where parent_id = ? and cat_id = ?";
         PreparedStatement ps = connection.prepareStatement(defQuer);
