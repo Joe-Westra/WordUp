@@ -124,7 +124,6 @@ public class WordUp {
      * @return a DefinitionInformation object containing all relevant information.
      */
     private DefinitionInformation retrieveDefinition(String queriedWord, String rootWord, JsonObject rootJSONObject) {
-        //TODO: query database for root word before accessing the API.
         DefinitionInformation definition = new DefinitionInformation();
         definition.setQueriedWord(queriedWord);
         definition.setRootWord(rootWord);

@@ -9,6 +9,7 @@ public class MySQLConnector {
     private String password = "JavaPa$$";
     private String database = "wordup";
     private Connection connection;
+    final int SQLNULL = -1;
 
 
     public MySQLConnector(){
@@ -111,6 +112,7 @@ public class MySQLConnector {
             stmt.execute(createExampleTable);
             connection.commit();
             connection.setAutoCommit(true);
+            stmt.close();
             return true;
         }catch (SQLException e){
             e.printStackTrace();
@@ -151,10 +153,11 @@ public class MySQLConnector {
             System.out.println(cat_ID);
             for (PossibleDefinition pd :
                     category.getSenses()) {
-                insertDefinitionIntoDB(connection, cat_ID, -1, pd);
+                insertDefinitionIntoDB(connection, cat_ID, SQLNULL, pd);
             }
 
         }
+        stmt.close();
     }
 
 
@@ -164,7 +167,7 @@ public class MySQLConnector {
         pstmt.setInt(1,cat_ID);
         pstmt.setInt(2,parent_ID);
         pstmt.setString(3,pd.getDefinition());
-        if (parent_ID == -1){
+        if (parent_ID == SQLNULL){
             pstmt.setNull(2, Types.INTEGER);
         }
         pstmt.execute();
@@ -183,6 +186,8 @@ public class MySQLConnector {
                 pd.getSubsenses()) {
             insertDefinitionIntoDB(connection,cat_ID,parent,subdef);
         }
+        pstmt.close();
+        stmt.close();
     }
 
 
@@ -200,8 +205,10 @@ public class MySQLConnector {
             PreparedStatement prepstat = connection.prepareStatement(quer);
             prepstat.setString(1, rootWord);
             ResultSet rs = prepstat.executeQuery();
-            if (rs.next())
+            if (rs.next()) {
+                prepstat.close();
                 return true;
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -210,6 +217,8 @@ public class MySQLConnector {
 
     public DefinitionInformation fetchDefinition(String rootWord) {
         String quer = "select quer_word,ROOT_WORDS.root_word,etymology,phonetic from QUERIED_WORDS,ROOT_WORDS where QUERIED_WORDS.root_word = ? and  ROOT_WORDS.root_word = ?";
+        String getCats = "select cat_id, lexi_cat from LEXI_CAT where root_word = ?";
+        String getDefs = "select def_id, parent_id, definition from DEFINITION where cat_id = ?";
         DefinitionInformation definition = null;
         try {
             PreparedStatement ps = connection.prepareStatement(quer);
@@ -219,64 +228,56 @@ public class MySQLConnector {
 
             //parse the results
             //TODO: THIS!
+
+            //fetch general info
+            String qw,rw,ety,phone;
+            if (rs.next()){
+                qw = rs.getString("quer_word");
+                rw = rs.getString("root_word");
+                ety = rs.getString("etymology");
+                phone = rs.getString("phonetic");
+            }
+
+            //fetch lexical categories for root word
+            PreparedStatement pscat = connection.prepareStatement(getCats);
+            pscat.setString(1,rootWord);
+            ResultSet categories = pscat.executeQuery();
+
+            //for each category,fetch all definitions
+            while(categories.next()){
+                //store category relevant information
+                String category = rs.getString("lexi_cat");
+                String cat_id = rs.getString("cat_id");
+
+
+                //get each definition from the category
+                PreparedStatement psdefs = connection.prepareStatement(getDefs);
+                ps.setString(1, cat_id);
+                ResultSet rsdefs = ps.executeQuery();
+
+                //LexicalCategory lc = new LexicalCategory(category,);
+            }
+
             return null;
         } catch (SQLException e) {
             return null;
         }
     }
-}
 
 
-/*
-public static void viewTable(Connection con, String dbName)
-    throws SQLException {
 
-    Statement stmt = null;
-    String query = "select COF_NAME, SUP_ID, PRICE, " +
-                   "SALES, TOTAL " +
-                   "from " + dbName + ".COFFEES";
-    try {
-        stmt = con.createStatement();
-        ResultSet rs = stmt.executeQuery(query);
-        while (rs.next()) {
-            String coffeeName = rs.getString("COF_NAME");
-            int supplierID = rs.getInt("SUP_ID");
-            float price = rs.getFloat("PRICE");
-            int sales = rs.getInt("SALES");
-            int total = rs.getInt("TOTAL");
-            System.out.println(coffeeName + "\t" + supplierID +
-                               "\t" + price + "\t" + sales +
-                               "\t" + total);
+    private ResultSet getRSforDefs(int catID, int parentID) throws SQLException{
+        String defQuer = "select def_id, parent_id, definition from DEFINITION where parent_id = ? and cat_id = ?";
+        PreparedStatement ps = connection.prepareStatement(defQuer);
+        ps.setInt(2,catID);
+
+        //value of SQLNULL (-1) indicates null value, as parent_id is declared in the schema as an NULLABLE AUTO_INCREMENT
+        //and consists of values >0 and NULL.  Therefore, -1 can be used in coding as a placeholder for null.
+        if (parentID == SQLNULL)
+            ps.setNull(1, Types.NULL);
+        else {
+            ps.setInt(1, parentID);
         }
-    } catch (SQLException e ) {
-        JDBCTutorialUtilities.printSQLException(e);
-    } finally {
-        if (stmt != null) { stmt.close(); }
+        return ps.executeQuery();
     }
 }
-
- */
-
-
-/*
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-
-Connection conn = null;
-...
-try {
-    conn =
-       DriverManager.acquireConnection("jdbc:mysql://localhost/test?" +
-                                   "user=minty&password=greatsqldb");
-
-    // Do something with the Connection
-
-   ...
-} catch (SQLException ex) {
-    // handle any errors
-    System.out.println("SQLException: " + ex.getMessage());
-    System.out.println("SQLState: " + ex.getSQLState());
-    System.out.println("VendorError: " + ex.getErrorCode());
-}
- */
