@@ -2,6 +2,7 @@ package WordUp;
 
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
@@ -220,7 +221,7 @@ public class MySQLConnector {
         String quer = "select quer_word,ROOT_WORDS.root_word,etymology,phonetic from QUERIED_WORDS,ROOT_WORDS where QUERIED_WORDS.root_word = ? and  ROOT_WORDS.root_word = ?";
         String getCats = "select cat_id, lexi_cat from LEXI_CAT where root_word = ?";
         String getDefs = "select def_id, parent_id, definition from DEFINITION where cat_id = ?";
-        DefinitionInformation definition = null;
+        DefinitionInformation definition = new DefinitionInformation();
         try {
             PreparedStatement ps = connection.prepareStatement(quer);
             ps.setString(1, rootWord);
@@ -231,7 +232,10 @@ public class MySQLConnector {
             //TODO: THIS!
 
             //fetch general info
-            String qw,rw,ety,phone;
+            String qw = "";
+            String rw = "";
+            String ety = "";
+            String phone = "";
             if (rs.next()){
                 qw = rs.getString("quer_word");
                 rw = rs.getString("root_word");
@@ -244,24 +248,32 @@ public class MySQLConnector {
             pscat.setString(1,rootWord);
             ResultSet categories = pscat.executeQuery();
 
+
+
             //for each category,fetch all definitions
+            List<LexicalCategory> lexicalCategories = new ArrayList<>();
             while(categories.next()){
+
+
                 //store category relevant information
-                String category = rs.getString("lexi_cat");
-                String cat_id = rs.getString("cat_id");
+                String cat_id = categories.getString("cat_id");
+                String category = categories.getString("lexi_cat");
 
 
                 //get each definition from the category
+                List<PossibleDefinition> defs = getDefs(getRSforDefs(Integer.valueOf(cat_id),SQLNULL));
 
 
-                ResultSet rsdefs = getRSforDefs(Integer.valueOf(cat_id),SQLNULL);
-
-
-                //LexicalCategory lc = new LexicalCategory(category,);
+                lexicalCategories.add(new LexicalCategory(category,defs));
             }
-
-            return null;
+            definition.setPhoneticSpelling(phone);
+            definition.setEtymologies(ety);
+            definition.setRootWord(rw);
+            definition.setQueriedWord(qw);
+            definition.setLexicalCategories(lexicalCategories);
+            return definition;
         } catch (SQLException e) {
+            e.printStackTrace();
             return null;
         }
     }
@@ -272,8 +284,32 @@ public class MySQLConnector {
      * @param rs
      * @return
      */
-    private List<PossibleDefinition> getDefs(ResultSet rs){
+    private List<PossibleDefinition> getDefs(ResultSet rs) throws SQLException{
+        List<PossibleDefinition> pds = new ArrayList<>();
+        while(rs.next()) {
+            String defintion = rs.getString("definition");
+            int defID = rs.getInt("def_id");
+            List<String> examples = getExamples(defID);
+            //for each entry, create new PD
+            PossibleDefinition def = new PossibleDefinition(defintion,examples);
+            def.addSubSenses(getDefs(getRSforDefs(rs.getInt("cat_id"),defID)));
+            pds.add(def);
+        }
+        return pds;
+    }
 
+
+
+    private List<String> getExamples(int defID)  throws SQLException{
+        String quer = "select example from EXAMPLE where def_id = ?";
+        PreparedStatement ps = connection.prepareStatement(quer);
+        ps.setInt(1,defID);
+        List<String> examples = new ArrayList<>();
+        ResultSet rs = ps.executeQuery();
+        while (rs.next())
+            examples.add(rs.getString("example"));
+
+        return examples;
 
     }
 
@@ -286,9 +322,15 @@ public class MySQLConnector {
      * @throws SQLException
      */
     private ResultSet getRSforDefs(int catID, int parentID) throws SQLException{
-        String defQuer = "select def_id, parent_id, definition from DEFINITION where parent_id = ? and cat_id = ?";
+        // the <=> operator is a null safe equivalency test.
+        /*
+        mysql> SELECT 1 <=> 1, NULL <=> NULL, 1 <=> NULL;
+        -> 1, 1, 0
+        mysql> SELECT 1 = 1, NULL = NULL, 1 = NULL;
+        -> 1, NULL, NULL
+         */
+        String defQuer = "select def_id, parent_id, cat_id, definition from DEFINITION where parent_id <=> ? and cat_id = ?";
         PreparedStatement ps = connection.prepareStatement(defQuer);
-        ps.setInt(2,catID);
 
         //value of SQLNULL (-1) indicates null value, as parent_id is declared in the schema as an NULLABLE AUTO_INCREMENT
         //and consists of values >0 and NULL.  Therefore, -1 can be used in coding as a placeholder for null.
@@ -297,6 +339,9 @@ public class MySQLConnector {
         else {
             ps.setInt(1, parentID);
         }
+
+        ps.setInt(2,catID);
+
         return ps.executeQuery();
     }
 }

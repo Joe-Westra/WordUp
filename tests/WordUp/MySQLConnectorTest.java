@@ -64,6 +64,8 @@ public class MySQLConnectorTest {
     @Test
     void entriesCanBeFetchedFromDB(){
         DefinitionInformation di = connector.fetchDefinition("alacrity");
+
+        System.out.println(di.toString());
         assertEquals("from alacer 'brisk'", di.getEtymologies());
         assertEquals("elakriti",di.getPhoneticSpelling());
         assertEquals("alacrity", di.getQueriedWord());
