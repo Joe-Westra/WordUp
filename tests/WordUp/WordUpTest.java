@@ -10,7 +10,7 @@ class WordUpTest {
     static WordUp w;
 
     @BeforeAll
-    public static void setup() {
+    static void setup() {
         w = new WordUp("testing");
     }
 

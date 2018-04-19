@@ -1,17 +1,17 @@
 package WordUp;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 //TODO: Implement spell correction
 //TODO: If API connection attempt fails, try again x amount of
-//TODO: Implement a database!
 public class WordUp {
     private String queriedWord;
     private String rootWord;
     private DefinitionInformation definition;  //contains all the information of a retrieved definition.
-    private MySQLConnector mySQLConnector;
+    private static MySQLConnector mySQLConnector;
     private static OxfordJsonParser ojp;
 
 
@@ -30,11 +30,33 @@ public class WordUp {
             word = args[0];
         }
         WordUp w = new WordUp(word);
-        w.setRootWord(ojp.determineBaseWord(w.queriedWord));
-        if( w.mySQLConnector.DBContains(w.rootWord)){
 
+        //create DB tables if they don't exist
+        mySQLConnector.createTables(mySQLConnector.getConnection());
+
+        w.setRootWord(ojp.fetchRootWordFromAPI(w.queriedWord));
+
+        //check DB for entry of rootword
+        if( mySQLConnector.DBContains(w.rootWord)){
+            //fetch the definition
+            w.definition = mySQLConnector.fetchDefinition(w.rootWord);
+
+        } else {
+            w.setDefinition(ojp.determineDefinition(w.queriedWord, w.rootWord));
+            try {
+                mySQLConnector.addDefinition(w.definition);
+            } catch (SQLException e){
+                System.out.printf("ERROR: cannot add %s's definition to database\n", w.rootWord);
+                e.printStackTrace();
+                try {
+                    mySQLConnector.getConnection().close();
+                } catch (SQLException ex) {
+                    System.out.println("ERROR: cannot close connection");
+                } finally {
+                    System.exit(-1);
+                }
+            }
         }
-        w.setDefinition(ojp.determineDefinition(w.queriedWord, w.rootWord));
 
         System.out.println(w.getDefinition().toString());
     }

@@ -11,6 +11,9 @@ public class MySQLConnector {
     private String password = "JavaPa$$";
     private String database = "wordup";
     private Connection connection;
+
+    //value of SQLNULL (-1) indicates null value, as parent_id is declared in the schema as an NULLABLE AUTO_INCREMENT
+    //and consists of values >0 and NULL.  Therefore, -1 can be used in coding as a placeholder for null.
     final int SQLNULL = -1;
 
 
@@ -45,11 +48,13 @@ public class MySQLConnector {
         properties.setProperty("password", password);
         properties.setProperty("useSSL", "false");
         properties.setProperty("autoReconnect", "true");
+        properties.setProperty("useUnicode", "true");
+        properties.setProperty("characterEncoding", "UTF8");
         Connection conn = null;
 
         try {
             conn = DriverManager.getConnection("jdbc:mysql://localhost/" + database + "?", properties);
-            System.out.println("connection established to " + database + " database");
+            //System.out.println("connection established to " + database + " database");
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -70,10 +75,16 @@ public class MySQLConnector {
             Statement stmt = connection.createStatement();
 
             String createRootWordTable =
-                    " create table if not EXISTS ROOT_WORDS(" +
+                    " create table if not EXISTS ROOT_WORDS (" +
                     " root_word VARCHAR(20) UNIQUE PRIMARY KEY," +
                     " etymology VARCHAR(250)," +
-                    " phonetic VARCHAR(25) NOT NULL)";
+                    " phonetic VARCHAR(25) NOT NULL," +
+                    " q_count INT DEFAULT 1," +
+                    " last_access DATE NOT NULL)";
+            /*
+                    -Update query count
+        -Update latest access date
+             */
             stmt.execute(createRootWordTable);
 
             String createQueriedWordsTable =
@@ -123,23 +134,25 @@ public class MySQLConnector {
     }
 
     public void addDefinition(DefinitionInformation totalDef) throws SQLException {
-        //search for queried word in QUERIEDWORDtable
-
-
         String rootWord = totalDef.getRootWord();
         String queriedWord = totalDef.getQueriedWord();
 
-        String addRW = String.format("insert into ROOT_WORDS values ('%s','%s','%s')" ,
-                rootWord,
-                totalDef.getEtymologies().replaceAll("'","''"),
-                totalDef.getPhoneticSpelling());
+        String addRW = "insert into ROOT_WORDS (root_word, etymology, phonetic, last_access) values (?,?,?,?)";
+        PreparedStatement psaddrw = connection.prepareStatement(addRW);
+        psaddrw.setString(1, rootWord);
+
+        //String etymo = totalDef.getEtymologies().replaceAll("'","''");
+        psaddrw.setString(2, totalDef.getEtymologies());
+        psaddrw.setString(3,  totalDef.getPhoneticSpelling());
+
+        psaddrw.setDate(4, getCurrentDatetime() );
 
         String addQW = String.format("insert into QUERIED_WORDS values ('%s','%s')" ,
                 queriedWord,
                 rootWord);
 
         Statement stmt = connection.createStatement();
-        stmt.execute(addRW);
+        psaddrw.execute();
         stmt.execute(addQW);
 
         for (LexicalCategory category : totalDef.getLexicalCategories() ) {
@@ -148,11 +161,9 @@ public class MySQLConnector {
                     "values ('%s','%s')" , rootWord, cat);
             stmt.execute(addLC);
             String getID = "SELECT LAST_INSERT_ID()";
-            System.out.println(getID);
             ResultSet rs = stmt.executeQuery(getID);
             rs.first();
             int cat_ID = rs.getInt("LAST_INSERT_ID()");
-            System.out.println(cat_ID);
             for (PossibleDefinition pd :
                     category.getSenses()) {
                 insertDefinitionIntoDB(connection, cat_ID, SQLNULL, pd);
@@ -160,6 +171,11 @@ public class MySQLConnector {
 
         }
         stmt.close();
+    }
+
+    public java.sql.Date getCurrentDatetime() {
+        java.util.Date today = new java.util.Date();
+        return new java.sql.Date(today.getTime());
     }
 
 
@@ -177,12 +193,18 @@ public class MySQLConnector {
         Statement stmt = connection.createStatement();
         ResultSet rs = stmt.executeQuery(getID);
         rs.first();
-        System.out.println(rs.toString());
         int parent = rs.getInt("LAST_INSERT_ID()");
         for (String example :
                 pd.getExamples()) {
-            String addEX = String.format("insert into EXAMPLE values ('%d', '%s')" , parent, example);
-            stmt.execute(addEX);
+
+            //escape single quotes before adding
+            example.replaceAll("'","''");
+
+            String addEX = "insert into EXAMPLE values (?,?)";
+            PreparedStatement psex = connection.prepareStatement(addEX);
+            psex.setInt(1,parent);
+            psex.setString(2,example);
+            psex.execute();
         }
         for (PossibleDefinition subdef :
                 pd.getSubsenses()) {
@@ -193,13 +215,6 @@ public class MySQLConnector {
     }
 
 
-    public void dropAllTables() throws SQLException {
-        String drop = "drop table if exists EXAMPLE, DEFINITION, LEXI_CAT, QUERIED_WORDS, ROOT_WORDS";
-        Statement stmt = connection.createStatement();
-        stmt.execute(drop);
-    }
-
-    public Connection getConnection() { return connection; }
 
     public boolean DBContains(String rootWord){
         try {
@@ -218,9 +233,9 @@ public class MySQLConnector {
     }
 
     public DefinitionInformation fetchDefinition(String rootWord) {
-        String quer = "select quer_word,ROOT_WORDS.root_word,etymology,phonetic from QUERIED_WORDS,ROOT_WORDS where QUERIED_WORDS.root_word = ? and  ROOT_WORDS.root_word = ?";
+        String quer = "select quer_word, ROOT_WORDS.root_word, etymology, phonetic, q_count, last_access " +
+                "from QUERIED_WORDS,ROOT_WORDS where QUERIED_WORDS.root_word = ? and  ROOT_WORDS.root_word = ?";
         String getCats = "select cat_id, lexi_cat from LEXI_CAT where root_word = ?";
-        String getDefs = "select def_id, parent_id, definition from DEFINITION where cat_id = ?";
         DefinitionInformation definition = new DefinitionInformation();
         try {
             PreparedStatement ps = connection.prepareStatement(quer);
@@ -229,18 +244,22 @@ public class MySQLConnector {
             ResultSet rs = ps.executeQuery();
 
             //parse the results
-            //TODO: THIS!
+
 
             //fetch general info
             String qw = "";
             String rw = "";
             String ety = "";
             String phone = "";
+            int q_count = 0;
+            java.util.Date last_access = new java.util.Date();
             if (rs.next()){
                 qw = rs.getString("quer_word");
                 rw = rs.getString("root_word");
                 ety = rs.getString("etymology");
                 phone = rs.getString("phonetic");
+                q_count = rs.getInt("q_count") +1; //actual value is incremented in the DB later in this block
+                last_access = rs.getDate("last_access");
             }
 
             //fetch lexical categories for root word
@@ -271,10 +290,29 @@ public class MySQLConnector {
             definition.setRootWord(rw);
             definition.setQueriedWord(qw);
             definition.setLexicalCategories(lexicalCategories);
+            definition.setAccessCount(q_count);
+            definition.setLastAccess(last_access);
+
+            //update fetch count and last review date
+            updateAccessData(rootWord);
+
             return definition;
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
+        }
+    }
+
+    public void updateAccessData(String rootWord) {
+        try {
+            String increment = "UPDATE ROOT_WORDS SET q_count = q_count +1, last_access = ? WHERE root_word = ?";
+            PreparedStatement ps = connection.prepareStatement(increment);
+            ps.setDate(1, getCurrentDatetime());
+            ps.setString(2, rootWord);
+            ps.execute();
+        } catch (SQLException e){
+            System.out.println("ERROR: cannot update access data for this entry.");
+            e.printStackTrace();
         }
     }
 
@@ -332,8 +370,7 @@ public class MySQLConnector {
         String defQuer = "select def_id, parent_id, cat_id, definition from DEFINITION where parent_id <=> ? and cat_id = ?";
         PreparedStatement ps = connection.prepareStatement(defQuer);
 
-        //value of SQLNULL (-1) indicates null value, as parent_id is declared in the schema as an NULLABLE AUTO_INCREMENT
-        //and consists of values >0 and NULL.  Therefore, -1 can be used in coding as a placeholder for null.
+
         if (parentID == SQLNULL)
             ps.setNull(1, Types.NULL);
         else {
@@ -344,4 +381,7 @@ public class MySQLConnector {
 
         return ps.executeQuery();
     }
+
+    public Connection getConnection() { return connection; }
+
 }

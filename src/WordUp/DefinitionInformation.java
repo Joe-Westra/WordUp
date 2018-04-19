@@ -1,6 +1,7 @@
 package WordUp;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class DefinitionInformation {
@@ -8,6 +9,9 @@ public class DefinitionInformation {
     private String queriedWord;
     private String rootWord;
     private String phoneticSpelling;
+    private int accessCount;
+    private Date lastAccess;
+
     private List<LexicalCategory> lexicalCategories;
 
 
@@ -62,6 +66,12 @@ public class DefinitionInformation {
         StringBuilder sb = new StringBuilder();
         sb.append("Queried word: " + this.queriedWord + "\n");
         sb.append("Root word: " + this.rootWord + "\n");
+        int q_count = getAccessCount();
+        if (q_count > 1) {
+            sb.append("You have looked up this word " + q_count + " times.  ");
+            String last_access = getLastAccess().toString();
+            sb.append("The last time was " + last_access + ".\n");
+        }
         if (phoneticSpelling != null)
             sb.append("Phonetic Spelling: " + phoneticSpelling + "\n");
         if (etymologies != null && !etymologies.equals(""))
@@ -75,5 +85,21 @@ public class DefinitionInformation {
 
     public String getPhoneticSpelling() {
         return phoneticSpelling;
+    }
+
+
+    public void setAccessCount(int accessCount) {
+        this.accessCount = accessCount;
+    }
+
+    public Date getLastAccess() {
+        return lastAccess;
+    }
+
+    public void setLastAccess(Date lastAccess) {
+        this.lastAccess = lastAccess;
+    }
+    public int getAccessCount() {
+        return this.accessCount;
     }
 }

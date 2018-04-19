@@ -16,9 +16,6 @@ public class OxfordJsonParser {
 
 
 
-
-
-
     /**
      * Queries the 'inflections' API of the Oxford dictionary.
      * This API takes a word and determines the root of the word.
@@ -26,7 +23,7 @@ public class OxfordJsonParser {
      * @param word the raw word that a definition is saught for
      * @return the base word of the user-queried word
      */
-    public String determineBaseWord(String word) {
+    public String fetchRootWordFromAPI(String word) {
         String baseWord = "";
         HttpsURLConnection inflectionConnection = null;
         try {

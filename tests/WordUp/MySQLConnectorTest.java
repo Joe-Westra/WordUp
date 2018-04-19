@@ -20,7 +20,7 @@ public class MySQLConnectorTest {
 
     @Test
     void canInitiateConnection(){
-     assertNotNull(connector.acquireConnection());
+        assertNotNull(connector.acquireConnection());
     }
 
     @Test
@@ -36,9 +36,7 @@ public class MySQLConnectorTest {
         //add dummy DI to database
         //Shouldn't throw an error...
         try {
-            //connector.dropAllTables()
-            // This is throwing an error saying "ROOT_WORDS" table doesn't exist, even though
-            // the SQL says "drop IF EXISTS".  This is really only necessary for testing purposes, however.
+            //OPTIONAL: remove 'alacrity' definition from the database so adding it doesn't throw an error
 
             connector.addDefinition(totalDef);
         } catch (SQLException e) {
@@ -83,6 +81,20 @@ public class MySQLConnectorTest {
         assertEquals("she accepted the invitation with alacrity", senses.get(0).getExamples().get(0));
     }
 
+    @Test
+    void subsequentQueriesIncrementAccessCount(){
+        String rootWord = "alacrity";
+        DefinitionInformation di = connector.fetchDefinition(rootWord);
+        int accessCount = di.getAccessCount();
+        di = connector.fetchDefinition(rootWord);
+        int secondAccess = di.getAccessCount();
+        assertTrue(secondAccess == accessCount +1);
+
+    }
+
+            /*-----------*/
+            /* NON-TESTS */
+            /*-----------*/
 
     public void SQLfreakout(SQLException e){
         System.out.println("error code: " + e.getErrorCode());
@@ -108,5 +120,7 @@ public class MySQLConnectorTest {
         totalDef.setPhoneticSpelling(phoneticSpelling);
         return totalDef;
     }
+
+
 
 }
