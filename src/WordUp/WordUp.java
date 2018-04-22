@@ -24,7 +24,7 @@ public class WordUp {
 
 
     public static void main(String[] args) {
-        String word = "testing";
+        String word = "trigonometric";//"testing";
         if(args.length > 0){
             //TODO: check for phrases or multiple words
             word = args[0];

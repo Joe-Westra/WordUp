@@ -203,12 +203,14 @@ public class OxfordJsonParser {
 
     private List<PossibleDefinition> getEachSense(JsonObject jo) {
         List<PossibleDefinition> senses = new ArrayList<>();
-        Iterator<JsonElement> senseList = jo.get("senses").getAsJsonArray().iterator();
-        while (senseList.hasNext()) {
-            JsonObject joSense = senseList.next().getAsJsonObject();
-            PossibleDefinition thisSense = digestDefinitionIfPresent(joSense);
-            thisSense.addSubSenses(getEachSubsense(joSense));
-            senses.add(thisSense);
+        if(jo.has("senses")) {
+            Iterator<JsonElement> senseList = jo.get("senses").getAsJsonArray().iterator();
+            while (senseList.hasNext()) {
+                JsonObject joSense = senseList.next().getAsJsonObject();
+                PossibleDefinition thisSense = digestDefinitionIfPresent(joSense);
+                thisSense.addSubSenses(getEachSubsense(joSense));
+                senses.add(thisSense);
+            }
         }
         return senses;
     }

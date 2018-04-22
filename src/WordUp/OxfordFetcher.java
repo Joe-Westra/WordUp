@@ -15,6 +15,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.Arrays;
 
 
 public class OxfordFetcher {
@@ -39,6 +40,7 @@ public class OxfordFetcher {
      */
     private JsonObject getRootJsonObject(HttpsURLConnection connection) throws NullPointerException, IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+        //br.lines().forEach(System.out::println);//print out the JSON response
         JsonParser jp = new JsonParser();
         JsonElement je = (jp.parse(br));
         return je.getAsJsonObject();

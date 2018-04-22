@@ -1,0 +1,50 @@
+April 19th:
+
+jdub@compy2:~$ define trigonometric
+Exception in thread "main" java.lang.NullPointerException
+	at WordUp.OxfordJsonParser.getEachSense(OxfordJsonParser.java:206)
+	at WordUp.OxfordJsonParser.getEachEntry(OxfordJsonParser.java:197)
+	at WordUp.OxfordJsonParser.getEachLexicalCategory(OxfordJsonParser.java:184)
+	at WordUp.OxfordJsonParser.fetchDefinitions(OxfordJsonParser.java:173)
+	at WordUp.OxfordJsonParser.retrieveDefinition(OxfordJsonParser.java:132)
+	at WordUp.OxfordJsonParser.determineDefinition(OxfordJsonParser.java:105)
+	at WordUp.WordUp.main(WordUp.java:45)
+
+
+	The JSON response from the API is:
+
+	{
+        "metadata": {
+            "provider": "Oxford University Press"
+        },
+        "results": [
+            {
+                "id": "trigonometric",
+                "language": "en",
+                "lexicalEntries": [
+                    {
+                        "grammaticalFeatures": [
+                            {
+                                "text": "Positive",
+                                "type": "Degree"
+                            }
+                        ],
+                        "inflectionOf": [
+                            {
+                                "id": "trigonometric",
+                                "text": "trigonometric"
+                            }
+                        ],
+                        "language": "en",
+                        "lexicalCategory": "Adjective",
+                        "text": "trigonometric"
+                    }
+                ],
+                "word": "trigonometric"
+            }
+        ]
+    }
+
+    ie. there are no "senses" and no definition of the word... this was unanticipated.  The best response from the program is to just offer the applicable lexical categories for use...
+
+    Fixed 04/21
